@@ -13,6 +13,10 @@ class ConteudoVideoPage(BasePage):
         self.overlay_marca_dagua: Locator = page.locator(
             "[data-testid='marca-dagua-overlay'], .marca-dagua-overlay, .watermark"
         )
+        # Botão "Baixar conteúdo" exposto no Aprender quando Segurança da
+        # atividade é "Somente Baixar" ou "Visualizar e Baixar". É um Chakra
+        # Button fora do Plyr, não um controle do player.
+        self.botao_download: Locator = page.locator("#download-content")
 
     def abrir_atividade(self, base_url: str, evento_id: str, atividade_id: str) -> None:
         # TODO confirmar rota do Aprender — usando mesma rota da edição sem /edit como hipótese.
