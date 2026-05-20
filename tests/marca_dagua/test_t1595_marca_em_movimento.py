@@ -16,7 +16,7 @@ PERFIL TESTADO: Aluno
 PLATAFORMA: Desktop (1920x1080)
 AMBIENTE: Principal (stage)
 
-Referência: docs/casos/t1595_marca_em_movimento.md
+Referência: docs/casos/T-1595.md
 
 OBSERVAÇÃO IMPORTANTE: a marca d'água é renderizada server-side e queimada nos frames
 do vídeo (não fica no DOM). A verificação de "em movimento" é feita por screenshots
