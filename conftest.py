@@ -34,6 +34,23 @@ def aluno_credentials() -> dict:
     return {"email": email, "password": password}
 
 
+@pytest.fixture(scope="session")
+def base_url_destinataria() -> str:
+    url = os.environ.get("BASE_URL_DESTINATARIA")
+    if not url:
+        pytest.fail("BASE_URL_DESTINATARIA não definida no .env")
+    return url.rstrip("/") + "/"
+
+
+@pytest.fixture(scope="session")
+def admin_destinataria_credentials() -> dict:
+    email = os.environ.get("ADMIN_DESTINATARIA_EMAIL")
+    password = os.environ.get("ADMIN_DESTINATARIA_PASSWORD")
+    if not email or not password:
+        pytest.fail("ADMIN_DESTINATARIA_EMAIL/ADMIN_DESTINATARIA_PASSWORD não definidos no .env")
+    return {"email": email, "password": password}
+
+
 @pytest.fixture
 def browser_context_args(browser_context_args):
     return {
@@ -61,5 +78,30 @@ def admin_logado(browser, browser_context_args, base_url, admin_credentials) -> 
 def aluno_logado(browser, browser_context_args, base_url, aluno_credentials) -> Page:
     context = browser.new_context(**browser_context_args)
     page = _login(context, base_url, aluno_credentials)
+    yield page
+    context.close()
+
+
+@pytest.fixture
+def admin_destinataria_logado(
+    browser, browser_context_args, base_url_destinataria, admin_destinataria_credentials
+) -> Page:
+    """Loga na org destinatária e troca o perfil para Administrador.
+
+    Após o login Twygo cai em /dashboard_students. O switch para admin é via
+    /o/{ORG_DESTINATARIA_ID}/events?profile=admin. Requer ORG_DESTINATARIA_ID no .env.
+    """
+    org_id = os.environ.get("ORG_DESTINATARIA_ID")
+    if not org_id:
+        pytest.fail("ORG_DESTINATARIA_ID não definido no .env")
+
+    context = browser.new_context(**browser_context_args)
+    page = _login(context, base_url_destinataria, admin_destinataria_credentials)
+    page.goto(
+        f"{base_url_destinataria}o/{org_id}/events?tab=events&profile=admin",
+        wait_until="domcontentloaded",
+        timeout=30000,
+    )
+    page.wait_for_timeout(5000)
     yield page
     context.close()

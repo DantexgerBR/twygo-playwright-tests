@@ -34,6 +34,9 @@ class CompartilharCursoPage(BasePage):
         self.botao_cancelar: Locator = page.locator("#cancel-shared-events-form-button")
         self.botao_voltar: Locator = page.locator("#back-to-shared-events")
         self.combobox_ambientes: Locator = page.locator('input[role="combobox"]').first
+        # Modo externo
+        self.input_token_externo: Locator = page.locator("#external_environment_token")
+        self.checkbox_termos: Locator = page.locator("#shared-events-terms-checkbox")
 
     def abrir_aba_share(self, base_url: str, evento_id: str) -> None:
         """Vai direto para /e/{evento}/edit?tab=share."""
@@ -43,6 +46,18 @@ class CompartilharCursoPage(BasePage):
             timeout=30000,
         )
         self.page.wait_for_timeout(6000)
+
+    def existe_share_para(self, nome_org: str) -> bool:
+        """Verifica na listagem 'Concedidos' (aba share atual) se já há um share
+        para a org `nome_org`. Útil para pular passo 2 quando o share já existe."""
+        return bool(self.page.evaluate(
+            r"""(nome) => {
+                const re = new RegExp(nome.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
+                return Array.from(document.querySelectorAll('tr'))
+                    .some(r => re.test(r.innerText || '') && r.offsetParent !== null);
+            }""",
+            nome_org,
+        ))
 
     def clicar_adicionar(self) -> None:
         """Clica em Adicionar e aguarda navegação para /shared_events/new."""
@@ -106,15 +121,33 @@ class CompartilharCursoPage(BasePage):
         self.page.wait_for_timeout(1500)
         return bool(clicou)
 
+    def preencher_token_externo(self, token: str) -> None:
+        """Preenche o campo 'Token do ambiente externo' (válido só com consumer_type=externo)."""
+        self.input_token_externo.scroll_into_view_if_needed()
+        self.input_token_externo.fill(token)
+        self.page.wait_for_timeout(1000)
+
+    def aceitar_termos(self) -> None:
+        """Marca o checkbox de aceite dos termos (obrigatório em compartilhamento externo)."""
+        # O input nativo costuma ser hidden; usar click direto via JS é mais robusto.
+        self.page.evaluate(
+            "() => document.querySelector('#shared-events-terms-checkbox')?.click()"
+        )
+        self.page.wait_for_timeout(800)
+
     def ler_estado_form(self) -> dict:
         """Snapshot dos radios e do select para asserções."""
         return self.page.evaluate(r"""() => {
             const radios = Array.from(document.querySelectorAll('input[type=radio]'))
                 .map(r => ({name: r.name, value: r.value, checked: r.checked}));
             const combo = document.querySelector('input[role="combobox"]');
+            const token = document.querySelector('#external_environment_token');
+            const terms = document.querySelector('#shared-events-terms-checkbox');
             return {
                 radios,
                 ambientes_value: combo?.value || '',
+                token_value: token?.value || '',
+                termos_checked: terms?.checked ?? null,
             };
         }""")
 
