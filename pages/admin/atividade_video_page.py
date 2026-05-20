@@ -56,3 +56,26 @@ class AtividadeVideoPage(BasePage):
                 return True
             except Exception:
                 return False
+
+    def ler_config_marca_dagua(self) -> dict:
+        """Lê todos os campos do form WaterMarkConfig (usado para comparar
+        atividade original vs atividade duplicada no T-1598)."""
+        return self.page.evaluate("""() => {
+            const cb = document.querySelector('#water-mark-video-enabled');
+            const lblCb = document.querySelector('label.chakra-checkbox');
+            const identif = Array.from(document.querySelectorAll('input[name="identificationFields"]'))
+                .map(i => i.value);
+            const fontSize = document.querySelector('#fontSize');
+            const fontColor = document.querySelector('#water-mark-video-font-color');
+            const fontPos = document.querySelector('input[name="fontPosition"]');
+            const fontMovSelected = document.querySelector('input[name="fontMovement"]:checked');
+            return {
+                enabled: cb ? cb.checked : null,
+                enabledLabelDataChecked: lblCb ? lblCb.getAttribute('data-checked') : null,
+                identificationFields: identif,
+                fontSize: fontSize ? fontSize.value : null,
+                fontColor: fontColor ? fontColor.value : null,
+                fontPosition: fontPos ? fontPos.value : null,
+                fontMovement: fontMovSelected ? fontMovSelected.value : null,
+            };
+        }""")
