@@ -1,0 +1,35 @@
+"""
+CASO: {{ caso.objetivo }}
+
+PRÉ-CONDIÇÕES:
+{% for pre in caso.pre_condicoes -%}
+    - {{ pre }}
+{% endfor %}
+PERFIL TESTADO: {{ caso.perfil or 'N/A' }}
+PLATAFORMA: {{ caso.plataforma or 'Desktop' }}
+AMBIENTE: {{ caso.ambiente or 'Principal' }}
+
+Referência: docs/casos/{{ slug }}.md
+Gerado automaticamente pela UI Twygo Test.
+"""
+import os
+
+import pytest
+from playwright.sync_api import Page, expect
+
+
+@pytest.mark.{{ marker }}
+def test_{{ slug }}(admin_logado, aluno_logado, base_url):
+    page: Page = admin_logado
+    aluno: Page = aluno_logado
+
+{% for passo in passos %}
+    # Passo {{ passo.n }} — {{ passo.acao }}
+    # Esperado: {{ passo.esperado }}
+{% for act in passo.actions_executadas %}
+    {{ render_action(act) }}
+{% endfor -%}
+{% for ass in passo.assertions %}
+    {{ render_assertion(ass) }}
+{% endfor %}
+{% endfor %}

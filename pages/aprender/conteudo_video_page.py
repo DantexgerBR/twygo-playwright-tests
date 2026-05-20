@@ -14,10 +14,13 @@ class ConteudoVideoPage(BasePage):
             "[data-testid='marca-dagua-overlay'], .marca-dagua-overlay, .watermark"
         )
 
-    def abrir_atividade(self, base_url: str, atividade_id: str) -> None:
-        # TODO confirmar rota real do Aprender.
-        self.page.goto(f"{base_url}aprender/atividades/{atividade_id}")
-        self.page.wait_for_load_state("networkidle", timeout=15000)
+    def abrir_atividade(self, base_url: str, evento_id: str, atividade_id: str) -> None:
+        # TODO confirmar rota do Aprender — usando mesma rota da edição sem /edit como hipótese.
+        self.page.goto(
+            f"{base_url}e/{evento_id}/contents/{atividade_id}",
+            wait_until="networkidle",
+            timeout=30000,
+        )
 
     def video_esta_visivel(self) -> bool:
         return self.player.first.is_visible()

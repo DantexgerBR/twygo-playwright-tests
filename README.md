@@ -4,6 +4,10 @@ Automação de testes da plataforma **Twygo** usando [Playwright](https://playwr
 
 Cada caso manual (no padrão Objetivo / Pré-condições / Passos numerados com Resultado Esperado) é traduzido para um arquivo de teste **rastreável** — quem lê o código consegue bater 1:1 com o caso manual. Quando um teste falha, o resultado vira um relatório de incidente no formato `:: Incidente identificado ::`.
 
+Há dois modos de uso:
+- **Manual (pytest)**: você escreve o arquivo de teste seguindo o padrão e roda com `pytest` — bom pra testes que viraram regressão.
+- **UI (Gradio + Claude)**: cola o caso, o sistema parseia, executa cada passo dirigindo Playwright via Claude API, gera o arquivo pytest persistente e retorna bug report no formato `:: Incidente identificado ::` se algo falhar.
+
 ---
 
 ## Pré-requisitos
@@ -50,7 +54,26 @@ ATIVIDADE_VIDEO_MARCA_DAGUA_ID=<id-da-atividade-pre-cadastrada>
 
 > O `.env` está no `.gitignore` — **nunca** será commitado.
 
-## Rodar testes
+## Modo UI (Gradio + Claude)
+
+Para colar um caso de teste e rodar dinamicamente:
+
+```bash
+source .venv/bin/activate
+PYTHONPATH=. python -m ui.app
+```
+
+Abre `http://127.0.0.1:7860`. Cole o caso na textarea, confira os campos (já vêm pré-populados do `.env`), e clique **Executar**. A UI:
+
+1. Parseia o caso (objetivo, pré-condições, passos).
+2. Para cada passo: captura snapshot da página → manda para Claude (`claude-opus-4-7`) com prompt caching → executa as ações Playwright que ele retornar.
+3. Verifica as asserções declaradas pelo modelo.
+4. Gera `tests/gerado/test_<slug>.py` + `docs/casos/<slug>.md`.
+5. Se algum passo falhar, retorna bug report no formato `:: Incidente identificado ::` + screenshot.
+
+Requer `ANTHROPIC_API_KEY` no `.env`.
+
+## Rodar testes manuais
 
 ```bash
 source .venv/bin/activate
