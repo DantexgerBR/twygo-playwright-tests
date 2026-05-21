@@ -1,0 +1,10 @@
+{
+  "status": "PASSOU",
+  "obs": "9 estampas detectadas. Acompanhando a 1ª por 12s: ΔX=472.5px, ΔY=151.2px. transforms distintos: 1 (['none']). Posições x: [361.1, 549.3, 617.6, 798.5, 758.3, 479.2]... ys: [615.7, 665.8, 660.6, 588.4, 607.3, 731]...",
+  "delta_x": 472.5,
+  "delta_y": 151.20000000000005,
+  "transforms_unicos": [
+    "none"
+  ],
+  "n_estampas": 9
+}
