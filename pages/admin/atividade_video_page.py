@@ -57,6 +57,21 @@ class AtividadeVideoPage(BasePage):
             except Exception:
                 return False
 
+    def set_cor_da_fonte_hex(self, hex_value: str) -> None:
+        """Preenche o input `#water-mark-video-font-color` com um hex.
+
+        Aceita 6 chars (#RRGGBB, sem alpha = totalmente opaco) ou 8 chars (#RRGGBBAA).
+        Para totalmente transparente: `#FFFFFF00` (ou qualquer RGB com AA=00).
+        """
+        inp = self.page.locator("#water-mark-video-font-color")
+        inp.scroll_into_view_if_needed()
+        inp.click()
+        inp.fill("")
+        inp.fill(hex_value)
+        # Dispara blur pra Chakra commitar o valor no estado React
+        inp.press("Tab")
+        self.page.wait_for_timeout(500)
+
     def ler_config_marca_dagua(self) -> dict:
         """Lê todos os campos do form WaterMarkConfig (usado para comparar
         atividade original vs atividade duplicada no T-1598)."""
