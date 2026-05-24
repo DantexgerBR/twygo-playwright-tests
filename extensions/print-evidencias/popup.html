@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <style>
+    :root {
+      --bg: #0a0c0f;
+      --panel: #10151b;
+      --line: #1d2530;
+      --ink: #e8eef5;
+      --mut: #69768a;
+      --acc: #b6ff3c;
+      --acc-dim: rgba(182, 255, 60, 0.12);
+      --danger: #ff5d5d;
+      --mono: "Cascadia Code", "JetBrains Mono", "SF Mono", ui-monospace, Consolas, monospace;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { margin: 0; }
+
+    body {
+      width: 340px;
+      font-family: var(--mono);
+      color: var(--ink);
+      background: var(--bg);
+      background-image:
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 22px 22px;
+      background-position: -1px -1px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Glow superior + vinheta para dar profundidade ao "painel". */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(120% 80% at 50% -10%, var(--acc-dim), transparent 55%),
+        radial-gradient(100% 100% at 50% 120%, rgba(0,0,0,0.6), transparent 60%);
+      pointer-events: none;
+    }
+
+    .wrap { position: relative; padding: 16px; }
+
+    /* ---- Cabeçalho ---- */
+    .head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+      opacity: 0;
+      animation: rise 0.5s 0.02s ease forwards;
+    }
+    .mira {
+      width: 26px; height: 26px;
+      flex: 0 0 auto;
+      color: var(--acc);
+      filter: drop-shadow(0 0 6px var(--acc-dim));
+    }
+    .titulo {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+    .sub {
+      font-size: 9.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mut);
+      margin-top: 3px;
+    }
+    .ver {
+      margin-left: auto;
+      font-size: 9px;
+      color: var(--mut);
+      letter-spacing: 0.1em;
+      border: 1px solid var(--line);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* ---- Status ---- */
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 12px 0;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mut);
+      opacity: 0;
+      animation: rise 0.5s 0.08s ease forwards;
+    }
+    .led {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--acc);
+      box-shadow: 0 0 0 0 var(--acc);
+      animation: pulse 2.4s infinite;
+    }
+    .status.off .led { background: var(--danger); animation: none; box-shadow: none; }
+    .status.off { color: var(--danger); }
+
+    /* ---- Botão principal ---- */
+    .btn-capturar {
+      position: relative;
+      width: 100%;
+      padding: 16px 14px;
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--acc);
+      border: 0;
+      border-radius: 8px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.12s ease, box-shadow 0.2s ease;
+      box-shadow: 0 6px 24px -8px var(--acc);
+      opacity: 0;
+      animation: rise 0.5s 0.14s ease forwards;
+    }
+    .btn-capturar:hover { transform: translateY(-1px); box-shadow: 0 10px 32px -8px var(--acc); }
+    .btn-capturar:active { transform: translateY(1px); }
+    .btn-capturar .atalho {
+      display: block;
+      margin-top: 5px;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      opacity: 0.65;
+    }
+    /* Varredura de luz ao passar o mouse. */
+    .btn-capturar::after {
+      content: "";
+      position: absolute;
+      top: 0; left: -60%;
+      width: 40%; height: 100%;
+      background: linear-gradient(100deg, transparent, rgba(255,255,255,0.5), transparent);
+      transform: skewX(-20deg);
+      transition: left 0.5s ease;
+    }
+    .btn-capturar:hover::after { left: 130%; }
+
+    /* ---- Aviso ---- */
+    .aviso {
+      display: none;
+      margin-top: 12px;
+      padding: 9px 11px;
+      font-size: 10px;
+      line-height: 1.5;
+      letter-spacing: 0.04em;
+      color: var(--danger);
+      background: rgba(255, 93, 93, 0.08);
+      border: 1px solid rgba(255, 93, 93, 0.3);
+      border-left-width: 3px;
+      border-radius: 6px;
+    }
+
+    /* ---- Saída (última URL) ---- */
+    .saida {
+      margin-top: 16px;
+      opacity: 0;
+      animation: rise 0.5s 0.2s ease forwards;
+    }
+    .rotulo {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 9.5px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mut);
+      margin-bottom: 6px;
+    }
+    .rotulo::before { content: ">"; color: var(--acc); }
+    .readout {
+      padding: 10px 11px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      font-size: 11px;
+      line-height: 1.45;
+      word-break: break-all;
+      min-height: 38px;
+    }
+    .readout.vazio { color: var(--mut); font-style: normal; }
+    .readout a, .readout a:visited { color: var(--acc); text-decoration: none; }
+    .readout a:hover { text-decoration: underline; }
+
+    #copiar {
+      width: 100%;
+      margin-top: 8px;
+      padding: 9px;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--acc);
+      background: transparent;
+      border: 1px solid var(--acc);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    #copiar:hover { background: var(--acc); color: var(--bg); }
+
+    /* ---- Rodapé ---- */
+    .rodape {
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      text-align: right;
+      opacity: 0;
+      animation: rise 0.5s 0.26s ease forwards;
+    }
+    .rodape a {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mut);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .rodape a:hover { color: var(--acc); }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0%   { box-shadow: 0 0 0 0 var(--acc-dim); }
+      70%  { box-shadow: 0 0 0 6px transparent; }
+      100% { box-shadow: 0 0 0 0 transparent; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; }
+      .head, .status, .btn-capturar, .saida, .rodape { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="head">
+      <svg class="mira" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <circle cx="12" cy="12" r="7" opacity="0.5"></circle>
+        <path d="M12 2v4M12 18v4M2 12h4M18 12h4"></path>
+        <circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"></circle>
+      </svg>
+      <div>
+        <div class="titulo">Print Evidências</div>
+        <div class="sub">Captura · Upload · Link</div>
+      </div>
+      <span class="ver">TWYGO</span>
+    </header>
+
+    <div class="status" id="status-bar">
+      <span class="led"></span>
+      <span id="status-txt">Cloudinary conectado</span>
+    </div>
+
+    <button id="capturar" class="btn-capturar">
+      Capturar área
+      <span class="atalho">arraste para selecionar · Ctrl+Shift+E</span>
+    </button>
+
+    <div id="aviso" class="aviso">Configure o Cloud name e o Upload preset nas opções.</div>
+
+    <section class="saida">
+      <div class="rotulo">Último link</div>
+      <div id="ultima" class="readout vazio">nenhuma captura ainda</div>
+      <button id="copiar" style="display:none;">Copiar URL</button>
+    </section>
+
+    <footer class="rodape">
+      <a href="#" id="opcoes">⚙ Configurações</a>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Print Evidências (Twygo)",
+  "version": "1.0.0",
+  "description": "Seleciona uma área da tela, captura o print e faz upload para o Cloudinary, copiando a URL pública para a área de transferência.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "notifications",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://api.cloudinary.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Print Evidências",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "commands": {
+    "capturar-area": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+E"
+      },
+      "description": "Capturar área da tela"
+    }
+  },
+  "icons": {
+    "128": "icon.png"
+  }
+}
