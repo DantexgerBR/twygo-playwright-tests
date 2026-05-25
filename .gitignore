@@ -17,3 +17,7 @@ evidencias/_sessao_atual/
 build/
 dist/
 *.spec
+
+# Notas locais com credenciais (NUNCA commitar)
+api.txt
+*_api_keys.txt
