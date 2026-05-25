@@ -17,19 +17,13 @@ from typing import Any, Callable, Literal, Optional
 from app.agents.llm_client import LLMClient, Mensagem, RespostaLLM, Tool, ToolCall
 from app.services.browser import Browser
 from app.services.stage_health import verificar_stage
-from app.state import CasoParseado, Documento, Evidencia
-
-
-Laudo = Literal["corrigido", "ainda_quebrado", "inconclusivo"]
-
-
-@dataclass
-class ResultadoExecucao:
-    laudo: Laudo
-    justificativa: str
-    screenshots: list[Path] = field(default_factory=list)
-    log: list[str] = field(default_factory=list)
-    iteracoes: int = 0
+from app.state import (
+    CasoParseado,
+    Documento,
+    Evidencia,
+    Laudo,
+    ResultadoExecucao,
+)
 
 
 # ---------------------------------------------------------------------------

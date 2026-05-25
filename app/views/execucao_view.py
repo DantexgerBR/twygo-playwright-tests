@@ -8,11 +8,11 @@ from typing import Optional
 import flet as ft
 
 from app.agents.llm_client import criar_cliente
-from app.agents.qa_agent import QAAgent, ResultadoExecucao
+from app.agents.qa_agent import QAAgent
 from app.icons import Icones
 from app.services.browser import Browser
 from app.services.stage_health import verificar_stage
-from app.state import AppState
+from app.state import AppState, ResultadoExecucao
 from app.theme import Tokens
 from app.ui_kit import (
     botao_primario,
@@ -229,7 +229,15 @@ def construir(page: ft.Page, state: AppState) -> ft.Control:
                     admin_password=cred.admin_password,
                     pasta_screenshots=pasta_screenshots,
                 )
+                # Define evidência de referência (primeira print do bug original)
+                for ev in state.evidencias:
+                    if ev.tipo == "print" and ev.path.exists():
+                        resultado.evidencia_referencia = ev.path
+                        break
                 _mostrar_laudo(resultado)
+                # Publica no state pra aba Resultado se atualizar
+                state.set_resultado(resultado)
+                _adicionar_log("→ Veja detalhes completos na aba 'Resultado'.")
             except Exception as e:
                 _adicionar_log(f"ERRO INESPERADO: {e}")
             finally:

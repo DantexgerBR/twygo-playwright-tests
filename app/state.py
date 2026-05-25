@@ -37,6 +37,23 @@ class Evidencia:
     origem: Literal["upload", "paste", "jam"]
 
 
+Laudo = Literal["corrigido", "ainda_quebrado", "inconclusivo"]
+
+
+@dataclass
+class ResultadoExecucao:
+    laudo: Laudo
+    justificativa: str
+    screenshots: list[Path] = field(default_factory=list)
+    log: list[str] = field(default_factory=list)
+    iteracoes: int = 0
+    # Evidência usada como referência (pra mostrar lado a lado no Resultado)
+    evidencia_referencia: Optional[Path] = None
+    # SHA do commit das evidências (preenchido após auto-commit)
+    commit_sha: Optional[str] = None
+    commit_url: Optional[str] = None
+
+
 @dataclass
 class CasoParseado:
     """Wrapper agnóstico ao Caso do ui/parser.py."""
@@ -62,6 +79,7 @@ class AppState:
         self.documentacao: list[Documento] = []
         self.caso: Optional[CasoParseado] = None
         self.evidencias: list[Evidencia] = []
+        self.resultado: Optional[ResultadoExecucao] = None
         self._listeners: dict[str, list[Callable]] = defaultdict(list)
 
     # ---- Observer pattern ----
@@ -99,6 +117,10 @@ class AppState:
     def set_caso(self, caso: Optional[CasoParseado]) -> None:
         self.caso = caso
         self.emit("caso_changed", caso)
+
+    def set_resultado(self, resultado: Optional[ResultadoExecucao]) -> None:
+        self.resultado = resultado
+        self.emit("resultado_changed", resultado)
 
     # ---- Documentação ----
 
