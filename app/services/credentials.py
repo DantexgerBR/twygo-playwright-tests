@@ -20,6 +20,7 @@ CHAVES_CREDENCIAIS = [
     "ALUNO_PASSWORD",
     "ANTHROPIC_API_KEY",
     "GEMINI_API_KEY",
+    "GROQ_API_KEY",
     "ORG_ID",
 ]
 
@@ -33,11 +34,16 @@ class Credenciais:
     aluno_password: str = ""
     anthropic_api_key: str = ""
     gemini_api_key: str = ""
+    groq_api_key: str = ""
     org_id: str = ""
 
     def completo_para_admin(self) -> bool:
-        # Pelo menos uma das chaves de LLM precisa estar definida (Gemini é o default).
-        tem_llm = bool(self.gemini_api_key) or bool(self.anthropic_api_key)
+        # Pelo menos uma das chaves de LLM precisa estar definida.
+        tem_llm = (
+            bool(self.gemini_api_key)
+            or bool(self.groq_api_key)
+            or bool(self.anthropic_api_key)
+        )
         return all([
             self.base_url,
             self.admin_email,
@@ -55,6 +61,7 @@ class Credenciais:
             aluno_password=env.get("ALUNO_PASSWORD", "") or "",
             anthropic_api_key=env.get("ANTHROPIC_API_KEY", "") or "",
             gemini_api_key=env.get("GEMINI_API_KEY", "") or "",
+            groq_api_key=env.get("GROQ_API_KEY", "") or "",
             org_id=env.get("ORG_ID", "") or "",
         )
 
@@ -93,6 +100,7 @@ def salvar(project_root: Path, cred: Credenciais) -> None:
         "ALUNO_PASSWORD": cred.aluno_password,
         "ANTHROPIC_API_KEY": cred.anthropic_api_key,
         "GEMINI_API_KEY": cred.gemini_api_key,
+        "GROQ_API_KEY": cred.groq_api_key,
         "ORG_ID": cred.org_id,
     })
     linhas = [f"{chave}={valor}" for chave, valor in existing.items()]

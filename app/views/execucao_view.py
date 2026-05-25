@@ -175,10 +175,10 @@ def construir(page: ft.Page, state: AppState) -> ft.Control:
             status_container.visible = True
             _maybe_update()
             return
-        if not cred.gemini_api_key and not cred.anthropic_api_key:
+        if not (cred.groq_api_key or cred.gemini_api_key or cred.anthropic_api_key):
             status_container.content = status_banner(
                 "error",
-                "Nenhuma chave de LLM configurada. Preencha GEMINI_API_KEY no ⚙.",
+                "Nenhuma chave de LLM configurada. Preencha GROQ ou GEMINI no ⚙.",
             )
             status_container.visible = True
             _maybe_update()
@@ -191,12 +191,16 @@ def construir(page: ft.Page, state: AppState) -> ft.Control:
         botao_parar.visible = True
         _maybe_update()
 
-        # Cria cliente LLM
+        # Cria cliente LLM — prioridade: Groq > Gemini > Claude
         try:
-            if cred.gemini_api_key:
+            if cred.groq_api_key:
+                _adicionar_log("Usando provedor: Groq (Llama 4)")
+                llm = criar_cliente(provedor="groq", api_key=cred.groq_api_key)
+            elif cred.gemini_api_key:
+                _adicionar_log("Usando provedor: Gemini 2.5 Flash")
                 llm = criar_cliente(provedor="gemini", api_key=cred.gemini_api_key)
             else:
-                _adicionar_log("Sem GEMINI_API_KEY — Claude não está suportado no MVP.")
+                _adicionar_log("Claude API ainda não está suportado no MVP.")
                 botao_executar.disabled = False
                 botao_parar.visible = False
                 _maybe_update()

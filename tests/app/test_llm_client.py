@@ -8,6 +8,7 @@ import pytest
 
 from app.agents.llm_client import (
     GeminiClient,
+    GroqClient,
     Mensagem,
     RespostaLLM,
     Tool,
@@ -143,3 +144,135 @@ def test_criar_cliente_gemini_via_factory():
     with patch("google.genai.Client"):
         client = criar_cliente(provedor="gemini", api_key="fake")
         assert isinstance(client, GeminiClient)
+
+
+# ---------------------------------------------------------------------------
+# Groq
+# ---------------------------------------------------------------------------
+
+
+def _fake_groq_response(text="", tool_name=None, args_json=None):
+    """Cria uma resposta fake do Groq SDK."""
+    fake_msg = MagicMock()
+    fake_msg.content = text
+    if tool_name:
+        fake_tc = MagicMock()
+        fake_tc.function.name = tool_name
+        fake_tc.function.arguments = args_json or "{}"
+        fake_msg.tool_calls = [fake_tc]
+    else:
+        fake_msg.tool_calls = None
+    choice = MagicMock()
+    choice.message = fake_msg
+    resp = MagicMock()
+    resp.choices = [choice]
+    return resp
+
+
+def test_groq_client_exige_api_key():
+    with pytest.raises(ValueError, match="GROQ_API_KEY"):
+        GroqClient(api_key="")
+
+
+def test_groq_client_gerar_texto_simples():
+    fake = _fake_groq_response(text="vou clicar em Salvar")
+
+    with patch("groq.Groq") as GroqMock:
+        instance = GroqMock.return_value
+        instance.chat.completions.create.return_value = fake
+
+        client = GroqClient(api_key="gsk-fake")
+        resp = client.gerar(
+            system_instruction="QA",
+            mensagens=[Mensagem(role="user", text="oi")],
+            tools=[],
+        )
+
+        assert "Salvar" in resp.text
+        assert resp.tool_calls == []
+
+
+def test_groq_client_gerar_com_tool_call():
+    fake = _fake_groq_response(
+        text="",
+        tool_name="clicar",
+        args_json='{"seletor": "#salvar"}',
+    )
+
+    with patch("groq.Groq") as GroqMock:
+        instance = GroqMock.return_value
+        instance.chat.completions.create.return_value = fake
+
+        client = GroqClient(api_key="gsk-fake")
+        resp = client.gerar(
+            system_instruction="QA",
+            mensagens=[Mensagem(role="user", text="clica salvar")],
+            tools=[
+                Tool(
+                    name="clicar",
+                    description="clica",
+                    parameters={
+                        "type": "object",
+                        "properties": {"seletor": {"type": "string"}},
+                        "required": ["seletor"],
+                    },
+                )
+            ],
+        )
+
+        assert len(resp.tool_calls) == 1
+        assert resp.tool_calls[0].name == "clicar"
+        assert resp.tool_calls[0].args == {"seletor": "#salvar"}
+
+
+def test_groq_client_com_imagem(tmp_path):
+    """Mensagem com image_path inclui base64 no payload OpenAI-style."""
+    img = tmp_path / "tela.png"
+    img.write_bytes(b"\x89PNG-fake")
+
+    fake = _fake_groq_response(text="vi a tela")
+
+    with patch("groq.Groq") as GroqMock:
+        instance = GroqMock.return_value
+        instance.chat.completions.create.return_value = fake
+
+        client = GroqClient(api_key="gsk-fake")
+        client.gerar(
+            system_instruction="",
+            mensagens=[Mensagem(role="user", text="o que tem?", image_path=img)],
+            tools=[],
+        )
+
+        # Verifica que mensagens passadas pra API têm image_url
+        call_kwargs = instance.chat.completions.create.call_args.kwargs
+        msgs = call_kwargs["messages"]
+        # Última msg é a do usuário com texto+imagem (lista de partes)
+        user_msg = next(m for m in msgs if m["role"] == "user")
+        assert isinstance(user_msg["content"], list)
+        types = {p["type"] for p in user_msg["content"]}
+        assert "image_url" in types
+
+
+def test_groq_client_args_json_invalido_nao_quebra():
+    """Se Groq devolver arguments com JSON inválido, salva em _raw em vez de crashar."""
+    fake = _fake_groq_response(
+        text="",
+        tool_name="clicar",
+        args_json="isso nao é json {{{",
+    )
+
+    with patch("groq.Groq") as GroqMock:
+        instance = GroqMock.return_value
+        instance.chat.completions.create.return_value = fake
+
+        client = GroqClient(api_key="gsk-fake")
+        resp = client.gerar(system_instruction="", mensagens=[], tools=[])
+
+        assert len(resp.tool_calls) == 1
+        assert "_raw" in resp.tool_calls[0].args
+
+
+def test_criar_cliente_groq_via_factory():
+    with patch("groq.Groq"):
+        client = criar_cliente(provedor="groq", api_key="gsk-fake")
+        assert isinstance(client, GroqClient)

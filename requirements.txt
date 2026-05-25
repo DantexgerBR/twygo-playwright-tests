@@ -17,3 +17,4 @@ keyring>=25.0.0
 
 # LLM (agente QA)
 google-genai>=2.0.0
+groq>=1.0.0

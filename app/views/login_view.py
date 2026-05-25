@@ -80,12 +80,17 @@ def construir_tela_login(
     aluno_password_tf = campo_texto(valor=cred.aluno_password, senha=True)
     gemini_key_tf = campo_texto(
         valor=cred.gemini_api_key,
-        hint="AIza... (grátis em aistudio.google.com — recomendado)",
+        hint="AIza... (grátis em aistudio.google.com — 1500 req/dia)",
+        senha=True,
+    )
+    groq_key_tf = campo_texto(
+        valor=cred.groq_api_key,
+        hint="gsk_... (grátis em console.groq.com — sem teto diário)",
         senha=True,
     )
     anthropic_key_tf = campo_texto(
         valor=cred.anthropic_api_key,
-        hint="sk-ant-... (opcional, pago — só se quiser usar Claude)",
+        hint="sk-ant-... (opcional, pago — Claude)",
         senha=True,
     )
     org_id_tf = campo_texto(
@@ -111,12 +116,13 @@ def construir_tela_login(
                 aluno_password=aluno_password_tf.value or "",
                 anthropic_api_key=(anthropic_key_tf.value or "").strip(),
                 gemini_api_key=(gemini_key_tf.value or "").strip(),
+                groq_api_key=(groq_key_tf.value or "").strip(),
                 org_id=(org_id_tf.value or "").strip(),
             )
             if not nova.completo_para_admin():
                 mostrar(
                     "error",
-                    "Preencha URL, e-mail/senha do admin e pelo menos uma chave (GEMINI ou ANTHROPIC).",
+                    "Preencha URL, e-mail/senha do admin e pelo menos uma chave de LLM (GEMINI, GROQ ou ANTHROPIC).",
                 )
                 return
             try:
@@ -145,6 +151,7 @@ def construir_tela_login(
         aluno_password_tf.value = ""
         anthropic_key_tf.value = ""
         gemini_key_tf.value = ""
+        groq_key_tf.value = ""
         org_id_tf.value = ""
         mostrar("warn", "Credenciais apagadas. Preencha de novo para usar o app.")
 
@@ -197,8 +204,14 @@ def construir_tela_login(
             _par_email_senha("E-mail", aluno_email_tf, "Senha", aluno_password_tf),
             ft.Container(height=Tokens.SPACE_3),
             secao_titulo("API do agente QA"),
-            _campo_com_label("GEMINI_API_KEY (recomendado — grátis)", gemini_key_tf),
-            _campo_com_label("ANTHROPIC_API_KEY (opcional — pago)", anthropic_key_tf),
+            ft.Text(
+                "Preencha pelo menos uma. Recomendado: GROQ (sem teto diário) ou GEMINI (1500/dia).",
+                color=Tokens.TEXT_MUTED,
+                size=Tokens.FONT_SM,
+            ),
+            _campo_com_label("GROQ_API_KEY (grátis, sem teto diário)", groq_key_tf),
+            _campo_com_label("GEMINI_API_KEY (grátis, 1500 req/dia)", gemini_key_tf),
+            _campo_com_label("ANTHROPIC_API_KEY (pago — Claude)", anthropic_key_tf),
             ft.Container(height=Tokens.SPACE_3),
             secao_titulo("Outros"),
             _campo_com_label("ORG_ID (opcional)", org_id_tf),
