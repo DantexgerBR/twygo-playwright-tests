@@ -1,6 +1,38 @@
-# Plano — Twygo QA App (Flet Desktop)
+# Plano — Twygo QA App (Flet Desktop) — ❌ CANCELADO em 2026-05-25
 
-> Roteiro de etapas para transformar o projeto `twygo-playwright-tests` em um aplicativo desktop com UI em **Flet**, mantendo todo o backend (parser, executor, llm, generator, reporter) intacto.
+> **STATUS: CANCELADO.** Trabalho preservado no código (commits 936b45b..08afb65) e nesse documento pra referência futura, mas **abandonado** como produto.
+>
+> **Motivo do cancelamento:** Custo/complexidade de manter um agente LLM (Gemini quota / Groq instabilidade / proxy corporativo da Twygo interrompendo conexões) ficaram acima do valor entregue. O agente conseguia logar como admin e navegar, mas:
+> - Gemini grátis esgota cota rápido em uso real
+> - Groq teve problemas de nome de modelo (`meta-llama/llama-4-maverick-17b-128e-instruct` retornou 404)
+> - Rede corporativa derruba conexões com APIs externas
+> - QA crítica precisa de mais confiabilidade que LLMs free oferecem hoje
+>
+> **Novo fluxo (em uso a partir de 2026-05-25):** o Dante manda o retrabalho (texto + print) direto no chat do Claude Code, que então:
+> 1. Escreve/adapta um script Playwright em Python usando o conftest.py e pages/ existentes
+> 2. Roda o script via venv local (sem API LLM externa)
+> 3. Captura screenshot do estado pós-correção
+> 4. Compara visualmente com o print do bug original (Dante anexa) ou analisa pelo DOM
+> 5. Emite veredito e gera comentário no padrão KQA pro Dante colar no Artia
+>
+> **O que continua sendo útil do código deste plano (mesmo cancelado):**
+> - `app/services/retrabalho_parser.py` — útil pra parsear retrabalhos do Artia
+> - `app/services/jam_fetcher.py` — útil pra baixar prints do Jam.dev
+> - `app/services/kqa_comment.py` — útil pra gerar comentário KQA
+> - `app/services/git_committer.py` — útil pra commitar evidências
+> - `app/services/stage_health.py` — útil pra verificar se stage tá no ar
+> - `app/services/browser.py` — wrapper Playwright com login admin do Twygo
+> - 112 testes unitários servindo de documentação executável dos componentes
+>
+> **O que NÃO usar mais:**
+> - `app/main.py` e `app/views/*` — UI Flet, descontinuada
+> - `app/agents/qa_agent.py` e `llm_client.py` — agente LLM, descontinuado
+> - `run.cmd` — entry point da UI, descontinuado
+>
+> ---
+
+> Roteiro original (preservado abaixo pra contexto):
+> Transformar o projeto `twygo-playwright-tests` em um aplicativo desktop com UI em **Flet**, mantendo todo o backend (parser, executor, llm, generator, reporter) intacto.
 
 ## Objetivo
 
