@@ -117,6 +117,22 @@ def construir(page: ft.Page, state: AppState) -> ft.Control:
         _maybe_update()
 
     def _item_passo(n: int, acao: str, esperado: str) -> ft.Container:
+        coluna_texto = [
+            ft.Text(
+                acao,
+                color=Tokens.TEXT_PRIMARY,
+                size=Tokens.FONT_SM,
+                weight=Tokens.WEIGHT_MEDIUM,
+            ),
+        ]
+        if esperado:
+            coluna_texto.append(
+                ft.Text(
+                    f"Esperado: {esperado}",
+                    color=Tokens.TEXT_MUTED,
+                    size=Tokens.FONT_XS,
+                )
+            )
         return ft.Container(
             content=ft.Row(
                 controls=[
@@ -126,26 +142,16 @@ def construir(page: ft.Page, state: AppState) -> ft.Control:
                             color=Tokens.BG_PRIMARY,
                             size=Tokens.FONT_SM,
                             weight=Tokens.WEIGHT_BOLD,
+                            text_align=ft.TextAlign.CENTER,
                         ),
                         bgcolor=Tokens.ACCENT,
                         border_radius=Tokens.RADIUS_SM,
-                        padding=ft.Padding(left=8, top=2, right=8, bottom=2),
+                        width=28,
+                        height=28,
                         alignment=ft.Alignment(0, 0),
                     ),
                     ft.Column(
-                        controls=[
-                            ft.Text(
-                                acao,
-                                color=Tokens.TEXT_PRIMARY,
-                                size=Tokens.FONT_SM,
-                                weight=Tokens.WEIGHT_MEDIUM,
-                            ),
-                            ft.Text(
-                                f"Esperado: {esperado}" if esperado else "Esperado: —",
-                                color=Tokens.TEXT_MUTED,
-                                size=Tokens.FONT_XS,
-                            ),
-                        ],
+                        controls=coluna_texto,
                         spacing=2,
                         tight=True,
                         expand=True,
@@ -275,7 +281,7 @@ def construir(page: ft.Page, state: AppState) -> ft.Control:
             ],
             spacing=Tokens.SPACE_2,
             horizontal_alignment=ft.CrossAxisAlignment.STRETCH,
-            expand=True,
+            scroll=ft.ScrollMode.AUTO,
         ),
         padding=Tokens.SPACE_5,
         expand=True,

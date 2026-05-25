@@ -427,6 +427,7 @@ def construir(page: ft.Page, state: AppState) -> ft.Control:
             ],
             spacing=Tokens.SPACE_2,
             horizontal_alignment=ft.CrossAxisAlignment.STRETCH,
+            scroll=ft.ScrollMode.AUTO,
         ),
         padding=Tokens.SPACE_5,
         expand=True,
