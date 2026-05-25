@@ -179,6 +179,43 @@ class QAAgent:
         admin_password: str,
         pasta_screenshots: Path,
     ) -> ResultadoExecucao:
+        try:
+            return self._executar_inner(
+                caso=caso,
+                evidencias=evidencias,
+                documentacao=documentacao,
+                base_url=base_url,
+                admin_email=admin_email,
+                admin_password=admin_password,
+                pasta_screenshots=pasta_screenshots,
+            )
+        except Exception as e:
+            import traceback
+            tb = traceback.format_exc()
+            self._logar(f"EXCEÇÃO no agente: {e}")
+            self._logar(tb)
+            try:
+                self.browser.close()
+            except Exception:
+                pass
+            return ResultadoExecucao(
+                laudo="inconclusivo",
+                justificativa=f"Exceção não tratada no agente: {e}",
+                screenshots=self.screenshots,
+                log=self.log,
+            )
+
+    def _executar_inner(
+        self,
+        *,
+        caso: CasoParseado,
+        evidencias: list[Evidencia],
+        documentacao: list[Documento],
+        base_url: str,
+        admin_email: str,
+        admin_password: str,
+        pasta_screenshots: Path,
+    ) -> ResultadoExecucao:
         # 1. Verifica stage
         self._logar("Verificando se stage está no ar…")
         status = verificar_stage(base_url)
@@ -255,10 +292,13 @@ class QAAgent:
                 )
 
             self._logar(f"--- Iteração {iteracao} ---")
+            self._logar(f"  Chamando LLM ({len(mensagens)} mensagens, {len(tools)} tools)…")
             try:
                 resp = self.llm.gerar(SYSTEM_PROMPT_RETRABALHO, mensagens, tools)
             except Exception as e:
-                self._logar(f"Erro chamando LLM: {e}")
+                import traceback
+                self._logar(f"Erro chamando LLM: {type(e).__name__}: {e}")
+                self._logar(traceback.format_exc())
                 self.browser.close()
                 return ResultadoExecucao(
                     laudo="inconclusivo",
@@ -268,6 +308,10 @@ class QAAgent:
                     iteracoes=iteracao,
                 )
 
+            self._logar(
+                f"  LLM respondeu: text={len(resp.text)} chars, "
+                f"tool_calls={len(resp.tool_calls)}"
+            )
             if resp.text:
                 self._logar(f"Agente: {resp.text[:300]}")
             if resp.tool_calls:
@@ -354,7 +398,11 @@ class QAAgent:
         """Executa uma lista de tool calls, devolvendo mensagens de feedback pro LLM."""
         novas: list[Mensagem] = []
         for tc in chamadas:
-            self._logar(f"Tool call: {tc.name}({json.dumps(tc.args, ensure_ascii=False)})")
+            try:
+                args_repr = json.dumps(tc.args, ensure_ascii=False, default=str)
+            except Exception:
+                args_repr = repr(tc.args)
+            self._logar(f"Tool call: {tc.name}({args_repr})")
             try:
                 if tc.name == "clicar":
                     self.browser.click(tc.args["seletor"])

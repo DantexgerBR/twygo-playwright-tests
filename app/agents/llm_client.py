@@ -123,14 +123,18 @@ class GeminiClient:
         # ---- Converte tools ----
         gemini_tools: list[Any] = []
         if tools:
-            decls = [
-                types.FunctionDeclaration(
-                    name=t.name,
-                    description=t.description,
-                    parameters=t.parameters or {"type": "object", "properties": {}},
-                )
-                for t in tools
-            ]
+            decls = []
+            for t in tools:
+                kwargs: dict[str, Any] = {
+                    "name": t.name,
+                    "description": t.description,
+                }
+                # Só envia parameters quando há props de verdade. Se a tool não
+                # tem args, omite — alguns SDKs do Gemini falham com object vazio.
+                props = (t.parameters or {}).get("properties") or {}
+                if props:
+                    kwargs["parameters"] = t.parameters
+                decls.append(types.FunctionDeclaration(**kwargs))
             gemini_tools = [types.Tool(function_declarations=decls)]
 
         # ---- Chama API ----
@@ -138,15 +142,28 @@ class GeminiClient:
             system_instruction=system_instruction or None,
             tools=gemini_tools or None,
         )
-        resp = self.client.models.generate_content(
-            model=self.model,
-            contents=contents,
-            config=config,
+        print(
+            f"[llm_client] generate_content: model={self.model}, "
+            f"contents={len(contents)}, tools={len(gemini_tools)}",
+            flush=True,
         )
+        try:
+            resp = self.client.models.generate_content(
+                model=self.model,
+                contents=contents,
+                config=config,
+            )
+        except Exception as e:
+            print(f"[llm_client] generate_content RAISED: {type(e).__name__}: {e}", flush=True)
+            raise
 
         # ---- Parseia resposta ----
         text = ""
         tool_calls: list[ToolCall] = []
+        print(
+            f"[llm_client] response candidates={len(getattr(resp, 'candidates', []) or [])}",
+            flush=True,
+        )
         if getattr(resp, "candidates", None):
             cand = resp.candidates[0]
             cand_content = getattr(cand, "content", None)
