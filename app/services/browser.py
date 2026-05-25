@@ -67,8 +67,19 @@ class Browser:
 
     # ---- Ações de alto nível ----
 
-    def login_twygo(self, base_url: str, email: str, password: str) -> None:
-        """Loga como admin no Twygo. Usa o seletor padrão das pages/login_page.py."""
+    def login_twygo(
+        self,
+        base_url: str,
+        email: str,
+        password: str,
+        org_id: str = "",
+    ) -> None:
+        """Loga no Twygo e troca pro perfil Administrador.
+
+        Twygo redireciona pra /dashboard_students por padrão após login.
+        Pra entrar como admin, navega para /o/{org_id}/events?profile=admin.
+        Se org_id não for fornecido, tenta detectar da URL atual após login.
+        """
         if not self.page:
             raise RuntimeError("Browser não iniciado — chame start() antes.")
         url = base_url.rstrip("/") + "/login"
@@ -78,6 +89,36 @@ class Browser:
         self.page.click("#user_submit")
         try:
             self.page.wait_for_load_state("networkidle", timeout=20000)
+        except Exception:
+            pass
+
+        # Detecta org_id da URL atual se não foi fornecido
+        if not org_id:
+            org_id = self._detectar_org_id_da_url()
+
+        # Troca pro perfil admin
+        if org_id and org_id != "-1":
+            self._mudar_para_admin(base_url, org_id)
+
+    def _detectar_org_id_da_url(self) -> str:
+        """Tenta extrair o org_id da URL atual (formato /o/<id>/...)."""
+        import re
+        url_atual = self.current_url()
+        m = re.search(r"/o/(\d+)/", url_atual)
+        return m.group(1) if m else ""
+
+    def _mudar_para_admin(self, base_url: str, org_id: str) -> None:
+        """Navega para a área de admin do Twygo."""
+        admin_url = (
+            f"{base_url.rstrip('/')}/o/{org_id}/events?tab=events&profile=admin"
+        )
+        try:
+            self.page.goto(admin_url, wait_until="domcontentloaded", timeout=30000)
+        except Exception:
+            pass
+        # Aguarda pouco pra UI estabilizar (Twygo às vezes faz redirect interno)
+        try:
+            self.page.wait_for_load_state("networkidle", timeout=10000)
         except Exception:
             pass
 

@@ -228,6 +228,7 @@ def construir(page: ft.Page, state: AppState) -> ft.Control:
                     admin_email=cred.admin_email,
                     admin_password=cred.admin_password,
                     pasta_screenshots=pasta_screenshots,
+                    org_id=cred.org_id,
                 )
                 # Define evidência de referência (primeira print do bug original)
                 for ev in state.evidencias:

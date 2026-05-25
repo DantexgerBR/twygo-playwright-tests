@@ -46,18 +46,47 @@ def test_context_manager():
 def test_login_twygo_chama_seletores_certos():
     with patch("playwright.sync_api.sync_playwright") as mock_sp:
         _, _, _, page = _setup_playwright_mock(mock_sp)
+        page.url = "https://teste.stage.twygoead.com/dashboard_students"
         with Browser(headless=True) as b:
             b.login_twygo("https://teste.stage.twygoead.com/", "foo@bar.com", "senha")
 
-        # Verifica chamadas
-        page.goto.assert_called_once()
-        goto_args = page.goto.call_args
-        assert "/login" in goto_args.args[0]
-
+        # Verifica login (sem org_id, não troca pra admin)
+        assert page.goto.called
         # fill foi chamado 2 vezes (email + senha)
         assert page.fill.call_count == 2
         # click no botão de login
         page.click.assert_called_with("#user_submit")
+
+
+def test_login_twygo_com_org_id_troca_para_admin():
+    with patch("playwright.sync_api.sync_playwright") as mock_sp:
+        _, _, _, page = _setup_playwright_mock(mock_sp)
+        page.url = "https://teste.stage.twygoead.com/dashboard_students"
+        with Browser(headless=True) as b:
+            b.login_twygo(
+                "https://teste.stage.twygoead.com/",
+                "foo@bar.com",
+                "senha",
+                org_id="36675",
+            )
+
+        # 1ª goto: /login, 2ª goto: /o/36675/events?...profile=admin
+        urls = [c.args[0] for c in page.goto.call_args_list]
+        assert any("/login" in u for u in urls)
+        assert any("/o/36675/" in u and "profile=admin" in u for u in urls)
+
+
+def test_login_twygo_detecta_org_id_da_url():
+    """Se a URL após login tem /o/<id>/, usa esse id pra trocar pra admin."""
+    with patch("playwright.sync_api.sync_playwright") as mock_sp:
+        _, _, _, page = _setup_playwright_mock(mock_sp)
+        # Simula que após login Twygo já redirecionou pra /o/12345/...
+        page.url = "https://teste.stage.twygoead.com/o/12345/dashboard"
+        with Browser(headless=True) as b:
+            b.login_twygo("https://teste.stage.twygoead.com/", "foo@bar.com", "senha")
+
+        urls = [c.args[0] for c in page.goto.call_args_list]
+        assert any("/o/12345/" in u for u in urls)
 
 
 def test_login_twygo_sem_start_levanta():

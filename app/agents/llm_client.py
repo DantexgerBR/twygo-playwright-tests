@@ -147,15 +147,33 @@ class GeminiClient:
             f"contents={len(contents)}, tools={len(gemini_tools)}",
             flush=True,
         )
-        try:
-            resp = self.client.models.generate_content(
-                model=self.model,
-                contents=contents,
-                config=config,
-            )
-        except Exception as e:
-            print(f"[llm_client] generate_content RAISED: {type(e).__name__}: {e}", flush=True)
-            raise
+        # Pequeno retry pra erros transitórios de rede (proxy corporativo,
+        # conexão derrubada). Não tenta de novo se for erro de auth/quota.
+        import time as _time
+        ultima_exc: Exception | None = None
+        for tentativa in range(1, 4):
+            try:
+                resp = self.client.models.generate_content(
+                    model=self.model,
+                    contents=contents,
+                    config=config,
+                )
+                break
+            except Exception as e:
+                msg = str(e).lower()
+                # Não retentar em erros permanentes
+                if any(k in msg for k in ("api_key", "unauthor", "permission", "quota", "billing", "404")):
+                    print(f"[llm_client] erro permanente, não retenta: {type(e).__name__}: {e}", flush=True)
+                    raise
+                ultima_exc = e
+                print(
+                    f"[llm_client] tentativa {tentativa}/3 falhou: {type(e).__name__}: {e}",
+                    flush=True,
+                )
+                if tentativa < 3:
+                    _time.sleep(2 ** tentativa)  # 2s, 4s
+        else:
+            raise ultima_exc  # type: ignore[misc]
 
         # ---- Parseia resposta ----
         text = ""

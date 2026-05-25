@@ -178,6 +178,7 @@ class QAAgent:
         admin_email: str,
         admin_password: str,
         pasta_screenshots: Path,
+        org_id: str = "",
     ) -> ResultadoExecucao:
         try:
             return self._executar_inner(
@@ -188,6 +189,7 @@ class QAAgent:
                 admin_email=admin_email,
                 admin_password=admin_password,
                 pasta_screenshots=pasta_screenshots,
+                org_id=org_id,
             )
         except Exception as e:
             import traceback
@@ -215,6 +217,7 @@ class QAAgent:
         admin_email: str,
         admin_password: str,
         pasta_screenshots: Path,
+        org_id: str = "",
     ) -> ResultadoExecucao:
         # 1. Verifica stage
         self._logar("Verificando se stage está no ar…")
@@ -235,8 +238,8 @@ class QAAgent:
         self._logar("Iniciando browser e fazendo login…")
         try:
             self.browser.start()
-            self.browser.login_twygo(base_url, admin_email, admin_password)
-            self._logar(f"Logado. URL atual: {self.browser.current_url()}")
+            self.browser.login_twygo(base_url, admin_email, admin_password, org_id=org_id)
+            self._logar(f"Logado como admin. URL atual: {self.browser.current_url()}")
         except Exception as e:
             self._logar(f"Falha no login: {e}")
             self.browser.close()
