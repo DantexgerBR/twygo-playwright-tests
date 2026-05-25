@@ -53,7 +53,7 @@ def _item_evidencia(ev: Evidencia, on_remover: Callable[[Evidencia], None]) -> f
             src=str(ev.path),
             width=80,
             height=60,
-            fit=ft.ImageFit.COVER,
+            fit=ft.BoxFit.COVER,
             border_radius=Tokens.RADIUS_SM,
         )
     else:
