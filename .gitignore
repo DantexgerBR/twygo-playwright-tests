@@ -1,4 +1,5 @@
 .env
+.env.*
 .venv/
 venv/
 __pycache__/
@@ -8,3 +9,11 @@ test-results/
 playwright-report/
 node_modules/
 .DS_Store
+
+# QA App (Flet)
+app/state.json
+docs/projetos/*/_credentials.json
+evidencias/_sessao_atual/
+build/
+dist/
+*.spec
