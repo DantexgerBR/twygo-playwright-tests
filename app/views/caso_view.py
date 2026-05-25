@@ -169,39 +169,43 @@ def construir(page: ft.Page, state: AppState) -> ft.Control:
             return
 
         try:
-            from ui.parser import parse_caso
-        except Exception as e:
-            mostrar_status("error", f"Não consegui importar o parser: {e}")
-            return
-
-        try:
-            caso_raw = parse_caso(texto)
+            if state.modo == "retrabalho":
+                from app.services.retrabalho_parser import parse_retrabalho
+                caso = parse_retrabalho(texto)
+            else:
+                from ui.parser import parse_caso
+                caso_raw = parse_caso(texto)
+                caso = CasoParseado(
+                    objetivo=caso_raw.objetivo or "",
+                    pre_condicoes=list(caso_raw.pre_condicoes),
+                    passos=[
+                        {"n": p.n, "acao": p.acao, "esperado": p.esperado}
+                        for p in caso_raw.passos
+                    ],
+                    perfil=caso_raw.perfil,
+                    plataforma=caso_raw.plataforma,
+                    ambiente=caso_raw.ambiente,
+                    texto_bruto=texto,
+                )
         except Exception as e:
             mostrar_status("error", f"Parser falhou: {e}")
             return
 
-        # Adapta pro modelo do app (CasoParseado)
-        caso = CasoParseado(
-            objetivo=caso_raw.objetivo or "",
-            pre_condicoes=list(caso_raw.pre_condicoes),
-            passos=[
-                {"n": p.n, "acao": p.acao, "esperado": p.esperado}
-                for p in caso_raw.passos
-            ],
-            perfil=caso_raw.perfil,
-            plataforma=caso_raw.plataforma,
-            ambiente=caso_raw.ambiente,
-            texto_bruto=texto,
-        )
         state.set_caso(caso)
 
         if not caso.tem_passos:
-            mostrar_status(
-                "warn",
-                "Não encontrei passos no texto. Confira o formato — em retrabalho, "
-                "espero » Passo em linhas; em caso T-XXXX, espero uma tabela com "
-                "colunas 'Ações do Passo' e 'Resultados Esperados'.",
-            )
+            if state.modo == "retrabalho":
+                msg = (
+                    "Não encontrei passos no texto. Em modo Retrabalho, espero "
+                    "linhas começando com » dentro de uma seção `:: Passo a passo "
+                    "para reprodução ::`."
+                )
+            else:
+                msg = (
+                    "Não encontrei passos no texto. Em modo Caso T-XXXX, espero "
+                    "uma tabela com colunas 'Ações do Passo' e 'Resultados Esperados'."
+                )
+            mostrar_status("warn", msg)
             container_resumo.visible = False
             _maybe_update()
             return
