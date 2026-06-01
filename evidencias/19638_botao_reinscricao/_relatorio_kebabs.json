@@ -1,0 +1,170 @@
+[
+  {
+    "idx": 0,
+    "participante": {
+      "email": "eduardo.schmidt@twygo.com",
+      "prog": "100",
+      "aprovado": false,
+      "resumo": "\t | Edu API | eduardo.schmidt@twygo.com | \t | 100% | \t | 100.0% | \t | 120 | \t | \t | Emitido | visibility | download | \t | more_vert"
+    },
+    "itens_menu": [
+      "workspace_premium",
+      "Histórico de aprendizagem",
+      "Histórico de certificado",
+      "emoji_events",
+      "mail",
+      "chat_add_on",
+      "Registros de acesso",
+      "replay"
+    ],
+    "reinscricao": {
+      "txt": "replay",
+      "aria": "",
+      "ariaDisabled": null,
+      "disabledProp": false,
+      "dataIcon": "replay"
+    },
+    "reinHTML": "<button type=\"button\" id=\"menu-list-:r2d:-menuitem-:r72:\" role=\"menuitem\" tabindex=\"-1\" class=\"chakra-menu__menuitem css-18esm8n\" data-index=\"7\"><div id=\"event_participants-44220434-custom-element-1-button-8\" class=\"css-caavdc\"><div class=\"css-1u0cc8u\"><div class=\"css-6lnnq1\"><span class=\"chakra-tex",
+    "tooltip": []
+  },
+  {
+    "idx": 1,
+    "participante": {
+      "email": "julia@sophia.tech.com.br",
+      "prog": "100",
+      "aprovado": false,
+      "resumo": "\t | Julia Oliveira | julia@sophia.tech.com.br | \t | 100% | \t | 100.0% | \t | 120 | \t | \t | Emitido | visibility | download | \t | more_vert"
+    },
+    "itens_menu": [
+      "workspace_premium",
+      "Histórico de aprendizagem",
+      "Histórico de certificado",
+      "emoji_events",
+      "mail",
+      "chat_add_on",
+      "Registros de acesso",
+      "replay"
+    ],
+    "reinscricao": {
+      "txt": "replay",
+      "aria": "",
+      "ariaDisabled": null,
+      "disabledProp": false,
+      "dataIcon": "replay"
+    },
+    "reinHTML": "<button type=\"button\" id=\"menu-list-:r2d:-menuitem-:r72:\" role=\"menuitem\" tabindex=\"-1\" class=\"chakra-menu__menuitem css-18esm8n\" data-index=\"7\"><div id=\"event_participants-44220434-custom-element-1-button-8\" class=\"css-caavdc\"><div class=\"css-1u0cc8u\"><div class=\"css-6lnnq1\"><span class=\"chakra-tex",
+    "tooltip": []
+  },
+  {
+    "idx": 2,
+    "participante": {
+      "email": "vanessa@sophia.tech.com.br",
+      "prog": "100",
+      "aprovado": false,
+      "resumo": "\t | Vanessa Pereira | vanessa@sophia.tech.com.br | \t | 100% | \t | 100.0% | \t | 120 | \t | \t | Emitido | visibility | download | \t | more_vert"
+    },
+    "itens_menu": [
+      "workspace_premium",
+      "Histórico de aprendizagem",
+      "Histórico de certificado",
+      "emoji_events",
+      "mail",
+      "chat_add_on",
+      "Registros de acesso",
+      "replay"
+    ],
+    "reinscricao": {
+      "txt": "replay",
+      "aria": "",
+      "ariaDisabled": null,
+      "disabledProp": false,
+      "dataIcon": "replay"
+    },
+    "reinHTML": "<button type=\"button\" id=\"menu-list-:r2d:-menuitem-:r72:\" role=\"menuitem\" tabindex=\"-1\" class=\"chakra-menu__menuitem css-18esm8n\" data-index=\"7\"><div id=\"event_participants-44220434-custom-element-1-button-8\" class=\"css-caavdc\"><div class=\"css-1u0cc8u\"><div class=\"css-6lnnq1\"><span class=\"chakra-tex",
+    "tooltip": []
+  },
+  {
+    "idx": 3,
+    "participante": {
+      "email": "gabriel@sophia.tech.com.br",
+      "prog": "92",
+      "aprovado": false,
+      "resumo": "\t | Gabriel Souza | gabriel@sophia.tech.com.br | \t | 92% | \t | 100.0% | \t | 110 | \t | \t | hourglass_empty | Pendente | \t | more_vert"
+    },
+    "itens_menu": [
+      "workspace_premium",
+      "Histórico de aprendizagem",
+      "Histórico de certificado",
+      "emoji_events",
+      "mail",
+      "chat_add_on",
+      "Registros de acesso",
+      "replay"
+    ],
+    "reinscricao": {
+      "txt": "replay",
+      "aria": "",
+      "ariaDisabled": null,
+      "disabledProp": false,
+      "dataIcon": "replay"
+    },
+    "reinHTML": "<button type=\"button\" id=\"menu-list-:r2d:-menuitem-:r72:\" role=\"menuitem\" tabindex=\"-1\" class=\"chakra-menu__menuitem css-18esm8n\" data-index=\"7\"><div id=\"event_participants-44220434-custom-element-1-button-8\" class=\"css-caavdc\"><div class=\"css-1u0cc8u\"><div class=\"css-6lnnq1\"><span class=\"chakra-tex",
+    "tooltip": []
+  },
+  {
+    "idx": 4,
+    "participante": {
+      "email": "carla@sophia.tech.com.br",
+      "prog": "100",
+      "aprovado": false,
+      "resumo": "\t | Carla Silva | carla@sophia.tech.com.br | \t | 100% | \t | 100.0% | \t | 120 | \t | \t | Emitido | visibility | download | \t | more_vert"
+    },
+    "itens_menu": [
+      "workspace_premium",
+      "Histórico de aprendizagem",
+      "Histórico de certificado",
+      "emoji_events",
+      "mail",
+      "chat_add_on",
+      "Registros de acesso",
+      "replay"
+    ],
+    "reinscricao": {
+      "txt": "replay",
+      "aria": "",
+      "ariaDisabled": null,
+      "disabledProp": false,
+      "dataIcon": "replay"
+    },
+    "reinHTML": "<button type=\"button\" id=\"menu-list-:r2d:-menuitem-:r72:\" role=\"menuitem\" tabindex=\"-1\" class=\"chakra-menu__menuitem css-18esm8n\" data-index=\"7\"><div id=\"event_participants-44220434-custom-element-1-button-8\" class=\"css-caavdc\"><div class=\"css-1u0cc8u\"><div class=\"css-6lnnq1\"><span class=\"chakra-tex",
+    "tooltip": []
+  },
+  {
+    "idx": 5,
+    "participante": {
+      "email": "danilo@sophia.tech.com.br",
+      "prog": "92",
+      "aprovado": false,
+      "resumo": "\t | Danilo Marques | danilo@sophia.tech.com.br | \t | 92% | \t | 100.0% | \t | 110 | \t | \t | hourglass_empty | Pendente | \t | more_vert"
+    },
+    "itens_menu": [
+      "workspace_premium Emitir certificado",
+      "Histórico de aprendizagem",
+      "Histórico de certificado",
+      "emoji_events Pontuação",
+      "mail Enviar e-mail",
+      "chat_add_on Comentários",
+      "Registros de acesso",
+      "replay Iniciar reinscrição"
+    ],
+    "reinscricao": {
+      "txt": "replay Iniciar reinscrição",
+      "aria": "",
+      "ariaDisabled": null,
+      "disabledProp": false,
+      "dataIcon": "replay"
+    },
+    "reinHTML": "<button type=\"button\" id=\"menu-list-:r2d:-menuitem-:r72:\" role=\"menuitem\" tabindex=\"-1\" class=\"chakra-menu__menuitem css-18esm8n\" data-index=\"7\"><div id=\"event_participants-44220434-custom-element-1-button-8\" class=\"css-caavdc\"><div class=\"css-1u0cc8u\"><div class=\"css-6lnnq1\"><span class=\"chakra-tex",
+    "tooltip": []
+  }
+]

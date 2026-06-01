@@ -1,0 +1,252 @@
+[
+  {
+    "id": "798475",
+    "nome": "Construindo times de alta performance",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798476",
+    "nome": "Gestão para resultados",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": true
+    },
+    "on": true
+  },
+  {
+    "id": "798477",
+    "nome": "Cultura de feedback",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798478",
+    "nome": "Conflitos e negociação",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798479",
+    "nome": "Comunicação e oratória",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798480",
+    "nome": "Storytelling",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798481",
+    "nome": "Programação neurolinguística (PNL)",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798482",
+    "nome": "Conhecendo a SophiaTech",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798483",
+    "nome": "Áreas funcionais",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798484",
+    "nome": "Culture code",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798485",
+    "nome": "Planejamento estratégico",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798486",
+    "nome": "Produtividade e gestão do tempo",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798487",
+    "nome": "Webinar: Inteligência emocional",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798488",
+    "nome": "Criatividade e inovação",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798489",
+    "nome": "Gestão Ágil (Agile)",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798490",
+    "nome": "Programa de melhoria contínua",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798491",
+    "nome": "Processo de monitoramento de desvio padrão",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798492",
+    "nome": "Modelo de diagnóstico e solução de problemas e desperdícios",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798493",
+    "nome": "Certificações",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798494",
+    "nome": "Normativas para equipamentos de proteção individual (EPI)",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798495",
+    "nome": "Programa de riscos ambientais",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798496",
+    "nome": "Processo de abertura de CAT (Comunicação de acidente de trabalho)",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798497",
+    "nome": "Manual de uso do CRM",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798498",
+    "nome": "Gestão de carteira de leads",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  },
+  {
+    "id": "798499",
+    "nome": "SalesKit (material do vendedor)",
+    "tipo": "Curso",
+    "switch": {
+      "existe": true,
+      "checked": false
+    },
+    "on": false
+  }
+]

@@ -1,0 +1,6 @@
+[0] 	 | Edu API | eduardo.schmidt@twygo.com | 	 | 100% | 	 | 100.0% | 	 | 120 | 	 | 	 | Emitido | visibility | download | 	 | more_vert
+[1] 	 | Julia Oliveira | julia@sophia.tech.com.br | 	 | 100% | 	 | 100.0% | 	 | 120 | 	 | 	 | Emitido | visibility | download | 	 | more_vert
+[2] 	 | Vanessa Pereira | vanessa@sophia.tech.com.br | 	 | 100% | 	 | 100.0% | 	 | 120 | 	 | 	 | Emitido | visibility | download | 	 | more_vert
+[3] 	 | Gabriel Souza | gabriel@sophia.tech.com.br | 	 | 92% | 	 | 100.0% | 	 | 110 | 	 | 	 | hourglass_empty | Pendente | 	 | more_vert
+[4] 	 | Carla Silva | carla@sophia.tech.com.br | 	 | 100% | 	 | 100.0% | 	 | 120 | 	 | 	 | Emitido | visibility | download | 	 | more_vert
+[5] 	 | Danilo Marques | danilo@sophia.tech.com.br | 	 | 92% | 	 | 100.0% | 	 | 110 | 	 | 	 | hourglass_empty | Pendente | 	 | more_vert
