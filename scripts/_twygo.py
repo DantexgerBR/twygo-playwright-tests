@@ -19,10 +19,19 @@ tudo vem do .env (veja .env.example). Import nos scripts:
 """
 import os
 import re
+import sys
 from pathlib import Path
 
 from dotenv import load_dotenv
 from playwright.sync_api import sync_playwright  # re-exportado p/ conveniência
+
+# Console pt-BR (cp1252) quebra ao imprimir acentos/superscripts vindos do stage.
+# Reconfigura stdout/stderr pra utf-8 (com replace) — imune a console encoding.
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
 
 ROOT = Path(__file__).resolve().parents[1]
 load_dotenv(ROOT / ".env")
