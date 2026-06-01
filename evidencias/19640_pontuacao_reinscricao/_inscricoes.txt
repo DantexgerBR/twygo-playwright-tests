@@ -1,0 +1,14 @@
+[0] prog=0% desemp=0.0% pont=0 cert=Pendente | 	 | Agents Richard | agents.richard@claude.com | 	 | 0% | 	 | 0.0% | 	 | 0 | 	 | 	 | hourglass_empty | Pendente | 	 | more_vert
+[1] prog=0% desemp=0.0% pont=0 cert=Emitido | 	 | Agents Richard | agents.richard@claude.com | 	 | 0% | 	 | 0.0% | 	 | 0 | 	 | 	 | Emitido | visibility | download | 	 | more_vert
+[2] prog=100% desemp=100.0% pont=110 cert=Pendente | 	 | Agents Claude | agents.claude@claude.com | 	 | 100% | 	 | 100.0% | 	 | 110 | 	 | 	 | hourglass_empty | Pendente | 	 | more_vert
+[3] prog=0% desemp=0.0% pont=0 cert=Pendente | 	 | WW SS | testeidnovo@teste.com | 	 | 0% | 	 | 0.0% | 	 | 0 | 	 | 	 | hourglass_empty | Pendente | 	 | more_vert
+[4] prog=0% desemp=0.0% pont=0 cert=Pendente | 	 | Agents Richard | agents.richard@claude.com | 	 | 0% | 	 | 0.0% | 	 | 0 | 	 | 	 | hourglass_empty | Pendente | 	 | more_vert
+[5] prog=0% desemp=0.0% pont=0 cert=Pendente | 	 | Agents Richard | agents.richard@claude.com | 	 | 0% | 	 | 0.0% | 	 | 0 | 	 | 	 | hourglass_empty | Pendente | 	 | more_vert
+[6] prog=0% desemp=0.0% pont=0 cert=Pendente | 	 | Agents Edu | agents.edu@claude.com | 	 | 0% | 	 | 0.0% | 	 | 0 | 	 | 	 | hourglass_empty | Pendente | 	 | more_vert
+[7] prog=0% desemp=0.0% pont=0 cert=Pendente | 	 | Agents Richard | agents.richard@claude.com | 	 | 0% | 	 | 0.0% | 	 | 0 | 	 | 	 | hourglass_empty | Pendente | 	 | more_vert
+[8] prog=0% desemp=0.0% pont=0 cert=Emitido | 	 | Agents Edu | agents.edu@claude.com | 	 | 0% | 	 | 0.0% | 	 | 0 | 	 | 	 | Emitido | visibility | download | 	 | more_vert
+[9] prog=0% desemp=0.0% pont=0 cert=Substituido | 	 | Agents Edu | agents.edu@claude.com | 	 | 0% | 	 | 0.0% | 	 | 0 | 	 | 	 | autorenew | Substituído | 	 | more_vert
+[10] prog=0% desemp=0.0% pont=0 cert=Pendente | 	 | Agents Richard | agents.richard@claude.com | 	 | 0% | 	 | 0.0% | 	 | 0 | 	 | 	 | hourglass_empty | Pendente | 	 | more_vert
+[11] prog=0% desemp=0.0% pont=0 cert=Pendente | 	 | Agents Richard | agents.richard@claude.com | 	 | 0% | 	 | 0.0% | 	 | 0 | 	 | 	 | hourglass_empty | Pendente | 	 | more_vert
+[12] prog=0% desemp=0.0% pont=0 cert=Pendente | 	 | Agents Richard | agents.richard@claude.com | 	 | 0% | 	 | 0.0% | 	 | 0 | 	 | 	 | hourglass_empty | Pendente | 	 | more_vert
+[13] prog=96% desemp=55.6% pont=670 cert=Pendente | 	 | Richard Sebold | richard.sebold@twygo.com | 	 | 96% | 	 | 55.6% | 	 | 670 | 	 | 	 | hourglass_empty | Pendente | 	 | more_vert

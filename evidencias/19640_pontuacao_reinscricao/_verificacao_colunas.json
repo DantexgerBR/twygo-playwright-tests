@@ -1,0 +1,42 @@
+{
+  "heads": [
+    "",
+    "Participante",
+    "Progresso",
+    "Desempenho",
+    "Pontuação",
+    "Aprovação",
+    "Certificado",
+    ""
+  ],
+  "out": [
+    {
+      "itemId": "44275236",
+      "tds": [
+        "",
+        "Agents Claude agents.claude@claude.com",
+        "0%",
+        "100.0%",
+        "0",
+        "",
+        "hourglass_empty Pendente",
+        "more_vert"
+      ],
+      "aprovado": false
+    },
+    {
+      "itemId": "44275175",
+      "tds": [
+        "",
+        "Agents Claude agents.claude@claude.com",
+        "0%",
+        "0.0%",
+        "0",
+        "",
+        "hourglass_empty Pendente",
+        "more_vert"
+      ],
+      "aprovado": false
+    }
+  ]
+}
