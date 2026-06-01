@@ -39,7 +39,26 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
       .catch((err) => sendResponse({ ok: false, erro: err.message }));
     return true; // resposta assíncrona
   }
+  if (msg.tipo === "upload-imagem") {
+    processarImagem(msg.dataUrl)
+      .then((url) => sendResponse({ ok: true, url }))
+      .catch((err) => sendResponse({ ok: false, erro: err.message }));
+    return true; // resposta assíncrona
+  }
 });
+
+// Upload de uma imagem pronta (colada ou de arquivo), vinda do popup como dataURL.
+async function processarImagem(dataUrl) {
+  if (!dataUrl) throw new Error("Imagem vazia.");
+
+  const resp = await fetch(dataUrl);
+  const blob = await resp.blob();
+  const url = await uploadCloudinary(blob);
+
+  await chrome.storage.local.set({ ultimaUrl: url, ultimoEm: Date.now() });
+  notificar("Imagem enviada ✓", url + "\n(URL copiada para a área de transferência)");
+  return url;
+}
 
 async function processarSelecao(rect, aba) {
   if (!rect || rect.width < 2 || rect.height < 2) {

@@ -216,6 +216,80 @@
     }
     #copiar:hover { background: var(--acc); color: var(--bg); }
 
+    /* ---- Divisor "ou" ---- */
+    .divisor {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 14px 0;
+      opacity: 0;
+      animation: rise 0.5s 0.16s ease forwards;
+    }
+    .divisor::before, .divisor::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+    .divisor span {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mut);
+    }
+
+    /* ---- Botões secundários (colar / arquivo) ---- */
+    .acoes-img {
+      display: flex;
+      gap: 8px;
+      opacity: 0;
+      animation: rise 0.5s 0.18s ease forwards;
+    }
+    .btn-sec {
+      flex: 1;
+      padding: 11px 8px;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: border-color 0.15s ease, color 0.15s ease, transform 0.12s ease;
+    }
+    .btn-sec:hover { border-color: var(--acc); color: var(--acc); transform: translateY(-1px); }
+    .btn-sec:active { transform: translateY(1px); }
+    .btn-sec .atalho {
+      display: block;
+      margin-top: 4px;
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--mut);
+    }
+
+    /* ---- Status de processamento ---- */
+    .proc {
+      margin-top: 12px;
+      padding: 9px 11px;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--acc);
+      background: var(--acc-dim);
+      border: 1px solid rgba(182, 255, 60, 0.3);
+      border-left-width: 3px;
+      border-radius: 6px;
+    }
+    .proc.erro {
+      color: var(--danger);
+      background: rgba(255, 93, 93, 0.08);
+      border-color: rgba(255, 93, 93, 0.3);
+    }
+
     /* ---- Rodapé ---- */
     .rodape {
       margin-top: 16px;
@@ -276,6 +350,22 @@
     </button>
 
     <div id="aviso" class="aviso">Configure o Cloud name e o Upload preset nas opções.</div>
+
+    <div class="divisor"><span>ou</span></div>
+
+    <div class="acoes-img">
+      <button id="colar" class="btn-sec">
+        Colar print
+        <span class="atalho">Ctrl+V</span>
+      </button>
+      <button id="arquivo" class="btn-sec">
+        Escolher arquivo
+        <span class="atalho">PNG · JPG</span>
+      </button>
+    </div>
+    <input id="file-input" type="file" accept="image/*" hidden />
+
+    <div id="proc" class="proc" style="display:none;"></div>
 
     <section class="saida">
       <div class="rotulo">Último link</div>

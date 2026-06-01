@@ -8,7 +8,8 @@
     "scripting",
     "storage",
     "notifications",
-    "clipboardWrite"
+    "clipboardWrite",
+    "clipboardRead"
   ],
   "host_permissions": [
     "https://api.cloudinary.com/*"
