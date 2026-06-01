@@ -13,7 +13,7 @@ load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 
 BASE_DEST = os.environ.get("BASE_URL_DESTINATARIA", "https://danteshare.stage.twygoead.com/")
 EMAIL = os.environ.get("ADMIN_DESTINATARIA_EMAIL", "dante.tavares@twygo.com")
-SENHA = os.environ.get("ADMIN_DESTINATARIA_PASSWORD", "123456")
+SENHA = os.environ.get("ADMIN_DESTINATARIA_PASSWORD", "SENHA_NO_ENV")
 OUT = Path("test-results/inspect_destinataria")
 OUT.mkdir(parents=True, exist_ok=True)
 

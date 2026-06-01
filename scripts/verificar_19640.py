@@ -7,8 +7,9 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE_URL = "https://recertificacao-testeqa.stage.twygoead.com"
-EMAIL, SENHA = "agents.claude@claude.com", "123456"
+import _twygo as tw
+_c = tw.cfg("RECERT")
+BASE_URL, EMAIL, SENHA = _c["base_url"], _c["email"], _c["senha"]
 TRILHA_ID = "807406"
 PREV_ID = "44275175"
 PASTA = ROOT / "evidencias" / "19640_pontuacao_reinscricao"

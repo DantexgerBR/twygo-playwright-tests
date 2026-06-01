@@ -6,9 +6,10 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE_URL = "https://eduapi.stage.twygoead.com"
+import _twygo as tw
+_c = tw.cfg("EDUAPI")
+BASE_URL, EMAIL, SENHA = _c["base_url"], _c["email"], _c["senha"]
 CID = "798476"
-EMAIL, SENHA = "eduardo.schmidt@twygo.com", "123456"
 PASTA = ROOT / "evidencias" / "19638_botao_reinscricao"
 
 

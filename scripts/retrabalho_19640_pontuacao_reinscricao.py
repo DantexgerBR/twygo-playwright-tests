@@ -18,9 +18,9 @@ from collections import defaultdict
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE_URL = "https://recertificacao-testeqa.stage.twygoead.com"
-ORG_ID = "37048"
-EMAIL, SENHA = "agents.claude@claude.com", "123456"
+import _twygo as tw
+_c = tw.cfg("RECERT")
+BASE_URL, ORG_ID, EMAIL, SENHA = _c["base_url"], _c["org_id"], _c["email"], _c["senha"]
 TRILHA_ID = "807406"
 
 PASTA = ROOT / "evidencias" / "19640_pontuacao_reinscricao"

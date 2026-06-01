@@ -12,7 +12,7 @@ from pages.login_page import LoginPage  # noqa: E402
 load_dotenv(Path(__file__).resolve().parents[1] / ".env")
 BASE_DEST = "https://danteshare.stage.twygoead.com/"
 EMAIL = "dante.tavares@twygo.com"
-SENHA = "123456"
+SENHA = "SENHA_NO_ENV"
 ORG_DEST = "37018"
 OUT = Path("test-results/inspect_destinataria_admin2")
 OUT.mkdir(parents=True, exist_ok=True)
