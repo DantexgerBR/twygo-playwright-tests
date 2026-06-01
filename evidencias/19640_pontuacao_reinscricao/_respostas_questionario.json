@@ -1,27 +1,27 @@
 {
-  "heads": [
-    "",
-    "Participante",
-    "Questionário",
-    "Tipo",
-    "Tentativa",
-    "Desempenho",
-    "Resultado",
-    ""
-  ],
-  "rows": [
+  "exibido_aprendizagem": [
     {
-      "itemId": "",
-      "txt": "Agents Claude agents.claude@claude.com Questionário contract_edit Prova 2ᵃ 100% Aprovado rule"
+      "itemId": "44275236",
+      "email": "agents.claude@claude.com",
+      "progresso": "0%",
+      "desempenho": "100.0%",
+      "pontuacao": "0",
+      "certificado": "hourglass_empty Pendente",
+      "aprovado": false
     },
     {
-      "itemId": "",
-      "txt": "Agents Claude agents.claude@claude.com Questionário contract_edit Prova 1ᵃ 100% Aprovado rule"
-    },
-    {
-      "itemId": "",
-      "txt": "Agents Claude agents.claude@claude.com Questionário de Ciências contract_edit Prova 1ᵃ 100% Aprovado rule"
+      "itemId": "44275175",
+      "email": "agents.claude@claude.com",
+      "progresso": "0%",
+      "desempenho": "0.0%",
+      "pontuacao": "0",
+      "certificado": "hourglass_empty Pendente",
+      "aprovado": false
     }
   ],
-  "totalTr": 26
+  "respostas_reais": [
+    "Agents Claude agents.claude@claude.com Questionário contract_edit Prova 2ᵃ 100% Aprovado rule",
+    "Agents Claude agents.claude@claude.com Questionário contract_edit Prova 1ᵃ 100% Aprovado rule",
+    "Agents Claude agents.claude@claude.com Questionário de Ciências contract_edit Prova 1ᵃ 100% Aprovado rule"
+  ]
 }

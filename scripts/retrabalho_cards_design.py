@@ -1,4 +1,4 @@
-"""Retrabalho — cards de atividade tipo Página na aba Design cortam texto.
+r"""Retrabalho — cards de atividade tipo Página na aba Design cortam texto.
 
 Bug original (do Artia):
     Em cards de atividade do tipo Página na aba de Design de um modelo, foi

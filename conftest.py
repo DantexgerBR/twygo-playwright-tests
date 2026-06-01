@@ -83,6 +83,42 @@ def aluno_logado(browser, browser_context_args, base_url, aluno_credentials) -> 
 
 
 @pytest.fixture
+def admin_em(browser, browser_context_args):
+    """Factory de login admin por ambiente (perfil do .env).
+
+        page, base = admin_em("RECERT")   # usa RECERT_BASE_URL/ORG_ID/EMAIL/SENHA
+        page, base = admin_em("EDUAPI")    # idem EDUAPI_*
+
+    Faz `pytest.skip` (não falha) se as credenciais do perfil não estiverem no .env —
+    assim os testes E2E de stage não viram falso negativo em quem não tem o ambiente.
+    """
+    contexts = []
+
+    def _logar(prefix: str):
+        base = os.environ.get(f"{prefix}_BASE_URL")
+        org = os.environ.get(f"{prefix}_ORG_ID")
+        email = os.environ.get(f"{prefix}_EMAIL")
+        senha = os.environ.get(f"{prefix}_SENHA")
+        if not (base and email and senha):
+            pytest.skip(f"Credenciais {prefix}_* ausentes no .env (veja .env.example)")
+        base = base.rstrip("/") + "/"
+        ctx = browser.new_context(**browser_context_args)
+        contexts.append(ctx)
+        page = _login(ctx, base, {"email": email, "password": senha})
+        if org:
+            page.goto(
+                f"{base}o/{org}/events?tab=events&profile=admin",
+                wait_until="domcontentloaded", timeout=30000,
+            )
+            page.wait_for_timeout(4000)
+        return page, base
+
+    yield _logar
+    for c in contexts:
+        c.close()
+
+
+@pytest.fixture
 def admin_destinataria_logado(
     browser, browser_context_args, base_url_destinataria, admin_destinataria_credentials
 ) -> Page:
