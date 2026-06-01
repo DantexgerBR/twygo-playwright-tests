@@ -110,7 +110,7 @@ def test_marca_dagua_video_oculta_em_tipo(admin_logado, base_url, rotulo, radio_
     """Para cada tipo do caso, ao selecionar o radio `media_type`, o form NÃO
     deve mostrar o checkbox `#water-mark-video-enabled` (marca d'água do vídeo).
     """
-    assert EVENTO_ID and ATIVIDADE_ID, "Defina EVENTO_ID e ATIVIDADE_VIDEO_MARCA_DAGUA_ID"
+    EVENTO_ID and ATIVIDADE_ID or pytest.skip("Defina EVENTO_ID e ATIVIDADE_VIDEO_MARCA_DAGUA_ID")
     page = admin_logado
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -134,7 +134,8 @@ def test_marca_dagua_video_oculta_em_tipo(admin_logado, base_url, rotulo, radio_
 @pytest.mark.marca_dagua
 def test_marca_dagua_video_presente_para_video_interno_referencia(admin_logado, base_url):
     """Sanity check: o checkbox DEVE existir para media_type=video (vídeo interno)."""
-    assert EVENTO_ID and ATIVIDADE_ID
+    if not (EVENTO_ID and ATIVIDADE_ID):
+        pytest.skip("EVENTO_ID/ATIVIDADE_VIDEO_MARCA_DAGUA_ID não definidos no .env")
     page = admin_logado
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 

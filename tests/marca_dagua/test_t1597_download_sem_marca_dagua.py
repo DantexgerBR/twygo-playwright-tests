@@ -37,7 +37,7 @@ OUTPUT_DIR = Path("test-results/t1597")
 @pytest.mark.aluno
 @pytest.mark.marca_dagua
 def test_download_video_nao_contem_marca_dagua(aluno_logado, base_url):
-    assert EVENTO_ID and ATIVIDADE_ID, "Defina EVENTO_ID e ATIVIDADE_VIDEO_MARCA_DAGUA_ID no .env"
+    EVENTO_ID and ATIVIDADE_ID or pytest.skip("Defina EVENTO_ID e ATIVIDADE_VIDEO_MARCA_DAGUA_ID no .env")
     page = aluno_logado
     page.set_viewport_size({"width": 1920, "height": 1080})
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)

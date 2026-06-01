@@ -35,7 +35,7 @@ def test_desmarcar_marca_dagua_oculta_no_aprender(
     aluno_logado,
     base_url,
 ):
-    assert EVENTO_ID and ATIVIDADE_ID, "Defina EVENTO_ID e ATIVIDADE_VIDEO_MARCA_DAGUA_ID no .env"
+    EVENTO_ID and ATIVIDADE_ID or pytest.skip("Defina EVENTO_ID e ATIVIDADE_VIDEO_MARCA_DAGUA_ID no .env")
 
     admin_page = AtividadeVideoPage(admin_logado)
 

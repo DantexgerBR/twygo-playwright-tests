@@ -47,11 +47,11 @@ def test_compartilhamento_controlado_propaga_para_destinataria(
     base_url_destinataria,
 ):
     """End-to-end T-1599 — origem envia, destinatária recebe/aceita, valida marca d'água."""
-    assert EVENTO_ORIGEM and ATIVIDADE_ORIGEM, (
-        "Defina EVENTO_ID e ATIVIDADE_VIDEO_MARCA_DAGUA_ID no .env"
-    )
-    assert TOKEN_DESTINATARIA, "Defina TOKEN_DESTINATARIA no .env (gerado em Configurações > Integrações > Token na destinatária)"
-    assert ORG_DESTINATARIA_ID, "Defina ORG_DESTINATARIA_ID no .env"
+    if not (EVENTO_ORIGEM and ATIVIDADE_ORIGEM and TOKEN_DESTINATARIA and ORG_DESTINATARIA_ID):
+        pytest.skip(
+            "EVENTO_ID/ATIVIDADE_VIDEO_MARCA_DAGUA_ID/TOKEN_DESTINATARIA/ORG_DESTINATARIA_ID "
+            "não definidos no .env"
+        )
 
     pg_origem = admin_logado
     pg_dest = admin_destinataria_logado

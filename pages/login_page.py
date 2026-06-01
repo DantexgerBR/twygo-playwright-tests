@@ -17,4 +17,9 @@ class LoginPage(BasePage):
         self.campo_email.fill(email)
         self.campo_senha.fill(password)
         self.botao_entrar.click()
-        self.page.wait_for_load_state("networkidle", timeout=20000)
+        # O stage tem polling/websocket → 'networkidle' às vezes nunca dispara.
+        # Não falhar por isso: esperar best-effort e seguir.
+        try:
+            self.page.wait_for_load_state("networkidle", timeout=15000)
+        except Exception:
+            self.page.wait_for_timeout(3000)

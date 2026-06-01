@@ -83,7 +83,7 @@ def _ler_overlay_marca(page) -> dict:
 @pytest.mark.marca_dagua
 def test_marca_dagua_invisivel_com_cor_transparente(aluno_logado, base_url):
     """3 passos: aluno acessa curso, abre player, reproduz e marca não é perceptível."""
-    assert EVENTO_ID and ATIVIDADE_ID, "Defina EVENTO_ID e ATIVIDADE_VIDEO_MARCA_DAGUA_ID no .env"
+    EVENTO_ID and ATIVIDADE_ID or pytest.skip("Defina EVENTO_ID e ATIVIDADE_VIDEO_MARCA_DAGUA_ID no .env")
     page = aluno_logado
     page.set_viewport_size({"width": 1920, "height": 1080})
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)

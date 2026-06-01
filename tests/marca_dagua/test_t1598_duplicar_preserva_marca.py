@@ -40,7 +40,7 @@ OUTPUT_DIR = Path("test-results/t1598")
 @pytest.mark.admin
 @pytest.mark.marca_dagua
 def test_duplicar_atividade_preserva_config_marca_dagua(admin_logado, base_url):
-    assert EVENTO_ORIGEM and ATIVIDADE_ORIGEM, "Defina EVENTO_ID e ATIVIDADE_VIDEO_MARCA_DAGUA_ID no .env"
+    EVENTO_ORIGEM and ATIVIDADE_ORIGEM or pytest.skip("Defina EVENTO_ID e ATIVIDADE_VIDEO_MARCA_DAGUA_ID no .env")
     page = admin_logado
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 

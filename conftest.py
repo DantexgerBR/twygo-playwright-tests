@@ -27,10 +27,11 @@ def admin_credentials() -> dict:
 
 @pytest.fixture(scope="session")
 def aluno_credentials() -> dict:
+    # Opcional: pula (não falha) se não configurado — evita falso negativo.
     email = os.environ.get("ALUNO_EMAIL")
     password = os.environ.get("ALUNO_PASSWORD")
     if not email or not password:
-        pytest.fail("ALUNO_EMAIL/ALUNO_PASSWORD não definidos no .env")
+        pytest.skip("ALUNO_EMAIL/ALUNO_PASSWORD não definidos no .env")
     return {"email": email, "password": password}
 
 
@@ -38,7 +39,7 @@ def aluno_credentials() -> dict:
 def base_url_destinataria() -> str:
     url = os.environ.get("BASE_URL_DESTINATARIA")
     if not url:
-        pytest.fail("BASE_URL_DESTINATARIA não definida no .env")
+        pytest.skip("BASE_URL_DESTINATARIA não definida no .env")
     return url.rstrip("/") + "/"
 
 
@@ -47,7 +48,7 @@ def admin_destinataria_credentials() -> dict:
     email = os.environ.get("ADMIN_DESTINATARIA_EMAIL")
     password = os.environ.get("ADMIN_DESTINATARIA_PASSWORD")
     if not email or not password:
-        pytest.fail("ADMIN_DESTINATARIA_EMAIL/ADMIN_DESTINATARIA_PASSWORD não definidos no .env")
+        pytest.skip("ADMIN_DESTINATARIA_EMAIL/ADMIN_DESTINATARIA_PASSWORD não definidos no .env")
     return {"email": email, "password": password}
 
 

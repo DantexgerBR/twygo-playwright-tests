@@ -36,7 +36,7 @@ OUTPUT_DIR = Path("test-results/t1596")
 @pytest.mark.marca_dagua
 @pytest.mark.mobile
 def test_marca_dagua_em_viewport_mobile(browser, aluno_credentials, base_url):
-    assert EVENTO_ID and ATIVIDADE_ID, "Defina EVENTO_ID e ATIVIDADE_VIDEO_MARCA_DAGUA_ID no .env"
+    EVENTO_ID and ATIVIDADE_ID or pytest.skip("Defina EVENTO_ID e ATIVIDADE_VIDEO_MARCA_DAGUA_ID no .env")
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     context = browser.new_context(

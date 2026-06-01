@@ -62,9 +62,8 @@ def _ler_marca_dagua_overlay(page) -> dict:
 @pytest.mark.marca_dagua
 def test_atividade_legada_aluno_reproduz_sem_marca(aluno_logado, base_url):
     """Passos 1-3: aluno acessa curso, abre atividade de vídeo legada, reproduz — sem marca."""
-    assert EVENTO_LEGADO_ID and ATIVIDADE_LEGADA_ID, (
-        "Defina EVENTO_LEGADO_ID e ATIVIDADE_LEGADA_ID no .env (rodar setup_t1600.py antes)"
-    )
+    if not (EVENTO_LEGADO_ID and ATIVIDADE_LEGADA_ID):
+        pytest.skip("EVENTO_LEGADO_ID/ATIVIDADE_LEGADA_ID não definidos no .env (rodar setup_t1600.py antes)")
     page = aluno_logado
     page.set_viewport_size({"width": 1920, "height": 1080})
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -120,7 +119,7 @@ def test_atividade_legada_aluno_reproduz_sem_marca(aluno_logado, base_url):
 @pytest.mark.marca_dagua
 def test_atividade_legada_admin_checkbox_desmarcado(admin_logado, base_url):
     """Passo 4: admin abre edit da atividade legada — checkbox desmarcado por default."""
-    assert EVENTO_LEGADO_ID and ATIVIDADE_LEGADA_ID, "Defina EVENTO_LEGADO_ID/ATIVIDADE_LEGADA_ID"
+    EVENTO_LEGADO_ID and ATIVIDADE_LEGADA_ID or pytest.skip("Defina EVENTO_LEGADO_ID/ATIVIDADE_LEGADA_ID")
     page = admin_logado
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
