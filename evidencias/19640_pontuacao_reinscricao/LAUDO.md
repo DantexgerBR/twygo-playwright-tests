@@ -5,31 +5,34 @@
 - **Trilha:** "Trilha para CASCADE" (id **807406**) — mesma do card 19602
 - **Data:** 2026-06-01
 
-## Veredito: ❌ Ainda quebrado — desempenho NÃO condizente na aba Aprendizagem
+## Veredito: ⚠ Inconclusivo (CORRIGIDO — o ❌ anterior era falso positivo)
 
-### ⚑ Refinamento após reconferência (outro avaliador apontou desempenho não condizente)
-Cruzei a aba **"Respostas de questionário"** (fonte real do desempenho) com a aba **Aprendizagem**:
+> **Correção de veredito (2026-06-01):** eu havia emitido **❌ "dado sobrescrito/zerado"** olhando só a
+> coluna Desempenho da aba Aprendizagem. Ao cruzar com a **fonte de verdade** (aba "Respostas de
+> questionário"), o dado real está **PRESERVADO** → não houve perda de dado. Aquele ❌ era **falso
+> positivo**. Veredito correto: **⚠ Inconclusivo** (há inconsistência de exibição a confirmar com o dev).
 
-- **Respostas de questionário (real, PRESERVADO):** `agents.claude` tem os quizzes respondidos com
-  **100% — Aprovado** (Prova 1ª e 2ª tentativa, Questionário de Ciências). A performance real existe e
-  está intacta. Evidência: `20-respostas-questionario.png`, `_respostas_questionario.json`.
-- **Aba Aprendizagem (após reinscrição) — NÃO condizente:** lendo por coluna (header-mapped):
-  - geração **anterior `44275175`** (a que efetivamente fez os quizzes, 100% Aprovado): mostra
-    **Desempenho 0,0% / Pontuação 0** — deveria mostrar ~100% / 110.
-  - geração **nova `44275236`** (reinscrição fresca, 0% progresso): mostra **Desempenho 100,0% / Pontuação 0**
-    — não deveria ter desempenho nenhum.
+### O que está confirmado por evidência
+- **Fonte de verdade (PRESERVADA):** na aba **"Respostas de questionário"**, `agents.claude` tem os
+  quizzes **100% — Aprovado** (Prova 1ª/2ª tentativa, Questionário de Ciências). O desempenho real do
+  usuário **existe e está intacto** — nada foi destruído. Evidência: `20-respostas-questionario.png`.
+- **Inconsistência observada na aba Aprendizagem (a confirmar):** após a reinscrição, a coluna
+  Desempenho/Pontuação por geração não bate com a performance real:
+  - geração `44275175` (a que fez os quizzes a 100%): exibe **0,0% / 0**;
+  - geração `44275236` (reinscrição fresca, 0% progresso): exibe **100,0% / 0**.
 
-  Ou seja, o desempenho **migra para a geração errada** (vai pra reinscrição atual) e a pontuação some;
-  o desempenho exibido na aba Aprendizagem **não bate** com a performance real preservada. Evidências:
-  `19-reconferencia-full.png`, `_reconferencia.json`.
-
-**Conclusão refinada:** o bug do card 19640 SE CONFIRMA — na aba Aprendizagem (visão admin) o desempenho/
-pontuação das gerações **não respeitam o histórico por inscrição** após uma reinscrição (a anterior perde
-o valor exibido e a atual exibe valor que não ganhou). O dado-fonte (respostas de questionário) está
-preservado, então é a **camada de desempenho/pontuação da aba Aprendizagem** que apresenta valor não
-condizente/imutável. Veredito mantido: ❌.
+### Por que NÃO é ❌ (e não é ✅)
+- **Não é ❌:** não consigo afirmar perda/sobrescrita de dado — o dado-fonte está preservado. O que vejo
+  é a aba Aprendizagem exibindo desempenho/pontuação por geração de forma possivelmente incorreta.
+- **Não é ✅:** o valor exibido na aba Aprendizagem realmente não está condizente com a performance real
+  por geração; pode ser um defeito de exibição/cálculo — ou comportamento esperado pós-reinscrição que eu
+  desconheço.
+- **Falta pra fechar:** confirmação do **dev / banco** sobre qual desempenho/pontuação cada geração
+  DEVERIA exibir após uma reinscrição. Sem isso, o honesto é **⚠ Inconclusivo**, não ❌.
 
 ---
+
+## (Detalhe) Observação do antes/depois — NÃO interpretar como perda de dado
 
 ## (Detalhe) Reprodução ao vivo do antes/depois
 
