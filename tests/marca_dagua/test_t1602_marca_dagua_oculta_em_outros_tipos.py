@@ -34,6 +34,8 @@ from pathlib import Path
 
 import pytest
 
+from pages.base_page import _dispensar_nps
+
 EVENTO_ID = os.environ.get("EVENTO_ID", "")
 ATIVIDADE_ID = os.environ.get("ATIVIDADE_VIDEO_MARCA_DAGUA_ID", "")
 OUTPUT_DIR = Path("test-results/t1602")
@@ -91,15 +93,26 @@ def _abrir_form_e_selecionar_tipo(page, base_url: str, tipo_radio_value: str):
         timeout=30000,
     )
     page.wait_for_timeout(6000)
+    _dispensar_nps(page)  # a modal de NPS/pesquisa pode cobrir o form e bloquear o clique
     radio = page.locator(f"input[name='media_type'][value='{tipo_radio_value}']").first
     assert radio.count() > 0, f"radio media_type={tipo_radio_value} não encontrado no form"
+    # O input do radio é OCULTO (Chakra) — clicar nele não muda o estado (React reage
+    # no label). Clicar o label: 1) label[for=id]; 2) label ancestral que o envolve.
     rid = radio.get_attribute("id")
+    clicado = False
     if rid:
         lbl = page.locator(f"label[for='{rid}']").first
-        lbl.scroll_into_view_if_needed()
-        lbl.click()
-    else:
-        radio.check(force=True, timeout=3000)
+        if lbl.count():
+            lbl.scroll_into_view_if_needed()
+            lbl.click()
+            clicado = True
+    if not clicado:
+        wrapper = radio.locator("xpath=ancestor::label[1]")
+        if wrapper.count():
+            wrapper.scroll_into_view_if_needed()
+            wrapper.click(force=True)
+        else:
+            radio.check(force=True, timeout=3000)
     page.wait_for_timeout(3000)
 
 

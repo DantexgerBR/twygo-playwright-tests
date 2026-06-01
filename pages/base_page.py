@@ -1,4 +1,44 @@
+import re
+
 from playwright.sync_api import Page, Locator, expect
+
+# Botões que fecham as várias modais de NPS/pesquisa do Twygo.
+_NPS_BOTOES = ["Pergunte depois", "Perguntar depois", "Agora não", "Pular",
+               "Não, obrigado", "Fechar", "Depois"]
+_NPS_FECHAR_SEL = [".chakra-modal__close-btn", "[aria-label='Close']",
+                   "[aria-label='Fechar']", "button[aria-label*='ech']"]
+
+
+def _dispensar_nps(page: Page) -> None:
+    """Fecha modais de NPS/pesquisa bloqueantes (várias variantes). Best-effort:
+    tenta botões conhecidos, depois o X de fechar, depois Escape se houver modal."""
+    for _ in range(2):
+        fechou = False
+        for txt in _NPS_BOTOES:
+            try:
+                b = page.get_by_role("button", name=re.compile(txt, re.I)).first
+                if b.count() and b.is_visible():
+                    b.click(timeout=1500); page.wait_for_timeout(500); fechou = True; break
+            except Exception:
+                pass
+        if not fechou:
+            for sel in _NPS_FECHAR_SEL:
+                try:
+                    b = page.locator(sel).first
+                    if b.count() and b.is_visible():
+                        b.click(timeout=1500); page.wait_for_timeout(500); fechou = True; break
+                except Exception:
+                    pass
+        if not fechou:
+            try:
+                if page.locator(".chakra-modal__content, [role=dialog], [role=alertdialog]").filter(
+                    visible=True
+                ).count():
+                    page.keyboard.press("Escape"); page.wait_for_timeout(500); fechou = True
+            except Exception:
+                pass
+        if not fechou:
+            break
 
 
 class BasePage:
@@ -12,17 +52,6 @@ class BasePage:
         expect(self.toast(texto)).to_be_visible(timeout=timeout)
 
     def dispensar_nps(self) -> None:
-        """Fecha a modal de NPS / modais bloqueantes do Twygo, se aparecerem.
-        Mesmo comportamento de `scripts/_twygo.dispensar_nps`, para uso no POM."""
-        for sel in (
-            "button:has-text('Pergunte depois')",
-            ".chakra-modal__close-btn",
-            "[aria-label='Close']",
-        ):
-            loc = self.page.locator(sel).first
-            try:
-                if loc.count() and loc.is_visible():
-                    loc.click(timeout=1500)
-                    self.page.wait_for_timeout(500)
-            except Exception:
-                pass
+        """Fecha modais de NPS / pesquisa bloqueantes do Twygo (várias variantes),
+        se aparecerem. Mesmo comportamento de `scripts/_twygo.dispensar_nps`."""
+        _dispensar_nps(self.page)

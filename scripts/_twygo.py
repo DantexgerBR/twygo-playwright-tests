@@ -92,16 +92,40 @@ def snap(page, pasta, nome: str, full: bool = False):
     return fp
 
 
+_NPS_BOTOES = ["Pergunte depois", "Perguntar depois", "Agora não", "Pular",
+               "Não, obrigado", "Fechar", "Depois"]
+_NPS_FECHAR_SEL = [".chakra-modal__close-btn", "[aria-label='Close']",
+                   "[aria-label='Fechar']", "button[aria-label*='ech']"]
+
+
 def dispensar_nps(page):
-    """Fecha a modal de NPS / modais bloqueantes, se aparecerem."""
-    for sel in ["button:has-text('Pergunte depois')", ".chakra-modal__close-btn", "[aria-label='Close']"]:
-        try:
-            b = page.locator(sel).first
-            if b.count() and b.is_visible():
-                b.click(timeout=1500)
-                page.wait_for_timeout(500)
-        except Exception:
-            pass
+    """Fecha modais de NPS/pesquisa bloqueantes do Twygo (várias variantes).
+    Best-effort: botões conhecidos → X de fechar → Escape se houver modal."""
+    for _ in range(2):
+        fechou = False
+        for txt in _NPS_BOTOES:
+            try:
+                b = page.get_by_role("button", name=re.compile(txt, re.I)).first
+                if b.count() and b.is_visible():
+                    b.click(timeout=1500); page.wait_for_timeout(500); fechou = True; break
+            except Exception:
+                pass
+        if not fechou:
+            for sel in _NPS_FECHAR_SEL:
+                try:
+                    b = page.locator(sel).first
+                    if b.count() and b.is_visible():
+                        b.click(timeout=1500); page.wait_for_timeout(500); fechou = True; break
+                except Exception:
+                    pass
+        if not fechou:
+            try:
+                if page.locator(".chakra-modal__content, [role=dialog], [role=alertdialog]").filter(visible=True).count():
+                    page.keyboard.press("Escape"); page.wait_for_timeout(500); fechou = True
+            except Exception:
+                pass
+        if not fechou:
+            break
 
 
 # --------------------------------------------------------------------------- #

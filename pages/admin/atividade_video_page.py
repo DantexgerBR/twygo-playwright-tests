@@ -25,11 +25,17 @@ class AtividadeVideoPage(BasePage):
         self.botao_salvar: Locator = page.get_by_role("button", name="Salvar")
 
     def abrir_edicao(self, base_url: str, evento_id: str, atividade_id: str) -> None:
+        # 'networkidle' às vezes nunca dispara no stage (polling) → não bloquear nisso.
         self.page.goto(
             f"{base_url}e/{evento_id}/contents/{atividade_id}/edit",
-            wait_until="networkidle",
+            wait_until="domcontentloaded",
             timeout=30000,
         )
+        try:
+            self.page.wait_for_load_state("networkidle", timeout=12000)
+        except Exception:
+            self.page.wait_for_timeout(3000)
+        self.dispensar_nps()  # a modal de NPS pode cobrir o form
 
     def desmarcar_marca_dagua(self) -> None:
         # Input nativo é hidden no Chakra — clicar no label visual.
