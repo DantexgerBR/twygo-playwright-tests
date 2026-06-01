@@ -5,7 +5,33 @@
 - **Trilha:** "Trilha para CASCADE" (id **807406**) — mesma do card 19602
 - **Data:** 2026-06-01
 
-## Veredito: ❌ Ainda quebrado (bug REPRODUZIDO ao vivo)
+## Veredito: ❌ Ainda quebrado — desempenho NÃO condizente na aba Aprendizagem
+
+### ⚑ Refinamento após reconferência (outro avaliador apontou desempenho não condizente)
+Cruzei a aba **"Respostas de questionário"** (fonte real do desempenho) com a aba **Aprendizagem**:
+
+- **Respostas de questionário (real, PRESERVADO):** `agents.claude` tem os quizzes respondidos com
+  **100% — Aprovado** (Prova 1ª e 2ª tentativa, Questionário de Ciências). A performance real existe e
+  está intacta. Evidência: `20-respostas-questionario.png`, `_respostas_questionario.json`.
+- **Aba Aprendizagem (após reinscrição) — NÃO condizente:** lendo por coluna (header-mapped):
+  - geração **anterior `44275175`** (a que efetivamente fez os quizzes, 100% Aprovado): mostra
+    **Desempenho 0,0% / Pontuação 0** — deveria mostrar ~100% / 110.
+  - geração **nova `44275236`** (reinscrição fresca, 0% progresso): mostra **Desempenho 100,0% / Pontuação 0**
+    — não deveria ter desempenho nenhum.
+
+  Ou seja, o desempenho **migra para a geração errada** (vai pra reinscrição atual) e a pontuação some;
+  o desempenho exibido na aba Aprendizagem **não bate** com a performance real preservada. Evidências:
+  `19-reconferencia-full.png`, `_reconferencia.json`.
+
+**Conclusão refinada:** o bug do card 19640 SE CONFIRMA — na aba Aprendizagem (visão admin) o desempenho/
+pontuação das gerações **não respeitam o histórico por inscrição** após uma reinscrição (a anterior perde
+o valor exibido e a atual exibe valor que não ganhou). O dado-fonte (respostas de questionário) está
+preservado, então é a **camada de desempenho/pontuação da aba Aprendizagem** que apresenta valor não
+condizente/imutável. Veredito mantido: ❌.
+
+---
+
+## (Detalhe) Reprodução ao vivo do antes/depois
 
 ### Prova definitiva — teste controlado (reinscrição pelo lado do ALUNO)
 Fiz uma reinscrição na conta `agents.claude` (botão **"Reinscrever-se"** no banner da trilha, visão

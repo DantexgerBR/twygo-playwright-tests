@@ -1,0 +1,27 @@
+{
+  "heads": [
+    "",
+    "Participante",
+    "Questionário",
+    "Tipo",
+    "Tentativa",
+    "Desempenho",
+    "Resultado",
+    ""
+  ],
+  "rows": [
+    {
+      "itemId": "",
+      "txt": "Agents Claude agents.claude@claude.com Questionário contract_edit Prova 2ᵃ 100% Aprovado rule"
+    },
+    {
+      "itemId": "",
+      "txt": "Agents Claude agents.claude@claude.com Questionário contract_edit Prova 1ᵃ 100% Aprovado rule"
+    },
+    {
+      "itemId": "",
+      "txt": "Agents Claude agents.claude@claude.com Questionário de Ciências contract_edit Prova 1ᵃ 100% Aprovado rule"
+    }
+  ],
+  "totalTr": 26
+}
