@@ -1,0 +1,12 @@
+leaderboard | Dashboard |   | school | Aprendizagem |   | group | Usuários |   | work | Empresas |   | live_help | Questionários |   | groups | Comunidades |   | psychology | Skills | BETA |   | perso
+Lista de conteúdos > Aprendizagem  | Voltar | Trilha para CASCADE | Aprendizagem | Respostas de questionário | Chamada | Ações em massa | ios_share | Extrair dados | grid_view | reorder | filter_alt |
+| Agents Richard | agents.richard@claude.com | 	 | 0% | 	 | 0.0% | 	 | 0 | 	 | 	 | Emitido | visibility | download | 	 | more_vert
+| Agents Claude | agents.claude@claude.com | 	 | 100% | 	 | 100.0% | 	 | 110 | 	 | 	 | hourglass_empty | Pendente | 	 | more_vert
+| WW SS | testeidnovo@teste.com | 	 | 0% | 	 | 0.0% | 	 | 0 | 	 | 	 | hourglass_empty | Pendente | 	 | more_vert
+| Agents Richard | agents.richard@claude.com | 	 | 100% | 	 | 100.0% | 	 | 30 | 	 | 	 | hourglass_empty | Pendente | 	 | more_vert
+| Agents Richard | agents.richard@claude.com | 	 | 0% | 	 | 0.0% | 	 | 0 | 	 | 	 | hourglass_empty | Pendente | 	 | more_vert
+| Agents Edu | agents.edu@claude.com | 	 | 0% | 	 | 0.0% | 	 | 0 | 	 | 	 | hourglass_empty | Pendente | 	 | more_vert
+| Agents Edu | agents.edu@claude.com | 	 | 0% | 	 | 0.0% | 	 | 0 | 	 | 	 | Emitido | visibility | download | 	 | more_vert
+| Agents Edu | agents.edu@claude.com | 	 | 0% | 	 | 0.0% | 	 | 0 | 	 | 	 | autorenew | Substituído | 	 | more_vert
+| Agents Richard | agents.richard@claude.com | 	 | 55% | 	 | 84.0% | 	 | 2530 | 	 | 	 | hourglass_empty | Pendente | 	 | more_vert
+| Richard Sebold | richard.sebold@twygo.com | 	 | 96% | 	 | 55.6% | 	 | 670 | 	 | 	 | hourglass_empty | Pendente | 	 | more_vert
