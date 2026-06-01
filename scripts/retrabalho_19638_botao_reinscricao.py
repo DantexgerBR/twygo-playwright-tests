@@ -6,7 +6,7 @@ habilitada, o item 'Iniciar reinscricao' deve aparecer no kebab de TODOS os
 participantes — habilitado p/ quem cumpre criterio (100% progresso, aprovado ou
 inscricao expirada), bloqueado (aria-disabled) + tooltip com motivo p/ quem nao cumpre.
 
-Env: eduapi (org 36912), login eduardo.schmidt@twygo.com / 123456.
+Env: eduapi (org 36912) — credenciais no .env (perfil EDUAPI). Ver .env.example.
 
 Uso: python scripts/retrabalho_19638_botao_reinscricao.py ["Nome do curso"]
 (default: primeiro curso da lista)
@@ -18,9 +18,9 @@ from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 
-BASE_URL = "https://eduapi.stage.twygoead.com"
-ORG_ID = "36912"
-EMAIL, SENHA = "eduardo.schmidt@twygo.com", "123456"
+import _twygo as tw
+_c = tw.cfg("EDUAPI")
+BASE_URL, ORG_ID, EMAIL, SENHA = _c["base_url"], _c["org_id"], _c["email"], _c["senha"]
 
 NOME_CURSO = sys.argv[1] if len(sys.argv) > 1 else "Construindo times de alta performance"
 

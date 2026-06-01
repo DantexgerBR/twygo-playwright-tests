@@ -1,0 +1,313 @@
+[
+  {
+    "ordem": 1,
+    "texto": "leaderboard\nDashboard",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/dashboard",
+    "path": "/o/36675/dashboard",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/dashboard",
+    "screenshot": "mapa-admin-twygo/01-leaderboard-dashboard.png"
+  },
+  {
+    "ordem": 2,
+    "texto": "format_list_bulleted_add\nConteúdos",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/events?tab=events",
+    "path": "/o/36675/events?tab=events",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/events?tab=events",
+    "screenshot": "mapa-admin-twygo/02-format-list-bulleted-add-conte-dos.png"
+  },
+  {
+    "ordem": 3,
+    "texto": "send\nCompartilhamentos",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/shared_events",
+    "path": "/o/36675/shared_events",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/shared_events",
+    "screenshot": "mapa-admin-twygo/03-send-compartilhamentos.png"
+  },
+  {
+    "ordem": 4,
+    "texto": "description\nRegistros\nBETA",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/records",
+    "path": "/o/36675/records",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/records",
+    "screenshot": "mapa-admin-twygo/04-description-registros-beta.png"
+  },
+  {
+    "ordem": 5,
+    "texto": "browse\nModelos de conteúdo",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/content_models",
+    "path": "/o/36675/content_models",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/content_models",
+    "screenshot": "mapa-admin-twygo/05-browse-modelos-de-conte-do.png"
+  },
+  {
+    "ordem": 6,
+    "texto": "folder_open\nBase de conhecimento",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/knowledge_repositories",
+    "path": "/o/36675/knowledge_repositories",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/knowledge_repositories",
+    "screenshot": "mapa-admin-twygo/06-folder-open-base-de-conhecimento.png"
+  },
+  {
+    "ordem": 7,
+    "texto": "book\nBiblioteca",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/events/?tab=libraries",
+    "path": "/o/36675/events/?tab=libraries",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/events/?tab=libraries",
+    "screenshot": "mapa-admin-twygo/07-book-biblioteca.png"
+  },
+  {
+    "ordem": 8,
+    "texto": "group\nUsuários",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/users",
+    "path": "/o/36675/users",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/users",
+    "screenshot": "mapa-admin-twygo/08-group-usu-rios.png"
+  },
+  {
+    "ordem": 9,
+    "texto": "work\nEmpresas",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/companies",
+    "path": "/o/36675/companies",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/companies",
+    "screenshot": "mapa-admin-twygo/09-work-empresas.png"
+  },
+  {
+    "ordem": 10,
+    "texto": "live_help\nQuestionários",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/question_lists",
+    "path": "/o/36675/question_lists",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/question_lists",
+    "screenshot": "mapa-admin-twygo/10-live-help-question-rios.png"
+  },
+  {
+    "ordem": 11,
+    "texto": "groups\nComunidades",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/feed",
+    "path": "/o/36675/feed",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/feed",
+    "screenshot": "mapa-admin-twygo/11-groups-comunidades.png"
+  },
+  {
+    "ordem": 12,
+    "texto": "lan\nOrganograma",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/organization_chart",
+    "path": "/o/36675/organization_chart",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/organization_chart",
+    "screenshot": "mapa-admin-twygo/12-lan-organograma.png"
+  },
+  {
+    "ordem": 13,
+    "texto": "badge\nFunções de negócio",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/roles",
+    "path": "/o/36675/roles",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/roles",
+    "screenshot": "mapa-admin-twygo/13-badge-fun-es-de-neg-cio.png"
+  },
+  {
+    "ordem": 14,
+    "texto": "award_star\nCompetências",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/organization_chart_competencies",
+    "path": "/o/36675/organization_chart_competencies",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/organization_chart_competencies",
+    "screenshot": "mapa-admin-twygo/14-award-star-compet-ncias.png"
+  },
+  {
+    "ordem": 15,
+    "texto": "pie_chart\nDashboard geral",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/succession_dashboards",
+    "path": "/o/36675/succession_dashboards",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/succession_dashboards",
+    "screenshot": "mapa-admin-twygo/15-pie-chart-dashboard-geral.png"
+  },
+  {
+    "ordem": 16,
+    "texto": "person\nAnálise individual",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/succession_people_analysis",
+    "path": "/o/36675/succession_people_analysis",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/succession_people_analysis",
+    "screenshot": "mapa-admin-twygo/16-person-an-lise-individual.png"
+  },
+  {
+    "ordem": 17,
+    "texto": "vital_signs\nAções de resposta",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/succession_actions",
+    "path": "/o/36675/succession_actions",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/succession_actions",
+    "screenshot": "mapa-admin-twygo/17-vital-signs-a-es-de-resposta.png"
+  },
+  {
+    "ordem": 18,
+    "texto": "instant_mix\nParâmetros",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/succession_initiatives",
+    "path": "/o/36675/succession_initiatives",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/succession_initiatives",
+    "screenshot": "mapa-admin-twygo/18-instant-mix-par-metros.png"
+  },
+  {
+    "ordem": 19,
+    "texto": "track_changes\nPDI",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/admin/pdis",
+    "path": "/o/36675/admin/pdis",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/admin/pdis",
+    "screenshot": "mapa-admin-twygo/19-track-changes-pdi.png"
+  },
+  {
+    "ordem": 20,
+    "texto": "Organização",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/edit",
+    "path": "/o/36675/edit",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/edit",
+    "screenshot": "mapa-admin-twygo/20-organiza-o.png"
+  },
+  {
+    "ordem": 21,
+    "texto": "Menu",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/use_modes",
+    "path": "/o/36675/use_modes",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/use_modes",
+    "screenshot": "mapa-admin-twygo/21-menu.png"
+  },
+  {
+    "ordem": 22,
+    "texto": "electrical_services Integrações",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/integrations",
+    "path": "/o/36675/integrations",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/integrations",
+    "screenshot": "mapa-admin-twygo/22-electrical-services-integra-es.png"
+  },
+  {
+    "ordem": 23,
+    "texto": "flash_auto Piloto automático",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/autopilots",
+    "path": "/o/36675/autopilots",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/autopilots",
+    "screenshot": "mapa-admin-twygo/23-flash-auto-piloto-autom-tico.png"
+  },
+  {
+    "ordem": 24,
+    "texto": "Regras do Jogo",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/game_rules",
+    "path": "/o/36675/game_rules",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/game_rules",
+    "screenshot": "mapa-admin-twygo/24-regras-do-jogo.png"
+  },
+  {
+    "ordem": 25,
+    "texto": "Comunicação",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/communication",
+    "path": "/o/36675/communication",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/communication",
+    "screenshot": "mapa-admin-twygo/25-comunica-o.png"
+  },
+  {
+    "ordem": 26,
+    "texto": "sell Cobrança de inscrição",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/payments",
+    "path": "/o/36675/payments",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/payments",
+    "screenshot": "mapa-admin-twygo/26-sell-cobran-a-de-inscri-o.png"
+  },
+  {
+    "ordem": 27,
+    "texto": "credit_card Plano e assinatura",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/subscription_plans",
+    "path": "/o/36675/subscription_plans",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/subscription_plans",
+    "screenshot": "mapa-admin-twygo/27-credit-card-plano-e-assinatura.png"
+  },
+  {
+    "ordem": 28,
+    "texto": "Segurança NOVO",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/security",
+    "path": "/o/36675/security",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/security",
+    "screenshot": "mapa-admin-twygo/28-seguran-a-novo.png"
+  },
+  {
+    "ordem": 29,
+    "texto": "smart_toy Controle de IA BETA",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/ai_consumption_analysis",
+    "path": "/o/36675/ai_consumption_analysis",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/ai_consumption_analysis",
+    "screenshot": "mapa-admin-twygo/29-smart-toy-controle-de-ia-beta.png"
+  },
+  {
+    "ordem": 30,
+    "texto": "palette Aparência",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/appearance",
+    "path": "/o/36675/appearance",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/appearance",
+    "screenshot": "mapa-admin-twygo/30-palette-apar-ncia.png"
+  },
+  {
+    "ordem": 31,
+    "texto": "TWYGO",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/dashboard",
+    "path": "/o/36675/dashboard",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/dashboard",
+    "screenshot": "mapa-admin-twygo/31-twygo.png"
+  },
+  {
+    "ordem": 32,
+    "texto": "Competências geradas com sucesso\n\nVocê pode retomar a criação das competências para a função\n\nhá 14 dias",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/roles/1587/generated",
+    "path": "/o/36675/roles/1587/generated",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/roles/1587/generated",
+    "screenshot": "mapa-admin-twygo/32-compet-ncias-geradas-com-sucesso-voc-pode-retomar-a-cria-o-d.png"
+  },
+  {
+    "ordem": 33,
+    "texto": "Falha na importação\n\nVeja o relatório de erros para ver o que precisa ser ajustado no arquivo. Usuários\n\nhá 19 dias",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/events?tab=events&profile=admin",
+    "path": "/o/36675/events?tab=events&profile=admin",
+    "titulo": "Domínio padrão",
+    "url_final": "https://twygo1772627238.stage.twygoead.com/o/36675/events?tab=events&profile=admin",
+    "screenshot": "mapa-admin-twygo/33-falha-na-importa-o-veja-o-relat-rio-de-erros-para-ver-o-que-.png"
+  },
+  {
+    "ordem": 34,
+    "texto": "Notificação Usuários\n\nExportação de usuários concluído\n\nhá 19 dias",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/data_exports/31725/download",
+    "path": "/o/36675/data_exports/31725/download",
+    "erro": "Error: Page.goto: Download is starting\nCall log:\n  - navigating to \"https://twygo1772627238.stage.twygoead.com/o/36675/data_exp"
+  },
+  {
+    "ordem": 35,
+    "texto": "Extração de dados concluída\n\nExtração de dados concluída\n\nhá 20 dias",
+    "href": "https://twygo1772627238.stage.twygoead.com/o/36675/data_exports/31730/download",
+    "path": "/o/36675/data_exports/31730/download",
+    "erro": "Error: Page.goto: Download is starting\nCall log:\n  - navigating to \"https://twygo1772627238.stage.twygoead.com/o/36675/data_exp"
+  }
+]

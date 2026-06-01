@@ -16,14 +16,11 @@ from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 
-# --- Env da RECERTIFICACAO (hardcoded; NAO usar .env que aponta pra 36675) ---
-BASE_URL = "https://recertificacao-testeqa.stage.twygoead.com"
-ORG_ID = "37048"
-# Credenciais: tenta a do retrabalho primeiro, fallback pra da memoria
-CREDS = [
-    ("agents.claude@claude.com", "123456"),
-    ("agents.qa@claude.com", "123456"),
-]
+# --- Env da RECERTIFICACAO (do .env, perfil RECERT — NAO o principal/36675) ---
+import _twygo as tw
+_c = tw.cfg("RECERT")
+BASE_URL, ORG_ID = _c["base_url"], _c["org_id"]
+CREDS = [(_c["email"], _c["senha"])]
 
 PASTA = ROOT / "evidencias" / "19602_desempenho_trilha"
 PASTA.mkdir(parents=True, exist_ok=True)
