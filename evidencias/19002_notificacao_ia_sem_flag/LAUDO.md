@@ -5,17 +5,22 @@
 - **PR do dev:** https://github.com/Twygo/twyg-app/pull/10181 (`fix/notificacao-analise-ia-sem-flag`)
 - **Data da validação:** 2026-06-02
 
-## Veredito: ⚠ Inconclusivo — NÃO HÁ O QUE VALIDAR AINDA (bloqueio duro, não incerteza de QA)
+## Veredito: 🔁 RETRABALHO — a correção NÃO está em nenhum ambiente (não foi consertado)
 
-Não é "tentei validar e não consegui distinguir". São **dois bloqueios concretos e verificados**
-que impedem a validação neste momento. **Não é ❌** (não testei a correção, então não posso dizer
-que o fix do dev falhou) e **não é ✅** (não há correção deployada para confirmar).
+A pedido do solicitante, o critério é binário: se não foi consertado, volta como retrabalho.
+**Não foi consertado** — a correção do PR não está deployada em lugar nenhum (confirmado abaixo).
+Não é ❌ "o fix do dev falhou" (não dá pra testar um código que não está rodando); é **retrabalho de
+processo**: o PR precisa ser mergeado e deployado antes de qualquer validação fazer sentido.
 
-### Bloqueio 1 (decisivo) — o PR #10181 está ABERTO, não foi mergeado nem deployado
-Verificado via API do GitHub: `state: OPEN`, `mergedAt: null`. A branch
-`fix/notificacao-analise-ia-sem-flag` **não está em nenhum ambiente** (nem stage, nem produção).
-Testar o `clararesorts` agora exercita o **código antigo** — só reconfirmaria o bug, não a correção.
-→ **Ação necessária antes de re-validar: mergear o PR e fazer o deploy.**
+### Bloqueio 1 (decisivo) — o PR #10181 está ABERTO e a correção NÃO está na branch default
+- Verificado via API do GitHub: `state: OPEN`, `mergedAt: null`. A branch
+  `fix/notificacao-analise-ia-sem-flag` **não está em nenhum ambiente** (nem stage, nem produção).
+- **Cruzamento extra (descarta "entrou por outro PR"):** o histórico de commits da branch default nos
+  DOIS arquivos que o fix altera não tem nenhum commit dessa correção. O commit mais recente em
+  `create_question_list_attempt_ai_generated_report.rb` é de **2025-09-25 (#8198)** — meses ANTES do
+  fix. Logo a correção não chegou por nenhum outro caminho.
+- Testar o `clararesorts` agora exercita o **código antigo** — só reconfirmaria o bug, não a correção.
+→ **Ação necessária antes de re-validar: mergear o PR #10181 e fazer o deploy.**
 
 ### Bloqueio 2 (independente) — a correção é backend (segmentação de notificação via SQS), não é card de UI/Playwright
 Pelo próprio PR, o fix espelha as guards de feature flag em dois pontos do pipeline:
