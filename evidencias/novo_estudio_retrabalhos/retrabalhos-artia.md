@@ -1,11 +1,25 @@
-# Retrabalhos — Novo Estúdio de Criação (QA 1.1 a 1.6 · 05/06/2026)
+# ✅ CHECKLIST — Retrabalhos PENDENTES de criar no Artia (Novo Estúdio)
 
-> Copiar e colar cada bloco no Artia. Evidências com link do GitHub logo abaixo de cada bloco.
-> Base das evidências: https://github.com/DantexgerBR/twygo-playwright-tests/tree/main/evidencias/novo_estudio_retrabalhos
+> **11 retrabalhos pra criar**, em ordem por card. Cada bloco está pronto: copiar → colar no Artia → marcar o checkbox.
+> Já criados antes: mobile <1366 (33030233) e menu lateral (33030219) — não estão nesta lista.
+
+- [ ] 1. [19705] Cards Trilha/Pacote abrem form de CURSO
+- [ ] 2. [19705] Card Curso não vai pro Estúdio
+- [ ] 3. [19705] "Criar curso com IA" bloqueado com IA ativa
+- [ ] 4. [19706] Copiloto: abrir em 50% + botão expandir a 100%
+- [ ] 5. [19706] Rota dedicada do Estúdio (404)
+- [ ] 6. [19707] RN 3 ausente (drag de abas + persistência + última aba)
+- [ ] 7. [19708] Sem section "Configurações de IA" com tooltip
+- [ ] 8. [19708] Copiloto não aparece na aba Identificação
+- [ ] 9. [19710] Lista do Estúdio não usa o nome customizado
+- [ ] 10. [19710] Botão "Editar" do preview nunca habilita
+- [ ] 11. [19710] Escolher tipo já cria a atividade (rascunho órfão)
+
+Login de todos: `agents.qa@claude.com` / `123456` · org 37061
 
 ---
 
-## R1 — Cards Trilha/Pacote abrem o formulário de CURSO (card 19705)
+## 1. [19705] Cards Trilha/Pacote abrem o formulário de CURSO
 
 ```
 :: Incidente identificado ::
@@ -37,7 +51,7 @@ org_id: 37061
 
 ---
 
-## R2 — Card "Curso" não direciona ao Estúdio de Criação (card 19705)
+## 2. [19705] Card "Curso" não direciona ao Estúdio de Criação
 
 ```
 :: Incidente identificado ::
@@ -67,7 +81,7 @@ org_id: 37061
 
 ---
 
-## R3 — "Criar curso com IA" bloqueado mesmo com IA ativa e saldo (card 19705)
+## 3. [19705] "Criar curso com IA" bloqueado mesmo com IA ativa e saldo
 
 ```
 :: Incidente identificado ::
@@ -75,13 +89,13 @@ Botão "Criar curso com IA" exibe o toast "Essa funcionalidade não foi habilita
 
     :: Passo a passo para reprodução ::
 » Passo 1: Logar como administrador e conferir em Configurações » Controle de IA » aba Configurações: ambiente principal "novoestudio" com "Acesso de IA ativo" LIGADO
-» Passo 2: Conferir na aba Extrato: saldo de créditos disponível (renovação mensal +1, saldo final 1)
+» Passo 2: Conferir na aba Extrato: saldo de créditos disponível
 » Passo 3: Acessar Aprendizagem » Conteúdos
 » Passo 4: Clicar no botão "Criar curso com IA"
 » Passo 5: Observar o toast "Essa funcionalidade não foi habilitada para esse ambiente. Ative ou consulte o responsável..." — o assistente não abre
 
     :: Comportamento esperado ::
-Com "Acesso de IA ativo" ligado e saldo disponível, o clique abre o assistente de criação de curso com IA (4 passos). Detalhe técnico: o clique não dispara nenhuma request — o bloqueio é uma checagem no front-end que não está respeitando a configuração ativa.
+Com "Acesso de IA ativo" ligado e saldo disponível, o clique abre o assistente de criação de curso com IA (4 passos). Detalhe técnico: o clique não dispara nenhuma request — o bloqueio é uma checagem no front-end que não respeita a configuração ativa.
 
     :: Informações ::
 url: https://novoestudio.stage.twygoead.com/o/37061/events?tab=events&profile=admin
@@ -97,46 +111,20 @@ org_id: 37061
 
 ---
 
-## R4 — Sem layout mobile abaixo de 1366px (card 19706)
+## 4. [19706] Drawer do copiloto fora do padrão: deve abrir em 50% com expandir até 100%
 
 ```
 :: Incidente identificado ::
-Em resolução menor que 1366x720 o Estúdio mantém o layout desktop espremido com scroll horizontal — não aplica o layout mobile/tablet com 3 tabs no rodapé
-
-    :: Passo a passo para reprodução ::
-» Passo 1: Logar como administrador e abrir o curso 807533 (Conteúdos » menu ⋮ » Editar)
-» Passo 2: Clicar na aba "Atividades" (Estúdio de Criação)
-» Passo 3: Redimensionar a janela para 1024x600 (ou usar o modo responsivo do DevTools — F12 + Ctrl+Shift+M)
-» Passo 4: Observar: aparece scroll horizontal na página e nenhuma tab de navegação no rodapé
-
-    :: Comportamento esperado ::
-Abaixo de 1366px o Estúdio aplica o layout mobile/tablet com 3 tabs no rodapé (lista, preview, copiloto), sem scroll horizontal.
-
-    :: Informações ::
-url: https://novoestudio.stage.twygoead.com/o/37061/contents/807533/edit?tab=studio
-login: agents.qa@claude.com
-senha: 123456
-org_id: 37061
-
-    :: Evidência(s) ::
-- Estúdio em 1024x600 com layout desktop e scroll: https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/novo_estudio_retrabalhos/r04-mobile-1024x600-scroll-horizontal.png
-```
-
----
-
-## R5 — Sem controles de colapsar/ocultar o menu lateral (card 19706)
-
-```
-:: Incidente identificado ::
-Não existem os botões de recolher o menu lateral principal para ícones nem de ocultá-lo inteiramente dentro do Estúdio de Criação
+O drawer do copiloto no Estúdio abre ocupando ~66% da largura da tela, de forma fixa e sem botão de expandir — o padrão definido é abrir em 50% com botão para expandir até 100%
 
     :: Passo a passo para reprodução ::
 » Passo 1: Logar como administrador e abrir o Estúdio do curso 807533 (Editar » aba Atividades)
-» Passo 2: Procurar no menu lateral principal (Dashboard, Aprendizagem, Usuários...) qualquer controle de colapsar ou ocultar
-» Passo 3: Observar: nenhum botão de colapso/ocultar existe
+» Passo 2: Clicar no botão flutuante do copiloto (canto da tela)
+» Passo 3: Observar a largura do drawer aberto: ~66% da tela (896px em viewport 1366), sobreposto ao conteúdo
+» Passo 4: Procurar um botão de expandir no drawer → não existe (só o X de fechar e a lista de conversas)
 
     :: Comportamento esperado ::
-RN 2 prevê menu lateral colapsável para ícones E opção de ocultar inteiramente, liberando espaço horizontal para o Estúdio.
+Drawer do copiloto abre ocupando 50% da largura por padrão, com botão para expandir até 100% (comportamento confirmado com o time de desenvolvimento em 05/06).
 
     :: Informações ::
 url: https://novoestudio.stage.twygoead.com/o/37061/contents/807533/edit?tab=studio
@@ -145,12 +133,39 @@ senha: 123456
 org_id: 37061
 
     :: Evidência(s) ::
-- Estúdio aberto sem controles no menu lateral: https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/novo_estudio_retrabalhos/r05-estudio-sem-controles-menu-lateral.png
+- Drawer aberto em ~66% sem botão de expandir: https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/novo_estudio_recon/qa12-09-copiloto-aberto.png
 ```
 
 ---
 
-## R6 — Reordenação e persistência de abas não existem (card 19707)
+## 5. [19706] Rota dedicada do Estúdio retorna 404
+
+```
+:: Incidente identificado ::
+A rota dedicada do Estúdio prevista na documentação (/o/{org}/events/:id/edit/studio) retorna 404 — o Estúdio só abre pela rota /o/{org}/contents/{id}/edit?tab=studio
+
+    :: Passo a passo para reprodução ::
+» Passo 1: Logar como administrador na organização
+» Passo 2: Acessar a URL https://novoestudio.stage.twygoead.com/o/37061/events/807533/edit/studio
+» Passo 3: Observar a página 404 ("The page you were looking for doesn't exist")
+» Passo 4: Acessar https://novoestudio.stage.twygoead.com/o/37061/contents/807533/edit?tab=studio → o Estúdio abre normalmente
+
+    :: Comportamento esperado ::
+A rota deve seguir a documentação (/o/{org}/events/:id/edit/studio abrindo o Estúdio) — confirmado com o time de desenvolvimento em 05/06. Obs: o <title> da aba permanece genérico ("Domínio padrão"), mas é o padrão atual do admin — sem alteração por enquanto.
+
+    :: Informações ::
+url: https://novoestudio.stage.twygoead.com/o/37061/events/807533/edit/studio
+login: agents.qa@claude.com
+senha: 123456
+org_id: 37061
+
+    :: Evidência(s) ::
+- Estúdio abrindo via ?tab=studio (rota da doc dá 404): https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/novo_estudio_recon/qa12-07-tab-studio-direto.png
+```
+
+---
+
+## 6. [19707] Reordenação e persistência de abas não existem (RN 3)
 
 ```
 :: Incidente identificado ::
@@ -175,12 +190,12 @@ org_id: 37061
     :: Evidência(s) ::
 - Hover na aba "Modelo" sem ícone de drag: https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/novo_estudio_retrabalhos/r06-hover-modelo-sem-icone-drag.png
 - Ordem inalterada após o drag: https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/novo_estudio_retrabalhos/r06-apos-drag-ordem-inalterada.png
-- Retorno ao curso abrindo em Identificação (last-tab não restaurada): https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/novo_estudio_retrabalhos/r06-retorno-abre-identificacao.png
+- Retorno ao curso abrindo em Identificação: https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/novo_estudio_retrabalhos/r06-retorno-abre-identificacao.png
 ```
 
 ---
 
-## R7 — Sem section "Configurações de IA" com tooltip na Identificação (card 19708)
+## 7. [19708] Sem section "Configurações de IA" com tooltip na Identificação
 
 ```
 :: Incidente identificado ::
@@ -192,7 +207,7 @@ A aba Identificação não tem a section "Configurações de IA" com tooltip exp
 » Passo 3: Procurar a section "Configurações de IA" e o ícone de informação com o tooltip "Estes campos são usados pela IA na geração de conteúdo. Quanto mais preenchidos, melhor o resultado." → não existem
 
     :: Comportamento esperado ::
-RN 4 prevê sections "Básico", "Caracterização" e "Configurações de IA", com os campos de IA agrupados na section de IA com tooltip explicativo.
+RN 4 prevê os campos de IA agrupados em section própria ("Configurações de IA") com tooltip explicativo do uso pela IA.
 
     :: Informações ::
 url: https://novoestudio.stage.twygoead.com/o/37061/contents/807533/edit?tab=identification
@@ -207,7 +222,7 @@ org_id: 37061
 
 ---
 
-## R8 — Copiloto não aparece na aba Identificação (card 19708)
+## 8. [19708] Copiloto não aparece na aba Identificação
 
 ```
 :: Incidente identificado ::
@@ -215,7 +230,7 @@ O botão flutuante do copiloto não renderiza na aba Identificação — só exi
 
     :: Passo a passo para reprodução ::
 » Passo 1: Logar como administrador e abrir o curso 807533 na aba Identificação
-» Passo 2: Procurar o botão flutuante roxo do copiloto → não existe nesta aba
+» Passo 2: Procurar o botão flutuante do copiloto → não existe nesta aba
 » Passo 3: Clicar na aba "Atividades" → o botão do copiloto aparece
 
     :: Comportamento esperado ::
@@ -234,7 +249,7 @@ org_id: 37061
 
 ---
 
-## R9 — Lista do Estúdio não reflete o nome customizado do tipo (card 19710)
+## 9. [19710] Lista do Estúdio não reflete o nome customizado do tipo
 
 ```
 :: Incidente identificado ::
@@ -264,7 +279,7 @@ org_id: 37061
 
 ---
 
-## R10 — Botão "Editar" do preview nunca habilita (card 19710)
+## 10. [19710] Botão "Editar" do preview nunca habilita
 
 ```
 :: Incidente identificado ::
@@ -292,7 +307,7 @@ org_id: 37061
 
 ---
 
-## R11 — Escolher um tipo no "Adicionar" já cria a atividade (card 19710)
+## 11. [19710] Escolher um tipo no "Adicionar" já cria a atividade (rascunho órfão)
 
 ```
 :: Incidente identificado ::
@@ -322,21 +337,9 @@ org_id: 37061
 
 ---
 
-## Menores/UX (avaliar se viram retrabalho)
+## (referência) Fora desta lista — nada a criar
 
-1. **Salvar silencioso na Identificação**: com "Tipo de experiência" (obrigatório) vazio, o Salvar falha sem nenhum toast de erro global — o usuário acha que salvou.
-2. **Sem toast no save do form de atividade** do Estúdio (salva, mas sem feedback visual).
-3. **Exceção do SCORM não aplicada** (executado em 05/06): ao criar atividade SCORM, o form traz nome customizado default "Conteúdo" e a LISTA do instrutor exibe "SCORM" — a regra da RN 6 era instrutor ver "Conteúdo SCORM" (aluno "Conteúdo"). Evidência: https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/novo_estudio_retrabalhos/extra-scorm-card-lista-instrutor.png
-
-## Validações positivas relevantes da reverificação (05/06)
-
-- **Play do aluno usa o display_label** ✅ — aluno inscrito (dante.tavares) vê "Aula Customizada" no card da atividade em /e/807533/learn, com ícone herdado do tipo (picture_as_pdf) → herança de ícone também ✅. Reforça que o R9 é só a lista do instrutor.
-- Obs de ambiente: dante.tavares@twygo.com ficou INSCRITO no curso 807533 (auto-inscrição feita pra executar o teste — mantida como pré-condição pra futuros testes de Play).
-
-## Confirmar com o solicitante antes de abrir (possível AT desatualizada)
-
-- Copiloto: fechado por padrão via botão flutuante, abre ~70% sobreposto, sem botão "Expandir" (AT: coluna ~30% expansível a ~50%).
-- Rota dedicada `/events/:id/edit/studio` retorna 404 (rota real: `?tab=studio`) e `<title>` da aba é genérico ("Domínio padrão").
-- Aba "Certificado" não existe (nem no produto atual).
-- "Dificuldade" é campo de texto livre (AT: dropdown); campo "Idioma" não existe.
-- Rótulo do menu ⋮ é "Editar" (AT: "Editar curso"); "Gerenciar curso" não existe em lugar nenhum.
+- **Já criados**: mobile <1366 → [33030233](https://app2.artia.com/a/4874953/f/6386039/activities/33030233) · menu lateral → [33030219](https://app2.artia.com/a/4874953/f/6386039/activities/33030219)
+- **Bug da DOC (corrigir análise de teste, não é retrabalho)**: aba "Certificado"; "Dificuldade" texto livre; campo "Idioma"
+- **Stand-by pós-CBTD**: rótulo do SCORM ("Conteúdo SCORM" x "Conteúdo")
+- **Menores/UX (avaliar depois)**: Salvar silencioso com "Tipo de experiência" vazio; sem toast no save do form de atividade
