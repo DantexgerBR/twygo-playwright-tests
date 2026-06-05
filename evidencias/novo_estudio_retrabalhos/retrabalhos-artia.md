@@ -249,7 +249,7 @@ O nome customizado do tipo (display_label) salva e persiste no formulário da at
 » Passo 6 (restaurar): voltar o campo para "PDF Estampado" e salvar
 
     :: Comportamento esperado ::
-A lista de atividades do Estúdio (visão do instrutor) exibe o display_label customizado no lugar do nome default do tipo, conforme RN 6.
+A lista de atividades do Estúdio (visão do instrutor) exibe o display_label customizado no lugar do nome default do tipo, conforme RN 6. IMPORTANTE pro dev: o dado persiste corretamente e o PLAY DO ALUNO já consome e exibe "Aula Customizada" (validado em 05/06 com aluno inscrito) — o gap é exclusivamente a renderização da lista do Estúdio.
 
     :: Informações ::
 url: https://novoestudio.stage.twygoead.com/o/37061/studio/activities/9288190/edit?type=pdf&eventId=807533
@@ -259,6 +259,7 @@ org_id: 37061
 
     :: Evidência(s) ::
 - Lista exibindo "PDF Estampado" com "Aula Customizada" salvo no form: https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/novo_estudio_retrabalhos/r09-lista-nao-reflete-display-label.png
+- Play do ALUNO exibindo "Aula Customizada" corretamente (contraste): https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/novo_estudio_retrabalhos/r09-play-aluno-exibe-display-label.png
 ```
 
 ---
@@ -325,7 +326,12 @@ org_id: 37061
 
 1. **Salvar silencioso na Identificação**: com "Tipo de experiência" (obrigatório) vazio, o Salvar falha sem nenhum toast de erro global — o usuário acha que salvou.
 2. **Sem toast no save do form de atividade** do Estúdio (salva, mas sem feedback visual).
-3. **SCORM com nome default "Conteúdo"** ao criar atividade (esperado: "SCORM"/"Conteúdo SCORM" pro instrutor).
+3. **Exceção do SCORM não aplicada** (executado em 05/06): ao criar atividade SCORM, o form traz nome customizado default "Conteúdo" e a LISTA do instrutor exibe "SCORM" — a regra da RN 6 era instrutor ver "Conteúdo SCORM" (aluno "Conteúdo"). Evidência: https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/novo_estudio_retrabalhos/extra-scorm-card-lista-instrutor.png
+
+## Validações positivas relevantes da reverificação (05/06)
+
+- **Play do aluno usa o display_label** ✅ — aluno inscrito (dante.tavares) vê "Aula Customizada" no card da atividade em /e/807533/learn, com ícone herdado do tipo (picture_as_pdf) → herança de ícone também ✅. Reforça que o R9 é só a lista do instrutor.
+- Obs de ambiente: dante.tavares@twygo.com ficou INSCRITO no curso 807533 (auto-inscrição feita pra executar o teste — mantida como pré-condição pra futuros testes de Play).
 
 ## Confirmar com o solicitante antes de abrir (possível AT desatualizada)
 
