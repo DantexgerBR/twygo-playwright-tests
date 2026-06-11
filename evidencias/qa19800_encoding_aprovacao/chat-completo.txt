@@ -1,0 +1,45 @@
+chevron_left
+wand_stars
+Copiloto do Estúdio
+
+Receba sugestões e gere atividades em conversa contextualizada com o curso, a aba ativa e as atividades selecionadas.
+
+Gere Roteiro da atividade "QA19800 atividade roteiro" (event_content_id: 9295618)
+
+Vou gerar o roteiro para essa atividade. Primeiro, deixe-me verificar o estado atual dela para confirmar os pré-requisitos.
+
+Ótimo! A atividade está pronta para gerar o roteiro. Vou verificar se há uma base de conhecimento selecionada na thread para aplicar a REGRA DE REUSO. Como essa é a primeira solicitação, vou solicitar a seleção da base de conhecimento:
+
+Não há bases de conhecimento disponíveis na organização. Vou prosseguir com a geração do roteiro sem RAG (sem repositório de conhecimento).
+
+Perfeito! 🚀 Disparei a geração do roteiro para a atividade "QA19800 atividade roteiro".
+
+Status da geração:
+
+Plano ID: 2252bebc-d0b2-4f2a-b37e-d12b07258b52
+Task: em processamento
+
+Acompanhe o progresso pelo card abaixo. Assim que o roteiro ficar pronto, você poderá revisar e aprovar. Após a aprovação, será possível gerar os demais artefatos (conteúdo de página e imagem).
+
+VALIDAÇÃO DO COPILOTO
+
+roteiro
+
+Bem-vindo a esta atividade de validação e encoding. Nesta página, você explorará os conceitos fundamentais relacionados à validação de dados e aos processos de encoding que garantem a integridade e a segurança das informações em sistemas modernos.
+
+A validação é um processo crítico em qualquer aplicação ou sistema de informação. Trata-se de verificar se os dados recebidos estão em conformidade com regras, formatos e padrões pré-definidos. Quando um usuário insere uma informação, seja um email, um número de telefone ou qualquer outro dado, o sistema deve garantir que essa informação seja válida antes de processá-la ou armazená-la. Isso evita erros, inconsistências e possíveis vulnerabilidades de segurança.
+
+O encoding, por sua vez, refere-se à transformação de dados de um formato para outro. Existem diversos tipos de encoding utilizados em contextos diferentes: encoding de caracteres (como UTF-8, ASCII), encoding de URLs, encoding de senhas (hash), entre outros. O propósito principal é representar dados de forma que possam ser transmitidos, armazenados ou processados de maneira segura e eficiente.
+
+A combinação entre validação e encoding é essencial para a aprovação de dados em fluxos críticos. Quando um dado passa por validação rigorosa e é devidamente codificado, ele pode ser considerado seguro e confiável para avançar no processo. Muitas organizações implementam checkpoints de validação em múltiplas etapas de seus workflows para garantir que apenas informações íntegras e bem formatadas prossigam.
+
+Compreender esses conceitos permite que você desenvolva ou avalie sistemas mais robustos, capazes de lidar com dados de forma confiável e segura. Ao longo desta atividade, você terá a oportunidade de aprofundar seu conhecimento sobre como esses mecanismos funcionam na prática e por que são tão importantes para a qualidade e segurança dos dados em qualquer contexto de TI.
+
+Aprovar
+Regerar
+Rejeitar
+
+content_copy
+Copiar
+arrow_upward
+Enviar
