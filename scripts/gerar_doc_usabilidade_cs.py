@@ -10,6 +10,8 @@ import sys
 
 sys.stdout.reconfigure(encoding="utf-8")
 from docx import Document
+from docx.oxml.ns import qn
+from docx.oxml.shared import OxmlElement
 from docx.shared import Pt, RGBColor
 
 TEMPLATE = r"D:\Trabalho\Twygo\Projetos\Widgets\Widgets - Usabilidade.docx"
@@ -50,8 +52,38 @@ def bullet(texto):
     return doc.add_paragraph(BULLET_PREFIX + texto, style=BULLET_STYLE)
 
 
-def h1(texto):
-    return doc.add_heading(texto, level=1)
+_bookmark_id = [0]
+
+
+def h1(texto, anchor=None):
+    """Heading 1 com bookmark — alvo dos links do Sumário (padrão do template:
+    w:bookmarkStart no parágrafo do título + w:hyperlink w:anchor no Sumário)."""
+    p = doc.add_heading(texto, level=1)
+    if anchor:
+        _bookmark_id[0] += 1
+        bid = str(_bookmark_id[0])
+        start = OxmlElement("w:bookmarkStart")
+        start.set(qn("w:id"), bid)
+        start.set(qn("w:name"), anchor)
+        end = OxmlElement("w:bookmarkEnd")
+        end.set(qn("w:id"), bid)
+        p._p.insert(0, start)
+        p._p.append(end)
+    return p
+
+
+def link_sumario(texto, anchor):
+    """Linha do Sumário como hyperlink interno (Ctrl+clique navega à seção)."""
+    p = doc.add_paragraph()
+    hl = OxmlElement("w:hyperlink")
+    hl.set(qn("w:anchor"), anchor)
+    r = OxmlElement("w:r")
+    t = OxmlElement("w:t")
+    t.text = texto
+    r.append(t)
+    hl.append(r)
+    p._p.append(hl)
+    return p
 
 
 def h2(texto):
@@ -84,21 +116,31 @@ tabela([
 ])
 par()
 
+SECOES = [
+    ("O que é?", "oque"),
+    ("Como funciona?", "comofunciona"),
+    ("Regras e comportamentos importantes", "regras"),
+    ("Como configurar", "comoconfigurar"),
+    ("Fluxo de uso", "fluxo"),
+    ("Telas do módulo", "telas"),
+    ("Widget de Tarefas", "widgettarefas"),
+    ("Visões por papel", "visoes"),
+    ("Comportamento importante", "comportamento"),
+]
+
 titulo("Sumário", 16)
-for s in ["O que é?", "Como funciona?", "Regras e comportamentos importantes", "Como configurar",
-          "Fluxo de uso", "Telas do módulo", "Widget de Tarefas", "Visões por papel",
-          "Comportamento importante"]:
-    par(s)
+for nome, anchor in SECOES:
+    link_sumario(nome, anchor)
 par()
 
-h1("O que é?")
+h1("O que é?", "oque")
 par("Módulo que protege a organização da perda de pessoas-chave. O administrador cadastra funções "
     "críticas, informa quem as executa hoje e quem são os possíveis sucessores, e o sistema calcula um "
     "risco de descontinuidade de 0 a 100 para cada função.")
 par("Para reduzir o risco, o usuário registra ações de resposta (ex.: capacitar um sucessor) e acompanha "
     "o efeito esperado em projeções de 6 e 12 meses, consolidadas no Dashboard geral.")
 
-h1("Como funciona?")
+h1("Como funciona?", "comofunciona")
 par("Em Skills > Funções de negócio, cada função crítica é cadastrada em cinco abas: Identificação, "
     "Pessoas, Documentos, Competências e Continuidade (criticidade e mínimo de executores).")
 par("O risco é calculado a partir de quatro fatores — probabilidade de perda dos executores, criticidade, "
@@ -107,7 +149,7 @@ par("O risco é calculado a partir de quatro fatores — probabilidade de perda 
 par("As ações de resposta não mudam o risco atual — mudam apenas as projeções de 6 e 12 meses. Quanto "
     "mais avançada a ação e mais próximo o prazo, maior o efeito projetado.")
 
-h1("Regras e comportamentos importantes")
+h1("Regras e comportamentos importantes", "regras")
 bullet("Funcionalidade liberada conforme contrato do ambiente — sem o módulo, a aba Continuidade fica "
        "desabilitada e as colunas de risco ficam ocultas.")
 bullet("Mínimo de executores é obrigatório — sem ele o risco não é calculado.")
@@ -116,7 +158,7 @@ bullet("Função sem executores assume probabilidade de perda máxima — o risc
 bullet("Ações canceladas saem das projeções; ações confidenciais só são vistas por Administrador e Líder.")
 bullet("Toda alteração relevante gera histórico e snapshots diários (alimentam o gráfico do Dashboard).")
 
-h1("Como configurar")
+h1("Como configurar", "comoconfigurar")
 bullet("Skills > Funções de negócio: cadastrar as funções críticas (criticidade + mínimo de executores na "
        "aba Continuidade).")
 bullet("Continuidade e sucessão > Parâmetros (só Administrador): cadastrar as iniciativas de resposta, com "
@@ -124,7 +166,7 @@ bullet("Continuidade e sucessão > Parâmetros (só Administrador): cadastrar as
 bullet("Menu > Painéis: adicionar o widget de Tarefas a um painel e vincular ao Modo de uso — não há item "
        "\"Tarefas\" fixo no menu.")
 
-h1("Fluxo de uso")
+h1("Fluxo de uso", "fluxo")
 h2("1. Cadastrar a função crítica")
 par("Acesse Skills > Funções de negócio e clique em + Adicionar. Informe nome, competências e, na aba "
     "Continuidade, a Criticidade e o Mínimo de executores.")
@@ -140,7 +182,7 @@ par("Atualize a situação das ações (o sistema deriva o status real, ex.: \"C
     "\"Atrasada\") e acompanhe o consolidado no Dashboard geral. Cada responsável vê suas pendências no "
     "widget de Tarefas.")
 
-h1("Telas do módulo")
+h1("Telas do módulo", "telas")
 tabela([
     ["Tela", "O que faz", "Perfil"],
     ["Dashboard geral", "Cards de risco e projeções, gráfico, tabelas de áreas/funções com maior risco, "
@@ -153,7 +195,7 @@ tabela([
     ["Widget de Tarefas", "Ações pendentes do usuário logado, por urgência.", "Líder e Aluno"],
 ], header=True)
 
-h1("Widget de Tarefas")
+h1("Widget de Tarefas", "widgettarefas")
 par("Lista as ações pendentes em que o usuário logado é o responsável, agrupadas por urgência: "
     "Atrasadas → Hoje → Próximas. Concluídas e canceladas saem da lista automaticamente.")
 bullet("Clicar em um card abre edição rápida: só Situação e Data de conclusão são editáveis; o link "
@@ -162,13 +204,13 @@ bullet("Com mais tarefas do que cabe no widget, o rodapé mostra \"Ver todas (N)
 bullet("Sem pendências, exibe \"Nenhuma tarefa pendente.\".")
 bullet("Aluno não vê ações confidenciais; Líder vê normalmente.")
 
-h1("Visões por papel")
+h1("Visões por papel", "visoes")
 bullet("Administrador: acesso completo, sem filtros, e exclusividade na tela de Parâmetros.")
 bullet("Líder de equipe: vê o módulo filtrado pelas pessoas que lidera; não vê Parâmetros (URL fora do "
        "escopo redireciona ao Dashboard).")
 bullet("Aluno: interage apenas com o widget de Tarefas, quando seu Modo de uso dá acesso.")
 
-h1("Comportamento importante")
+h1("Comportamento importante", "comportamento")
 bullet("Risco atual e projeções são coisas diferentes — ações só mexem nas projeções.")
 bullet("Skills > Funções de negócio é a fonte única de funções; o módulo não duplica cadastro.")
 bullet("Editar dados da pessoa em Análise individual sincroniza com o cadastro de usuários.")
