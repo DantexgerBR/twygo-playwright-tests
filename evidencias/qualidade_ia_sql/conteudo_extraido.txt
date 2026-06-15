@@ -1,0 +1,13 @@
+=== CURSO sql (807992) ===
+
+
+----- ATIVIDADE 9296250 | título: Introdução ao SQL e Modelagem Relacional -----
+Apresenta fundamentos do SQL e modelagem relacional para iniciantes, capacitando a escrever consultas básicas e estruturar dados de forma eficiente.
+
+
+----- ATIVIDADE 9296251 | título: Principais Conceitos de Bancos de Dados Relacionais -----
+Introdução prática aos bancos de dados relacionais: tabelas, chaves, relacionamentos e SQL básico para iniciantes estruturarem e consultarem dados eficientemente.
+
+
+----- ATIVIDADE 9296252 | título: Consultas Básicas no SQL: SELECT e WHERE -----
+Aprenda a usar SELECT e WHERE para recuperar e filtrar dados em SQL, aplicando operadores lógicos e boas práticas em consultas básicas.

@@ -1,0 +1,371 @@
+=== CONTEÚDO/SLIDES — sql (807992) ===
+
+
+----- 9296250 | Introdução ao SQL e Modelagem Relacional -----
+leaderboard
+Dashboard
+school
+Aprendizagem
+format_list_bulleted_add
+Conteúdos
+send
+Compartilhamentos
+description
+Registros
+BETA
+workspace_premium
+Certificados
+browse
+Modelos de conteúdo
+folder_open
+Base de conhecimento
+group
+Usuários
+work
+Empresas
+live_help
+Questionários
+groups
+Comunidades
+psychology
+Skills
+BETA
+lan
+Organograma
+badge
+Funções de negócio
+award_star
+Competências
+monitoring
+Planos e Metas
+BETA
+track_changes
+PDI
+novoestudio
+Configurações
+Organização
+Navegação
+electrical_services
+Integrações
+flash_auto
+Piloto automático
+Regras do Jogo
+Comunicação
+sell
+Cobrança de inscrição
+credit_card
+Plano e assinatura
+Segurança NOVO
+smart_toy
+Controle de IA BETA
+palette
+Aparência
+ agents qa
+NOVOESTUDIO
+school
+agents qa
+Administrador 
+leaderboard
+Dashboard
+ 
+school
+Aprendizagem
+ 
+group
+Usuários
+ 
+work
+Empresas
+ 
+live_help
+Questionários
+ 
+groups
+Comunidades
+ 
+psychology
+Skills
+BETA
+ 
+monitoring
+Planos e Metas
+BETA
+NOVOESTUDIO
+Configurações
+Estúdio > Domine SQL Básico e Modelagem Relacional > Atividades > Editando 
+Voltar
+Introdução ao SQL e Modelagem Relacional
+Página
+Dados
+Conteúdo
++ Adicionar
+Parágrafo
+more_horiz
+Introdução ao SQL e Modelagem Relacional
+Este conteúdo apresenta uma visão abrangente dos fundamentos do SQL e dos conceitos essenciais da modelagem relacional, preparando iniciantes para escrever consultas básicas e organizar dados de forma eficiente.
+Fundamentos do SQL para Manipulação de Dados
+O SQL, ou Structured Query Language, é a linguagem padrão para interação com bancos de dados relacionais. Dominar comandos básicos como  SELECT ,  WHERE  e  JOIN  permite extrair, filtrar e combinar informações de tabelas distintas, tornando possível a manipulação e análise eficiente de dados organizacionais.
+Por exemplo, o comando  SELECT  recupera colunas específicas de uma tabela, enquanto  WHERE  aplica condições para filtrar registros, e  JOIN  conecta tabelas com base em relacionamentos, facilitando consultas complexas e integradas.
+Bases da Modelagem Relacional para Estruturação de Dados
+A modelagem relacional é um método de organização de dados em tabelas (ou relações) que possuem colunas (atributos) e linhas (tuplas). Seu objetivo é garantir integridade, evitar redundâncias e facilitar consultas eficientes.
+Conceitos como chave primária e chave estrangeira são cruciais para estabelecer vínculos entre tabelas e garantir que os dados sejam consistentes e relacionados corretamente. Essa estrutura ajuda a modelar cenários reais de negócios, refletindo relações entre entidades com clareza.
+Boas Práticas para Iniciantes em SQL e Modelagem
+Para garantir o sucesso no aprendizado e aplicação do SQL e da modelagem relacional, é fundamental seguir práticas como:
+Entender claramente o problema de negócio antes de criar consultas ou modelos.
+Construir consultas simples e testá-las passo a passo para validar resultados.
+Normalizar dados para evitar duplicidades e facilitar manutenção do banco.
+Documentar relacionamentos e regras de integridade para uso futuro e colaboração.
+Erros Comuns e Como Evitá-los
+Iniciantes frequentemente cometem erros como não utilizar corretamente os filtros no  WHERE , o que pode resultar em conjuntos de dados muito grandes ou incorretos. Outro erro comum é a falta de entendimento dos relacionamentos entre tabelas, levando a junções inadequadas ou dados inconsistentes.
+Para evitar esses problemas, é recomendável revisar sempre a lógica das consultas, testar com pequenos conjuntos de dados e compreender profundamente as chaves e relacionamentos definidos no modelo relacional.
+Com essa base sólida em SQL e modelagem relacional, você estará preparado para avançar em análise e gestão de dados, aplicando consultas eficazes e projetando bancos organizados e confiáveis.
+Salvar
+Cancelar
+
+
+----- 9296251 | Principais Conceitos de Bancos de Dados Relacionais -----
+leaderboard
+Dashboard
+school
+Aprendizagem
+format_list_bulleted_add
+Conteúdos
+send
+Compartilhamentos
+description
+Registros
+BETA
+workspace_premium
+Certificados
+browse
+Modelos de conteúdo
+folder_open
+Base de conhecimento
+group
+Usuários
+work
+Empresas
+live_help
+Questionários
+groups
+Comunidades
+psychology
+Skills
+BETA
+lan
+Organograma
+badge
+Funções de negócio
+award_star
+Competências
+monitoring
+Planos e Metas
+BETA
+track_changes
+PDI
+novoestudio
+Configurações
+Organização
+Navegação
+electrical_services
+Integrações
+flash_auto
+Piloto automático
+Regras do Jogo
+Comunicação
+sell
+Cobrança de inscrição
+credit_card
+Plano e assinatura
+Segurança NOVO
+smart_toy
+Controle de IA BETA
+palette
+Aparência
+ agents qa
+NOVOESTUDIO
+school
+agents qa
+Administrador 
+leaderboard
+Dashboard
+ 
+school
+Aprendizagem
+ 
+group
+Usuários
+ 
+work
+Empresas
+ 
+live_help
+Questionários
+ 
+groups
+Comunidades
+ 
+psychology
+Skills
+BETA
+ 
+monitoring
+Planos e Metas
+BETA
+NOVOESTUDIO
+Configurações
+Estúdio > Domine SQL Básico e Modelagem Relacional > Atividades > Editando 
+Voltar
+Principais Conceitos de Bancos de Dados Relacionais
+Aula
+Dados
+Conteúdo
+
+Partes da aula
+
+add
+Adicionar parte
+
+00:00:00
+
+00:00:05
+
+Salvar e regerar
+Salvar como rascunho
+Cancelar
+restore_page
+Layout
+title
+Texto
+panorama
+Plano de fundo
+category
+Formas
+description
+Roteiro
+music_note
+Audio
+
+
+----- 9296252 | Consultas Básicas no SQL: SELECT e WHERE -----
+leaderboard
+Dashboard
+school
+Aprendizagem
+format_list_bulleted_add
+Conteúdos
+send
+Compartilhamentos
+description
+Registros
+BETA
+workspace_premium
+Certificados
+browse
+Modelos de conteúdo
+folder_open
+Base de conhecimento
+group
+Usuários
+work
+Empresas
+live_help
+Questionários
+groups
+Comunidades
+psychology
+Skills
+BETA
+lan
+Organograma
+badge
+Funções de negócio
+award_star
+Competências
+monitoring
+Planos e Metas
+BETA
+track_changes
+PDI
+novoestudio
+Configurações
+Organização
+Navegação
+electrical_services
+Integrações
+flash_auto
+Piloto automático
+Regras do Jogo
+Comunicação
+sell
+Cobrança de inscrição
+credit_card
+Plano e assinatura
+Segurança NOVO
+smart_toy
+Controle de IA BETA
+palette
+Aparência
+ agents qa
+NOVOESTUDIO
+school
+agents qa
+Administrador 
+leaderboard
+Dashboard
+ 
+school
+Aprendizagem
+ 
+group
+Usuários
+ 
+work
+Empresas
+ 
+live_help
+Questionários
+ 
+groups
+Comunidades
+ 
+psychology
+Skills
+BETA
+ 
+monitoring
+Planos e Metas
+BETA
+NOVOESTUDIO
+Configurações
+Estúdio > Domine SQL Básico e Modelagem Relacional > Atividades > Editando 
+Voltar
+Consultas Básicas no SQL: SELECT e WHERE
+Aula
+Dados
+Conteúdo
+
+Partes da aula
+
+add
+Adicionar parte
+
+00:00:00
+
+00:00:05
+
+Salvar e regerar
+Salvar como rascunho
+Cancelar
+restore_page
+Layout
+title
+Texto
+panorama
+Plano de fundo
+category
+Formas
+description
+Roteiro
+music_note
+Audio

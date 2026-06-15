@@ -1,0 +1,108 @@
+# -*- coding: utf-8 -*-
+"""Gera o ESQUELETO (wizard + 'Gerar') dos cursos 1..4 do lote, em sequência,
+sem esperar o render completo (o conteúdo renderiza async na fila do ambiente).
+Registra os ids em evidencias/qualidade_ia_ids.txt para a fase de extração."""
+import re
+import sys
+import time
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _twygo as tw
+
+CURSOS = [
+    {"slug": "sql", "theme": "Fundamentos de SQL", "audience": "Iniciantes em banco de dados",
+     "n": 3, "objective": "Capacitar iniciantes a escrever consultas SQL básicas (SELECT, WHERE, JOIN) e entender modelagem relacional."},
+    {"slug": "git", "theme": "Boas práticas de Git", "audience": "Desenvolvedores iniciantes",
+     "n": 3, "objective": "Ensinar o fluxo essencial de Git: commits, branches, merge, pull request e resolução de conflitos."},
+    {"slug": "nr35", "theme": "NR-35 Trabalho em Altura", "audience": "Trabalhadores da construção civil",
+     "n": 3, "objective": "Capacitar trabalhadores nos requisitos da NR-35 para execução segura de trabalho em altura."},
+    {"slug": "atendimento", "theme": "Atendimento ao Cliente", "audience": "Equipe de atendimento",
+     "n": 3, "objective": "Desenvolver habilidades de atendimento ao cliente com excelência, empatia e resolução de problemas."},
+    {"slug": "lideranca", "theme": "Liderança de Equipes", "audience": "Novos gestores",
+     "n": 3, "objective": "Preparar novos gestores para liderar equipes com comunicação, feedback e gestão de desempenho."},
+]
+ALVOS = [1, 2, 3, 4]  # git, nr35, atendimento, lideranca (sql=0 já gerado: 807992)
+IDS_FILE = tw.ROOT / "evidencias" / "qualidade_ia_ids.txt"
+c = tw.cfg("NOVOEST")
+
+
+def esperar_botao(page, padrao_regex, timeout_s=180):
+    fim = time.time() + timeout_s
+    while time.time() < fim:
+        btns = page.get_by_role("button", name=re.compile(padrao_regex, re.I))
+        for i in range(btns.count()):
+            b = btns.nth(i)
+            try:
+                if b.is_visible() and b.is_enabled():
+                    return b
+            except Exception:
+                pass
+        page.wait_for_timeout(2000)
+    return None
+
+
+def gerar_um(page, spec):
+    PASTA = tw.ROOT / "evidencias" / f"qualidade_ia_{spec['slug']}"
+    page.goto(f"{c['base_url']}/o/{c['org_id']}/contents/new_with_ai",
+              wait_until="domcontentloaded", timeout=45000)
+    page.wait_for_timeout(5000)
+    tw.dispensar_nps(page)
+    page.get_by_text(re.compile(r"Assistente de cria", re.I)).first.click(timeout=10000)
+    page.wait_for_timeout(5000)
+    tw.dispensar_nps(page)
+    page.locator('input[name="theme"]').fill(spec["theme"])
+    page.locator('input[name="targetAudience"]').fill(spec["audience"])
+    n = page.locator('input[name="numberOfLessons"]'); n.click(); n.fill(""); n.fill(str(spec["n"]))
+    for lbl in ["Página", "Aula"]:
+        try:
+            page.get_by_text(lbl, exact=True).first.click(timeout=2500)
+        except Exception:
+            pass
+    page.locator('textarea[name="objective"]').fill(spec["objective"])
+    page.wait_for_timeout(600)
+    passo = 1
+    while passo < 9:
+        disparo = esperar_botao(page, r"^Gerar$|Gerar curso|Criar curso|Concluir e gerar|Finalizar", timeout_s=5)
+        if disparo:
+            tw.snap(page, PASTA, "09-antes-disparo")
+            disparo.click(timeout=10000)
+            break
+        prox = esperar_botao(page, r"^(Próximo|Avançar|Continuar)$", timeout_s=180)
+        if not prox:
+            print(f"   [{spec['slug']}] passo {passo}: Próximo não habilitou — abortando este")
+            return None
+        passo += 1
+        prox.click(timeout=8000)
+        page.wait_for_timeout(3500)
+        tw.dispensar_nps(page)
+    # capturar id
+    curso_id = None
+    fim = time.time() + 180
+    while time.time() < fim:
+        m = re.search(r"/contents/(\d+)/edit", page.url)
+        if m:
+            curso_id = m.group(1); break
+        page.wait_for_timeout(3000)
+    tw.snap(page, PASTA, "10-pos-disparo")
+    return curso_id
+
+
+with tw.sync_playwright() as p:
+    browser, ctx, page = tw.nova_pagina(p, width=1440, height=900)
+    tw.login(page, c)
+    linhas = ["sql=807992"]  # sql já gerado
+    for idx in ALVOS:
+        spec = CURSOS[idx]
+        print(f"\n=== gerando esqueleto: {spec['theme']} (slug={spec['slug']}) ===")
+        try:
+            cid = gerar_um(page, spec)
+        except Exception as e:
+            print(f"   ERRO {e}"); cid = None
+        print(f">>> {spec['slug']} id={cid}")
+        linhas.append(f"{spec['slug']}={cid}")
+        IDS_FILE.write_text("\n".join(linhas) + "\n", encoding="utf-8")
+    print(f"\n=== IDS gravados em {IDS_FILE} ===")
+    for l in linhas:
+        print(f"  {l}")
+    ctx.close(); browser.close()
