@@ -1,0 +1,589 @@
+CURSO: Modo administrador  (slug=nr35, id=807994)
+ESTRUTURA:
+  - 1 Fundamentos da NR-35 e Normas de Segurança Aula Liberada 1 pendentes
+  - 2 Identificação de Riscos e Prevenção de Acidentes Página Liberada 1 pendentes
+  - 3 Procedimentos Práticos para Trabalho em Altura Aula Liberada 1 pendentes
+
+--- [Aula] 9296257 ---
+leaderboard
+Dashboard
+school
+Aprendizagem
+format_list_bulleted_add
+Conteúdos
+send
+Compartilhamentos
+description
+Registros
+BETA
+workspace_premium
+Certificados
+browse
+Modelos de conteúdo
+folder_open
+Base de conhecimento
+group
+Usuários
+work
+Empresas
+live_help
+Questionários
+groups
+Comunidades
+psychology
+Skills
+BETA
+lan
+Organograma
+badge
+Funções de negócio
+award_star
+Competências
+monitoring
+Planos e Metas
+BETA
+track_changes
+PDI
+novoestudio
+Configurações
+Organização
+Navegação
+electrical_services
+Integrações
+flash_auto
+Piloto automático
+Regras do Jogo
+Comunicação
+sell
+Cobrança de inscrição
+credit_card
+Plano e assinatura
+Segurança NOVO
+smart_toy
+Controle de IA BETA
+palette
+Aparência
+ agents qa
+NOVOESTUDIO
+school
+agents qa
+Administrador 
+leaderboard
+Dashboard
+ 
+school
+Aprendizagem
+ 
+group
+Usuários
+ 
+work
+Empresas
+ 
+live_help
+Questionários
+ 
+groups
+Comunidades
+ 
+psychology
+Skills
+BETA
+ 
+monitoring
+Planos e Metas
+BETA
+NOVOESTUDIO
+Configurações
+Estúdio > Segurança Essencial em Trabalho em Altura > Atividades > Editando 
+Voltar
+Fundamentos da NR-35 e Normas de Segurança
+Aula
+Dados
+Conteúdo
+
+Partes da aula
+
+NR-35 Fundamentos
+
+Duração: 00:00:10
+
+content_copy
+edit
+delete
+
+Definição NR-35
+
+Duração: 00:00:09
+
+content_copy
+edit
+delete
+
+Abrangência NR-35
+
+Duração: 00:00:11
+
+content_copy
+edit
+delete
+
+Riscos Altura
+
+Duração: 00:00:13
+
+content_copy
+edit
+delete
+
+Empregador NR-35
+
+Duração: 00:00:11
+
+content_copy
+edit
+delete
+
+Responsabilidades
+
+Duração: 00:00:11
+
+content_copy
+edit
+delete
+
+Treinamento NR-35
+
+Duração: 00:00:12
+
+content_copy
+edit
+delete
+
+EPIs Essenciais
+
+Duração: 00:00:11
+
+content_copy
+edit
+delete
+
+Normas Associadas
+
+Duração: 00:00:12
+
+content_copy
+edit
+delete
+
+Planejamento Altura
+
+Duração: 00:00:12
+
+content_copy
+edit
+delete
+
+Análise de Risco
+
+Duração: 00:00:12
+
+content_copy
+edit
+delete
+
+Sinalização
+
+Duração: 00:00:09
+
+content_copy
+edit
+delete
+
+Ancoragem Segura
+
+Duração: 00:00:09
+
+content_copy
+edit
+delete
+
+Manutenção EPIs
+
+Duração: 00:00:10
+
+content_copy
+edit
+delete
+
+Conduta Segura
+
+Duração: 00:00:10
+
+content_copy
+edit
+delete
+
+Trabalho em Equipe
+
+Duração: 00:00:10
+
+content_copy
+edit
+delete
+
+Prevenção Acidentes
+
+Duração: 00:00:10
+
+content_copy
+edit
+delete
+
+Casos Reais
+
+Duração: 00:00:10
+
+content_copy
+edit
+delete
+
+Fundamentos NR-35
+
+Duração: 00:00:11
+
+content_copy
+edit
+delete
+
+Próximos Passos
+
+Duração: 00:00:11
+
+content_copy
+edit
+delete
+add
+Adicionar parte
+
+00:00:00
+
+00:03:45
+
+Salvar e regerar
+Salvar como rascunho
+Cancelar
+restore_page
+Layout
+title
+Texto
+panorama
+Plano de fundo
+category
+Formas
+description
+Roteiro
+music_note
+Audio
+
+--- [Página] 9296258 ---
+Identificação de Riscos e Prevenção de Acidentes
+Para garantir a segurança no trabalho em altura, é fundamental reconhecer e compreender os riscos envolvidos, aplicando medidas preventivas eficazes que evitem acidentes e protejam a integridade dos trabalhadores.
+Aspectos Essenciais na Identificação de Riscos
+A identificação de riscos no trabalho em altura exige uma análise minuciosa do ambiente, equipamentos e procedimentos. É necessário observar fatores como estabilidade das estruturas, condições climáticas, uso correto de equipamentos de proteção individual (EPIs) e coletivos (EPCs), além da capacitação dos trabalhadores para reconhecer situações perigosas. Essa etapa é o alicerce para a prevenção, pois permite antecipar possíveis falhas e agir proativamente.
+Principais Riscos no Trabalho em Altura
+Os riscos mais comuns incluem quedas por falta de proteção adequada, falhas em ancoragens, uso incorreto de equipamentos, condições ambientais adversas e atitudes inseguras. Cada um desses riscos pode resultar em acidentes graves ou fatais, tornando imprescindível a identificação e o controle rigoroso de cada um deles.
+Quedas devido à ausência ou falha de sistemas de proteção contra quedas
+Equipamentos de proteção individual inadequados ou mal utilizados
+Estruturas instáveis ou superfícies escorregadias
+Falta de treinamento e conscientização sobre procedimentos seguros
+Medidas Preventivas para Minimizar Acidentes
+A prevenção de acidentes em altura é baseada na aplicação rigorosa da NR-35, que estabelece requisitos para planejamento, organização e execução segura dessas atividades. Entre as medidas estão a adoção de sistemas de ancoragem certificados, inspeção periódica dos equipamentos, sinalização adequada dos locais de trabalho, e o uso obrigatório de EPIs como cintos de segurança, capacetes e calçados apropriados.
+Além disso, a capacitação contínua dos trabalhadores é crucial para que reconheçam riscos, saibam como agir em situações emergenciais e sigam corretamente os procedimentos definidos. A supervisão qualificada no ambiente de trabalho assegura a aplicação dessas medidas e a correção imediata de desvios.
+Erros Frequentes que Potencializam Riscos
+Mesmo com normas claras, alguns erros ainda são comuns e aumentam o perigo no trabalho em altura. Entre eles, destacam-se a negligência na inspeção dos equipamentos, o não uso ou uso incorreto dos EPIs, a pressa para executar tarefas sem o devido planejamento e a falta de comunicação eficaz entre a equipe. Esses comportamentos comprometem a segurança e devem ser evitados com rigor.
+Ignorar sinais de desgaste ou defeito nos equipamentos de segurança
+Realizar trabalhos sem avaliação prévia dos riscos específicos do local
+Falta de atenção às condições climáticas adversas que podem afetar a segurança
+Checklist Essencial para Segurança em Trabalho em Altura
+Para facilitar a prevenção e garantir a segurança, recomenda-se a utilização de um checklist que compreenda os principais pontos de controle antes, durante e após a execução do trabalho em altura:
+Verificação da integridade e certificação dos equipamentos de proteção
+Avaliação das condições do ambiente e possíveis riscos adicionais
+Confirmação do treinamento e capacitação dos trabalhadores envolvidos
+Planejamento detalhado das atividades e definição clara dos procedimentos
+Supervisão constante e comunicação eficiente durante toda a execução
+A correta identificação dos riscos e a implementação efetiva das medidas preventivas são pilares para a
+
+--- [Aula] 9296259 ---
+leaderboard
+Dashboard
+school
+Aprendizagem
+format_list_bulleted_add
+Conteúdos
+send
+Compartilhamentos
+description
+Registros
+BETA
+workspace_premium
+Certificados
+browse
+Modelos de conteúdo
+folder_open
+Base de conhecimento
+group
+Usuários
+work
+Empresas
+live_help
+Questionários
+groups
+Comunidades
+psychology
+Skills
+BETA
+lan
+Organograma
+badge
+Funções de negócio
+award_star
+Competências
+monitoring
+Planos e Metas
+BETA
+track_changes
+PDI
+novoestudio
+Configurações
+Organização
+Navegação
+electrical_services
+Integrações
+flash_auto
+Piloto automático
+Regras do Jogo
+Comunicação
+sell
+Cobrança de inscrição
+credit_card
+Plano e assinatura
+Segurança NOVO
+smart_toy
+Controle de IA BETA
+palette
+Aparência
+ agents qa
+NOVOESTUDIO
+school
+agents qa
+Administrador 
+leaderboard
+Dashboard
+ 
+school
+Aprendizagem
+ 
+group
+Usuários
+ 
+work
+Empresas
+ 
+live_help
+Questionários
+ 
+groups
+Comunidades
+ 
+psychology
+Skills
+BETA
+ 
+monitoring
+Planos e Metas
+BETA
+NOVOESTUDIO
+Configurações
+Estúdio > Segurança Essencial em Trabalho em Altura > Atividades > Editando 
+Voltar
+Procedimentos Práticos para Trabalho em Altura
+Aula
+Dados
+Conteúdo
+
+Partes da aula
+
+Objetivo Prático
+
+Duração: 00:00:11
+
+content_copy
+edit
+delete
+
+Preparação Local
+
+Duração: 00:00:08
+
+content_copy
+edit
+delete
+
+Checagem EPIs
+
+Duração: 00:00:10
+
+content_copy
+edit
+delete
+
+Cinturão e Talabarte
+
+Duração: 00:00:10
+
+content_copy
+edit
+delete
+
+Ancoragem Segura
+
+Duração: 00:00:11
+
+content_copy
+edit
+delete
+
+Movimentação Segura
+
+Duração: 00:00:11
+
+content_copy
+edit
+delete
+
+Andaimes e Plataformas
+
+Duração: 00:00:11
+
+content_copy
+edit
+delete
+
+Escadas Seguras
+
+Duração: 00:00:11
+
+content_copy
+edit
+delete
+
+Comunicação
+
+Duração: 00:00:10
+
+content_copy
+edit
+delete
+
+Clima Adverso
+
+Duração: 00:00:12
+
+content_copy
+edit
+delete
+
+Monitoramento Contínuo
+
+Duração: 00:00:12
+
+content_copy
+edit
+delete
+
+Emergência Resgate
+
+Duração: 00:00:09
+
+content_copy
+edit
+delete
+
+Registro Atividades
+
+Duração: 00:00:11
+
+content_copy
+edit
+delete
+
+Responsabilidades Trabalhador
+
+Duração: 00:00:12
+
+content_copy
+edit
+delete
+
+Responsabilidades Empregador
+
+Duração: 00:00:12
+
+content_copy
+edit
+delete
+
+Boas Práticas
+
+Duração: 00:00:11
+
+content_copy
+edit
+delete
+
+Erros Comuns
+
+Duração: 00:00:15
+
+content_copy
+edit
+delete
+
+Capacitação Contínua
+
+Duração: 00:00:10
+
+content_copy
+edit
+delete
+
+Resumo Procedimentos
+
+Duração: 00:00:12
+
+content_copy
+edit
+delete
+add
+Adicionar parte
+
+00:00:00
+
+00:03:40
+
+Salvar e regerar
+Salvar como rascunho
+Cancelar
+restore_page
+Layout
+title
+Texto
+panorama
+Plano de fundo
+category
+Formas
+description
+Roteiro
+music_note
+Audio

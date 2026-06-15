@@ -1,0 +1,284 @@
+CURSO: Modo administrador  (slug=git, id=807993)
+ESTRUTURA:
+  - 1 Fluxo Essencial do Git Aula · 1 sub-atividades Liberada 1 pendentes
+  - 1.1 Gerenciando Commits e Branches Página Liberada 1 pendentes
+  - 2 Merge, Pull Requests e Resolução de Conflitos Página Liberada 1 pendentes
+
+--- [Aula] 9296253 ---
+leaderboard
+Dashboard
+school
+Aprendizagem
+format_list_bulleted_add
+Conteúdos
+send
+Compartilhamentos
+description
+Registros
+BETA
+workspace_premium
+Certificados
+browse
+Modelos de conteúdo
+folder_open
+Base de conhecimento
+group
+Usuários
+work
+Empresas
+live_help
+Questionários
+groups
+Comunidades
+psychology
+Skills
+BETA
+lan
+Organograma
+badge
+Funções de negócio
+award_star
+Competências
+monitoring
+Planos e Metas
+BETA
+track_changes
+PDI
+novoestudio
+Configurações
+Organização
+Navegação
+electrical_services
+Integrações
+flash_auto
+Piloto automático
+Regras do Jogo
+Comunicação
+sell
+Cobrança de inscrição
+credit_card
+Plano e assinatura
+Segurança NOVO
+smart_toy
+Controle de IA BETA
+palette
+Aparência
+ agents qa
+NOVOESTUDIO
+school
+agents qa
+Administrador 
+leaderboard
+Dashboard
+ 
+school
+Aprendizagem
+ 
+group
+Usuários
+ 
+work
+Empresas
+ 
+live_help
+Questionários
+ 
+groups
+Comunidades
+ 
+psychology
+Skills
+BETA
+ 
+monitoring
+Planos e Metas
+BETA
+NOVOESTUDIO
+Configurações
+Estúdio > Git Essencial: Domine Fluxos e Conflitos > Atividades > Editando 
+Voltar
+Fluxo Essencial do Git
+Aula
+Dados
+Conteúdo
+
+Partes da aula
+
+Git Essencial
+
+Duração: 00:00:12
+
+content_copy
+edit
+delete
+
+Importância Git
+
+Duração: 00:00:10
+
+content_copy
+edit
+delete
+
+Fluxo Git
+
+Duração: 00:00:14
+
+content_copy
+edit
+delete
+
+Commit
+
+Duração: 00:00:10
+
+content_copy
+edit
+delete
+
+Mensagens Commit
+
+Duração: 00:00:10
+
+content_copy
+edit
+delete
+
+Branches
+
+Duração: 00:00:10
+
+content_copy
+edit
+delete
+
+Branches Git
+
+Duração: 00:00:12
+
+content_copy
+edit
+delete
+
+Merge Git
+
+Duração: 00:00:11
+
+content_copy
+edit
+delete
+
+Conflitos Merge
+
+Duração: 00:00:13
+
+content_copy
+edit
+delete
+
+Pull Requests
+
+Duração: 00:00:12
+
+content_copy
+edit
+delete
+
+Fluxo Colaborativo
+
+Duração: 00:00:12
+
+content_copy
+edit
+delete
+
+Evitar Conflitos
+
+Duração: 00:00:10
+
+content_copy
+edit
+delete
+
+Fluxo Git
+
+Duração: 00:00:12
+
+content_copy
+edit
+delete
+
+Próximos Passos
+
+Duração: 00:00:10
+
+content_copy
+edit
+delete
+add
+Adicionar parte
+
+00:00:00
+
+00:02:43
+
+Salvar e regerar
+Salvar como rascunho
+Cancelar
+restore_page
+Layout
+title
+Texto
+panorama
+Plano de fundo
+category
+Formas
+description
+Roteiro
+music_note
+Audio
+
+--- [Página] 9296254 ---
+Gerenciando Commits e Branches
+Dominar o gerenciamento de commits e branches é fundamental para manter um fluxo de trabalho organizado, seguro e colaborativo no Git. Nesta seção, exploraremos como criar, gerenciar e otimizar essas operações essenciais para desenvolvedores iniciantes.
+Fundamentos e Importância dos Commits
+Um commit representa uma captura do estado atual do código, funcionando como um ponto seguro para revisitar ou reverter alterações. Cometer com mensagens claras e frequentes ajuda a documentar o progresso do projeto e facilita a colaboração entre equipes. Sem um bom controle de commits, o histórico do projeto se torna confuso, dificultando a identificação de mudanças importantes.
+Para garantir a qualidade dos commits, recomenda-se que cada alteração seja lógica, focada em uma tarefa específica, e acompanhada de uma mensagem descritiva que explique o "porquê" da mudança, não apenas o "o quê". Isso torna o histórico mais compreensível e útil para revisões futuras.
+Branches: Organização e Isolamento de Trabalhos
+Branches são ramificações independentes do desenvolvimento que permitem trabalhar em funcionalidades, correções ou experimentos sem afetar o código principal. Essa separação facilita o isolamento de mudanças e reduz riscos de conflitos em ambientes colaborativos.
+Criar branches com nomes claros e padronizados, como feature/nome-da-funcionalidade ou bugfix/descricao, ajuda a identificar rapidamente o propósito de cada ramificação. Além disso, trabalhar em branches curtas e mesclá-las regularmente ao branch principal evita grandes divergências e facilita a integração.
+Boas Práticas para Commits e Branches
+Faça commits pequenos e frequentes para facilitar o rastreamento e a revisão.
+Escreva mensagens de commit claras, explicando o motivo das alterações.
+Use branches para cada nova funcionalidade ou correção, mantendo o branch principal estável.
+Sincronize frequentemente seu branch com o principal para minimizar conflitos futuros.
+Remova branches obsoletos após a mesclagem para manter o repositório organizado.
+Erros Comuns e Como Evitá-los
+Um erro frequente é fazer commits muito grandes e genéricos, dificultando a compreensão e a reversão de mudanças específicas. Outra armadilha é trabalhar direto no branch principal sem usar ramificações, o que pode comprometer a estabilidade do projeto e gerar conflitos complexos.
+Também é comum esquecer de atualizar o branch local com as alterações do branch principal antes de iniciar um trabalho, aumentando a probabilidade de conflitos difíceis de resolver. Por isso, manter uma rotina de atualização e revisões frequentes é essencial.
+Finalmente, negligenciar a organização e nomenclatura dos branches pode gerar confusão na equipe, atrasos e retrabalhos. Estabelecer padrões claros desde o início evita esses problemas.
+Aplicação Prática para Desenvolvedores Iniciantes
+Ao iniciar um novo recurso, crie um branch específico para esse propósito. Realize commits frequentes com mensagens detalhadas sobre o que foi modificado e por quê. Antes de mesclar seu trabalho ao branch principal, atualize seu branch com as últimas alterações para evitar conflitos inesperados.
+Essa prática ajuda a manter o histórico claro e o código estável, facilitando a colaboração e a revisão por outros membros da equipe. Com o tempo, esse fluxo se torna natural e contribui para projetos mais organizados e com menos retrabalho.
+Dominar esses conceitos desde o início é um investimento que aumenta a produtividade e a 
+
+--- [Página] 9296255 ---
+Merge, Pull Requests e Resolução de Conflitos
+Entender como integrar alterações em diferentes branches e lidar com conflitos é crucial para um fluxo de trabalho colaborativo eficiente no Git.
+Fundamentos do Merge e sua importância
+O merge é o processo que combina as alterações feitas em diferentes branches para criar uma linha única de desenvolvimento. Ele é essencial para consolidar o trabalho paralelo de equipes, permitindo que funcionalidades ou correções sejam integradas ao branch principal sem perder histórico ou causar inconsistências.
+Ao realizar um merge, o Git tenta automaticamente unir as mudanças. Porém, quando duas alterações conflitantes ocorrem no mesmo trecho de código, surge um conflito que requer intervenção manual para garantir a integridade do projeto.
+Como funcionam os Pull Requests e seu papel na colaboração
+Pull Requests são solicitações para integrar alterações de uma branch para outra, geralmente para o branch principal. Eles funcionam como um espaço para revisão de código, discussão e validação antes da integração definitiva, promovendo qualidade e transparência no desenvolvimento.
+Por meio do Pull Request, é possível revisar modificações, sugerir melhorias e garantir que o merge não introduzirá problemas, além de facilitar o acompanhamento do histórico das mudanças e a comunicação entre os membros da equipe.
+Estratégias eficientes para resolução de conflitos
+Quando o Git não consegue fazer o merge automático devido a alterações conflitantes, é necessário resolver os conflitos manualmente. Para isso, o desenvolvedor deve analisar cuidadosamente as diferenças, escolher as alterações corretas ou combinar trechos para preservar a lógica desejada.
+Boas práticas para resolver conflitos incluem: comunicar-se com os membros da equipe para entender intenções, testar o código após a resolução e documentar as decisões tomadas para facilitar futuras manutenções.
+Dicas práticas para um fluxo de merge e pull request eficiente
+Mantenha branches pequenos e focados para facilitar revisões e merges
+Atualize seu branch frequentemente com as mudanças do branch principal para minimizar conflitos
+Use mensagens claras e descritivas nos commits para facilitar o entendimento do histórico
+Revise cuidadosamente os Pull Requests antes de aprovar para garantir qualidade e evitar retrabalho
+Resolva conflitos localmente com calma, testando as alterações antes de finalizar o merge
+Seguir essas práticas facilita a integração contínua, reduz erros e fortalece a colaboração entre desenvolvedores, resultando em projetos mais organizados e estáveis.
+Compreender e aplicar corretamente merge, pull requests e resolução de conflitos é fundamental para desenvolver em equipe com Git, garantindo um fluxo harmonioso e produtivo.

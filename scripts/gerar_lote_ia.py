@@ -22,7 +22,8 @@ CURSOS = [
     {"slug": "lideranca", "theme": "Liderança de Equipes", "audience": "Novos gestores",
      "n": 3, "objective": "Preparar novos gestores para liderar equipes com comunicação, feedback e gestão de desempenho."},
 ]
-ALVOS = [1, 2, 3, 4]  # git, nr35, atendimento, lideranca (sql=0 já gerado: 807992)
+import os as _os
+ALVOS = [int(x) for x in _os.environ.get("ALVOS", "2,3,4").split(",")]
 IDS_FILE = tw.ROOT / "evidencias" / "qualidade_ia_ids.txt"
 c = tw.cfg("NOVOEST")
 
@@ -44,13 +45,24 @@ def esperar_botao(page, padrao_regex, timeout_s=180):
 
 def gerar_um(page, spec):
     PASTA = tw.ROOT / "evidencias" / f"qualidade_ia_{spec['slug']}"
-    page.goto(f"{c['base_url']}/o/{c['org_id']}/contents/new_with_ai",
-              wait_until="domcontentloaded", timeout=45000)
-    page.wait_for_timeout(5000)
-    tw.dispensar_nps(page)
-    page.get_by_text(re.compile(r"Assistente de cria", re.I)).first.click(timeout=10000)
-    page.wait_for_timeout(5000)
-    tw.dispensar_nps(page)
+    # entrar no assistente com retry (a SPA às vezes não renderiza o card sob carga)
+    entrou = False
+    for tentativa in range(4):
+        page.goto(f"{c['base_url']}/o/{c['org_id']}/contents/new_with_ai",
+                  wait_until="domcontentloaded", timeout=45000)
+        page.wait_for_timeout(6000)
+        tw.dispensar_nps(page)
+        card = page.get_by_text(re.compile(r"Assistente de cria", re.I)).first
+        if card.count() and card.is_visible():
+            card.click(timeout=10000)
+            page.wait_for_timeout(5000)
+            tw.dispensar_nps(page)
+            if page.locator('input[name="theme"]').count():
+                entrou = True; break
+        print(f"   [{spec['slug']}] retry entrar no assistente ({tentativa+1}/4)")
+        page.wait_for_timeout(5000)
+    if not entrou:
+        raise RuntimeError("não consegui entrar no Assistente de criação")
     page.locator('input[name="theme"]').fill(spec["theme"])
     page.locator('input[name="targetAudience"]').fill(spec["audience"])
     n = page.locator('input[name="numberOfLessons"]'); n.click(); n.fill(""); n.fill(str(spec["n"]))
@@ -91,7 +103,14 @@ def gerar_um(page, spec):
 with tw.sync_playwright() as p:
     browser, ctx, page = tw.nova_pagina(p, width=1440, height=900)
     tw.login(page, c)
-    linhas = ["sql=807992"]  # sql já gerado
+    # merge: lê ids existentes e atualiza só os processados
+    ids = {}
+    if IDS_FILE.exists():
+        for ln in IDS_FILE.read_text(encoding="utf-8").splitlines():
+            if "=" in ln:
+                k, v = ln.split("=", 1)
+                ids[k.strip()] = v.strip()
+    ids.setdefault("sql", "807992"); ids.setdefault("git", "807993"); ids.setdefault("nr35", "807994")
     for idx in ALVOS:
         spec = CURSOS[idx]
         print(f"\n=== gerando esqueleto: {spec['theme']} (slug={spec['slug']}) ===")
@@ -100,9 +119,10 @@ with tw.sync_playwright() as p:
         except Exception as e:
             print(f"   ERRO {e}"); cid = None
         print(f">>> {spec['slug']} id={cid}")
-        linhas.append(f"{spec['slug']}={cid}")
-        IDS_FILE.write_text("\n".join(linhas) + "\n", encoding="utf-8")
-    print(f"\n=== IDS gravados em {IDS_FILE} ===")
-    for l in linhas:
-        print(f"  {l}")
+        if cid:
+            ids[spec["slug"]] = cid
+        IDS_FILE.write_text("\n".join(f"{k}={v}" for k, v in ids.items()) + "\n", encoding="utf-8")
+    print(f"\n=== IDS em {IDS_FILE} ===")
+    for k, v in ids.items():
+        print(f"  {k}={v}")
     ctx.close(); browser.close()
