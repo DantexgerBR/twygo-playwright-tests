@@ -3,8 +3,10 @@
 de ids). Para cada curso: lista atividades (estúdio), abre o sub-tab Conteúdo de
 cada Página e extrai o texto rico. Salva dump por curso + screenshots.
 (O conteúdo das Aulas é vídeo/canvas — avaliado à parte via player.)"""
+import os
 import re
 import sys
+import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -14,11 +16,12 @@ IDS_FILE = tw.ROOT / "evidencias" / "qualidade_ia_ids.txt"
 c = tw.cfg("NOVOEST")
 tid = lambda v: f'[data-test-id="{v}"]'
 
+FILTRO = [s for s in os.environ.get("SLUGS", "").split(",") if s]
 ids = {}
 for ln in IDS_FILE.read_text(encoding="utf-8").splitlines():
     if "=" in ln:
         k, v = ln.split("=", 1)
-        if v.strip() and v.strip() != "None":
+        if v.strip() and v.strip() != "None" and (not FILTRO or k.strip() in FILTRO):
             ids[k.strip()] = v.strip()
 
 with tw.sync_playwright() as p:
@@ -36,6 +39,23 @@ with tw.sync_playwright() as p:
         except Exception:
             print("  [!] lista não carregou"); continue
         page.wait_for_timeout(2500)
+
+        # esperar o render das aulas terminar (até ~9 min) p/ extrair slides reais
+        fim = time.time() + 540
+        while time.time() < fim:
+            corpo = page.evaluate("()=>document.body.innerText")
+            if not re.search(r"sendo renderizadas|Renderizando", corpo, re.I):
+                break
+            print("  [render] aguardando aulas renderizarem...")
+            page.wait_for_timeout(20000)
+            page.goto(f"{c['base_url']}/o/{c['org_id']}/contents/{cid}/edit?tab=studio",
+                      wait_until="domcontentloaded", timeout=45000)
+            tw.dispensar_nps(page)
+            try:
+                page.locator(tid("creation-studio-activities-list")).wait_for(state="visible", timeout=15000)
+            except Exception:
+                pass
+            page.wait_for_timeout(2000)
 
         # título do curso
         titulo_curso = page.evaluate("()=>{const h=document.querySelector('h1,h2');return h?h.innerText.trim():''}")
