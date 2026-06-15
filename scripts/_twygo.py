@@ -76,7 +76,11 @@ def cfg(prefix: str = "") -> dict:
 # Browser / página
 # --------------------------------------------------------------------------- #
 def nova_pagina(p, headless: bool = False, slow_mo: int = 350, width: int = 1500, height: int = 950):
-    """Cria browser+context+page com os defaults do projeto (pt-BR, viewport amplo)."""
+    """Cria browser+context+page com os defaults do projeto (pt-BR, viewport amplo).
+    Defina TW_HEADLESS=1 no ambiente para rodar sem janela (não rouba foco)."""
+    if os.environ.get("TW_HEADLESS") == "1":
+        headless = True
+        slow_mo = 0
     browser = p.chromium.launch(headless=headless, slow_mo=slow_mo)
     ctx = browser.new_context(viewport={"width": width, "height": height}, locale="pt-BR")
     return browser, ctx, ctx.new_page()
