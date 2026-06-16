@@ -1,0 +1,27 @@
+total=300 | ttl=900(pré-fix)=286 | ttl=3600(pós-fix)=14
+  ttl=900 período: 2026-06-04 17:01:20 -> 2026-06-11 12:58:00
+  ttl=3600 período: 2026-06-11 16:38:21 -> 2026-06-15 18:38:57  (fix entrou ~aqui)
+
+== PÓS-FIX (ttl=3600) (14 tokens) — gaps por usuário ==
+  user 7092750: 6 tokens | span=5874min | min_gap=3069s | mediana_gap=8050s | gaps<5min=0/5
+  user 7092771: 3 tokens | span=4645min | min_gap=9500s | mediana_gap=269188s | gaps<5min=0/2
+  user 7092773: 2 tokens | span=1261min | min_gap=75683s | mediana_gap=75683s | gaps<5min=0/1
+  user 7092777: 2 tokens | span=50min | min_gap=3002s | mediana_gap=3002s | gaps<5min=0/1
+  user 7088726: 1 token (sem gap)
+
+== últimos 15 tokens (mais recentes) ==
+  id=135035962 2026-06-11 12:58:00 user=7092773 ttl=900
+  id=135035963 2026-06-11 16:38:21 user=7088726 ttl=3600
+  id=135035964 2026-06-11 16:45:12 user=7092750 ttl=3600
+  id=135035965 2026-06-11 17:32:05 user=7092773 ttl=3600
+  id=135035966 2026-06-11 18:59:22 user=7092750 ttl=3600
+  id=135035967 2026-06-12 12:32:04 user=7092771 ttl=3600
+  id=135035968 2026-06-12 14:33:28 user=7092773 ttl=3600
+  id=135035969 2026-06-12 15:10:24 user=7092771 ttl=3600
+  id=135035970 2026-06-12 17:03:27 user=7092777 ttl=3600
+  id=135035971 2026-06-12 17:53:29 user=7092777 ttl=3600
+  id=135035972 2026-06-15 13:06:11 user=7092750 ttl=3600
+  id=135035973 2026-06-15 16:21:48 user=7092750 ttl=3600
+  id=135035974 2026-06-15 17:47:48 user=7092750 ttl=3600
+  id=135035975 2026-06-15 17:56:52 user=7092771 ttl=3600
+  id=135035976 2026-06-15 18:38:57 user=7092750 ttl=3600
