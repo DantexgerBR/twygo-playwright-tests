@@ -1,0 +1,32 @@
+19802 — Variação de slides na geração por IA (PR #374) — DIAGNÓSTICO
+
+Fix #374 (twygo-ai-knowledge-agent): rotateWithinFormat escolhe deterministicamente,
+por slide_index, um design diferente DENTRO do mesmo design_format (body/Corpo).
+=> só tem efeito observável quando o modelo tem >=2 designs de Corpo do tipo Aula
+   (template_designs.design_format='body' AND resource_type='DesignEditorConfig').
+
+Levantamento no banco (twygo_db_rc, stage):
+
+1) Modelos da org 37061 (NOVOEST, único com Studio no meu conjunto de logins):
+   - tpl 89 "aula_expositiva" (default): body=1
+   - tpl 90 "trilha_modular": body=1
+   - tpl 91 "rapida": body=0
+   => NENHUM com >=2 corpos. Por isso as aulas geradas em 15/06 saíram com slides
+      de estrutura idêntica — ESPERADO (modelo de 1 corpo), não o bug.
+
+2) Modelos com >=2 designs de Corpo do tipo Aula (DesignEditorConfig) em TODAS as orgs:
+   - tpl 96 org 36952 (5), tpl 119 org 36952 (3), tpl 43 org 36863 (2),
+     tpl 65 org 36863 (2), tpl 88 org 36952 (2), tpl 95 org 36952 (2)
+   => existem APENAS nas orgs 36952 e 36863 — nenhuma acessível por login
+      (meus perfis: 37061, 36675, 19653, 37048, 36912).
+
+3) Validação pura no banco em aulas já geradas (org 36952): inviável — os
+   design_editor_configs do tipo EventContent (aulas geradas) têm canva_content
+   NULO; o vínculo slide->variante-de-corpo não é rastreável sem engenharia
+   reversa profunda do schema.
+
+CONCLUSÃO: o cenário do rebote (slides com a mesma estrutura) exige um modelo
+multi-corpo que não está disponível em nenhum ambiente acessível. O fix é
+determinístico (rotateWithinFormat por slide_index) e tem suíte unitária verde
+no PR #374 (61 suites / 427 testes). Veredito por análise do fix + cobertura de
+testes + diagnóstico de ambiente (não reproduzível ao vivo nos modelos acessíveis).
