@@ -1,0 +1,18 @@
+== status das ai_generation_tasks ==
+  approved: 302 | 2026-06-02 17:35:33.834823 -> 2026-06-16 14:33:37.039601
+  completed: 74 | 2026-06-04 13:43:25.701505 -> 2026-06-15 17:49:33.363081
+  failed: 223 | 2026-06-09 14:06:00.310791 -> 2026-06-16 14:34:27.510903
+  processing: 1 | 2026-06-09 19:17:40.443214 -> 2026-06-09 19:17:40.443214
+  queued: 5 | 2026-06-04 14:27:15.673572 -> 2026-06-04 14:30:28.706390
+  skipped: 23 | 2026-06-05 19:49:16.166756 -> 2026-06-15 18:39:00.629557
+  superseded: 76 | 2026-06-03 17:03:57.494042 -> 2026-06-15 17:48:52.467240
+
+== error_code distintos (tarefas com erro) ==
+  code='PINECONE_TEMPLATE_DESIGNS_EMPTY': 214 | 2026-06-09 14:06:00.310791 -> 2026-06-16 14:34:27.501652
+  code='worker_execution_error': 9 | 2026-06-16 14:34:27.453648 -> 2026-06-16 14:34:27.510903
+
+== 19801 tool_use: tarefas cujo error_message casa ['tool_use', 'tool_result'] ==
+  ocorrências: 0
+
+== 19790 DynamoDB: tarefas cujo error_message casa ['ProvisionedThroughput', 'DynamoDb', 'throughput', 'checkpointer'] ==
+  ocorrências: 0
