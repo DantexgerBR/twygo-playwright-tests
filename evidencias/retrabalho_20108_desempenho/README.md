@@ -32,6 +32,16 @@ Sem o `results_for_filter`, não há como selecionar participantes → não cria
 não ativa autoavaliação → **não dá pra chegar na resposta da avaliação** (onde está o bug
 P0 "não prossegue").
 
+### Reforço CROSS-ORG (o 500 é sistêmico, não dado de uma org)
+Testado também no **36675** (org principal, Desempenho recém-habilitado):
+```
+GET /api/v1/o/36675/professionals/results_for_filter?page=1  -> 500
+GET /api/v1/o/36675/professionals?page=1                     -> 200
+GET /api/v1/o/36675/assessments?page=1                       -> 404 (modulo Avaliacoes indisponivel no 36675)
+```
+Ou seja: `results_for_filter` retorna **500 em 36675 E 37048** → bug do **endpoint**, não de
+dados de uma org específica. Bloqueia o seletor de participantes em qualquer org nossa.
+
 ### Leitura (anti-falso-positivo)
 - Esse **500 é reproduzível** e independe de parâmetros; é candidato a **bug próprio**
   (possível: o endpoint quebra com profissionais de dados incompletos — ex.: a lista plana
