@@ -1,36 +1,46 @@
 # 20108 (P0) — Avaliação de Desempenho não prossegue / autoavaliação
 
-**Ambiente alvo:** stage 37048 (Desempenho/Gestão de Time). Org da evidência do card: 19830 (linkada — não usar).
+**Ambiente:** stage 37048 (Desempenho/Gestão de Time). Org da evidência do card: 19830 (linkada — não usar).
 
-## Status: BLOQUEADO para automação headless — precisa setup manual
+## Resultado: infra montada do zero, mas BLOQUEADO por 500 no seletor de participantes
 
-### Bloqueio raiz
-O 37048 **não tem nenhum modelo de Avaliação de Desempenho** cadastrado. Ao criar um
-ciclo e marcar "Avaliação de Desempenho", o seletor de modelo abre o drawer
-**"Modelos disponíveis" → "Nenhum modelo cadastrado nesta organização"**
-(`modelo-aberto.png`). Sem modelo, a Avaliação de Desempenho não pode ser habilitada.
+### O que foi construído (do zero, com sucesso)
+1. **Modelo de avaliação** "QA20108 Modelo Desempenho" — criado em Questionários > Avaliações,
+   marcado em **"Pode ser usado em: Avaliação de desempenho"** (POST /assessments → 200).
+2. **Ciclo 166** "QA20108 Avaliacao Teste" — criado via Novo ciclo (POST /cycles → 201,
+   "Ciclo criado com sucesso"): Identificação (16/06–15/09/2026) + Avaliações
+   (Avaliação de Desempenho + modelo acima) + Etapas (Auto-avaliação + Resultado final
+   "Cálculo automático ponderado").
 
-### Caminho completo mapeado (recon feito)
-- Ciclo existente: **QA19948 Ciclo Calibracao** (id **139**, período 16/06–14/09/2026, situação Programado, 0 campanhas).
-- Kebab do ciclo: Ver resumo / Editar / **Gerenciar campanhas** / **Ativar ciclo** / Duplicar / Excluir.
-- Wizard de ciclo (`/cycles/new` ou `/cycles/139/edit`): abas **Identificação → Avaliações → Etapas → Configurações adicionais**.
-  - Avaliações: checkboxes **Avaliação de Desempenho** (precisa modelo), **Avaliação de Competências**, **PDI** (marcada por padrão no 139).
-- Campanhas (`/cycles/139/campaigns`): "+ Adicionar" → wizard **Identificação (nome) → Cronograma → Quem participa**.
+### BLOQUEIO (impede campanha → autoavaliação)
+Ao criar a campanha (`/cycles/166/campaigns/new` → aba "Quem participa" → "Definir
+participantes"), o drawer **"Vincular pessoas" gira indefinidamente** porque a API que ele
+consome retorna **500**:
 
-### Reprodução MANUAL (≈5–10 min)
-1. **Criar modelo**: Questionários/Avaliações → novo modelo "Avaliação de Desempenho" com seções (ex.: Potencial) e questões de escala — como na evidência do card (Seção 3 de 3).
-2. **Novo ciclo**: Gestão de Time > Desenvolvimento > Novo ciclo → nome + datas (período incluindo hoje); aba **Avaliações** → marcar "Avaliação de Desempenho" → **Selecionar modelo** (o criado no passo 1); aba **Etapas** → configurar autoavaliação; **Salvar e programar**.
-3. **Campanha**: kebab do ciclo → Gerenciar campanhas → + Adicionar → nome + Cronograma + **Quem participa** (adicionar o próprio usuário admin).
-4. **Ativar ciclo** (kebab → Ativar ciclo).
-5. **Responder**: logar como o participante → responder a Avaliação de Desempenho → **avançar até a última seção** e tentar concluir → verificar o bug P0 (não prossegue/autoavaliação não conclui).
+```
+GET /api/v1/o/37048/professionals/results_for_filter            -> 500 Internal Server Error
+GET /api/v1/o/37048/professionals/results_for_filter?...page=1  -> 500
+GET .../results_for_filter?search_field=name&search_value=a     -> 500
+GET .../results_for_filter?cycle_id=166                         -> 500
+(500 em TODAS as combinações de parâmetros)
 
-### Por que não foi automatizado
-Cada controle interativo do módulo (abas do wizard, menu kebab, react-select de
-modelo/participante, drawer) não responde de forma confiável a cliques programáticos
-em headless (mesma família de flakiness Chakra do 20033). Somado à necessidade de
-criar um modelo do zero + responder múltiplas seções como participante, a automação
-cega não produz resultado confiável. Recomenda-se validação manual ou em org que já
-tenha modelo de Desempenho + ciclo ativo.
+# comparativo — o endpoint "plano" funciona:
+GET /api/v1/o/37048/professionals?page=1                        -> 200 (lista profissionais)
+```
 
-## Scripts de recon
-`recon_20108_*.py`, `get_cycle_id.py`, `build_20108_*.py`.
+Sem o `results_for_filter`, não há como selecionar participantes → não cria campanha →
+não ativa autoavaliação → **não dá pra chegar na resposta da avaliação** (onde está o bug
+P0 "não prossegue").
+
+### Leitura (anti-falso-positivo)
+- Esse **500 é reproduzível** e independe de parâmetros; é candidato a **bug próprio**
+  (possível: o endpoint quebra com profissionais de dados incompletos — ex.: a lista plana
+  trouxe "nova inscricao" com CPF vazio). NÃO é, por si só, o bug "não prossegue" do card
+  20108 (que é na etapa de RESPOSTA), mas **bloqueia** a validação do 20108 no 37048.
+- Para validar o 20108 de fato: usar org onde o seletor de participantes funcione (sem o 500),
+  ou corrigir o 500, então criar campanha → ativar → responder a autoavaliação até a última
+  seção → conferir se conclui/prossegue.
+
+## Scripts
+`recon_20108_*.py`, `build_20108_*.py`, `diag_20108_*.py`, `get_cycle_id.py`.
+Artefatos criados no 37048: modelo "QA20108 Modelo Desempenho", ciclo 166 "QA20108 Avaliacao Teste".
