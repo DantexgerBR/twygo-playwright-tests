@@ -5,7 +5,12 @@
 **PRs:** Twygo/twyg-app#10262 e Twygo/twygo-ai-knowledge-agent#348 (ambos OPEN no GitHub,
 mas o comportamento do PR 348 já está deployado no stage — ver cenário A).
 
-## Veredito: ❌ Falhou (cenário A corrigido; cenário B ainda não)
+## Veredito: ✅ Passou
+
+> **Escopo (comentário do dev Gabriel Coelho no card, 19/05/2026):** o campo "Website" NÃO
+> é feito para receber links de vídeo/YouTube — é um extrator de conteúdo de páginas. Fazer
+> funcionar para o YouTube exigiria implementação nova, **fora do escopo** desta correção.
+> Logo o cenário B não é defeito a corrigir aqui; o que estava no escopo (cenário A) passou.
 
 ### Cenário A — certificado (arquivo) → ✅ CORRIGIDO
 Certificado de teste (PNG): "João da Silva concluiu o curso de Liderança Ágil e Gestão de
@@ -21,18 +26,16 @@ Times", "Carga horária: 480 minutos", "Emitido em 15/03/2024". Após "Preencher
 
 Bate 1:1 com os 4 casos de teste do PR 348. Os dois itens críticos do card passaram.
 
-### Cenário B — link do YouTube → ❌ AINDA FALHA
-Link `https://www.youtube.com/watch?v=k_rYoyLEZKg` no campo Website → "Preencher com IA"
-(IA executou em ~24s). Valores no DOM:
-- Tipo de experiência: "Online" (única coisa inferida)
-- **Nome (Conteúdo): VAZIO** · Descrição: vazia · Carga horária: 0 · Categorias: vazias
-O conteúdo do vídeo não é extraído do link — só a modalidade. O sintoma do card ("nenhuma
-informação puxada") melhorou (vem "Online"), mas o dado significativo (nome) segue ausente.
+### Cenário B — link do YouTube → FORA DO ESCOPO (não é defeito)
+Link `https://www.youtube.com/watch?v=k_rYoyLEZKg` no campo Website → "Preencher com IA":
+a IA só inferiu a modalidade "Online" (nome/descrição/carga vazios). Conforme o dev
+esclareceu no card, o campo "Website" é extrator de páginas e não suporta YouTube — então
+esse comportamento é esperado, não um defeito desta correção.
 
 ## Conclusão
-Cenário A (certificado) está corrigido. Cenário B (link do YouTube) **continua falhando** —
-a IA não extrai o conteúdo do vídeo (só a modalidade "Online"; nome/descrição/carga vazios).
-Como o cenário B é um defeito declarado no card e segue sem resolver, o retrabalho **falhou**.
+O foco da correção (extração de **certificados/conteúdo de página** — itens críticos Nome e
+Carga horária) está funcionando no stage, batendo com todos os casos do PR 348. O cenário do
+YouTube está fora do escopo (campo Website não é para vídeos). Retrabalho **aprovado**.
 
 ## Repro
 ```
