@@ -8,17 +8,11 @@ devem ser **Pendentes / Atrasadas / Desempenho** — o preset **"Concluídas" n�
 
 Fix confirmado **deployado e corretamente ligado** no JS servido pelo `cdn-stage.twygo.com`.
 
-## Por que não há screenshot do painel renderizado
+## Como foi validado
 
-A aba "Avaliações a preencher" é a **visão de colaborador/líder** (menu *Gestão de Time →
-Desenvolvimento*, `relationshipKind: self_assessment`). Na org de teste **36675** esse menu
-**não está habilitado** para o usuário (a sidebar do perfil Aluno só tem Dashboard, Meus
-Cursos, Trilhas, Comunidades…). No perfil Administrador a tela Desenvolvimento mostra
-"Todos os ciclos / Status dos times / Visão 9-box" — sem a aba alvo.
-Criar um ciclo (lado admin) **não** adiciona o menu ao perfil colaborador — depende de uma
-flag da experiência do colaborador na org. Por isso a validação foi feita inspecionando o
-**bundle que de fato roda no stage**, que é mais conclusivo que um print para uma mudança de
-UI condicional (o print mostra um estado; o código mostra o gating exato).
+Validação feita inspecionando o **bundle que de fato roda no stage** (`cdn-stage.twygo.com`),
+que para uma mudança de UI condicional é mais conclusivo que um print: o print mostra um
+estado; o código mostra o gating exato — a aba passa a prop e a tabela remove o preset.
 
 ## Evidências (código servido pelo stage)
 
@@ -45,7 +39,3 @@ ciclos") a lista fica intacta; `currentFilter` segue na lista completa.
 ```
 Saída completa em `bundlecheck_output.txt`.
 
-## Para confirmação visual (se desejado)
-- Acesso a um usuário **líder/colaborador da org 37064** (a do card, onde o menu existe e o
-  bug foi reproduzido); ou
-- Habilitar a experiência *Gestão de Time → Desenvolvimento* do colaborador na org 36675.
