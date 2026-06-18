@@ -29,12 +29,10 @@ Link `https://www.youtube.com/watch?v=k_rYoyLEZKg` no campo Website → "Preench
 O conteúdo do vídeo não é extraído do link — só a modalidade. O sintoma do card ("nenhuma
 informação puxada") melhorou (vem "Online"), mas o dado significativo (nome) segue ausente.
 
-## Conclusão / próximo passo
-A correção de extração de **certificados** (foco do PR 348, e os itens CRÍTICOS do card) está
-funcionando no stage. Já a extração a partir de **link do YouTube** continua não puxando o
-conteúdo (nome/descrição). Confirmar com o time se o cenário B (fetch do conteúdo do vídeo)
-faz parte do escopo destes PRs ou é ticket separado — se for fora de escopo, o que foi
-entregue (cenário A) está ✅.
+## Conclusão
+Cenário A (certificado) está corrigido. Cenário B (link do YouTube) **continua falhando** —
+a IA não extrai o conteúdo do vídeo (só a modalidade "Online"; nome/descrição/carga vazios).
+Como o cenário B é um defeito declarado no card e segue sem resolver, o retrabalho **falhou**.
 
 ## Repro
 ```
