@@ -1,0 +1,82 @@
+[cfg] base=https://goatwy.stage.twygoead.com org=36676 email=usuariodev@testes.com
+[cert] gerado: certificado_teste.png
+[login] logando + switch admin...
+[login] url atual: https://goatwy.stage.twygoead.com/o/36676/events?tab=events&profile=admin
+
+########## CENARIO A — UPLOAD DE CERTIFICADO ##########
+[A] botao IA disabled apos upload?: False
+
+===== CAMPOS LIDOS A (antes da IA) =====
+  workload_seconds: ''
+  startDate: ''
+  endDate: ''
+  approvalDate: ''
+  certificateDate: ''
+  expirationDate: ''
+  conteudo_nome: None
+  descricao: ''
+  selects_single: []
+  selects_multi: []
+  website: ''
+[ia] cliquei em 'Preencher com IA'
+[A] MODAL apos clique IA: 'Limite de créditos atingido Sua organização atingiu o limite de créditos de IA disponíveis. Para continuar utilizando, entre em contato com nossa equipe para liberar novos créditos. Contato'
+[A] BLOQUEADO por limite de creditos de IA — IA nao executou.
+
+===== CAMPOS LIDOS A (apos IA) =====
+  workload_seconds: ''
+  startDate: ''
+  endDate: ''
+  approvalDate: ''
+  certificateDate: ''
+  expirationDate: ''
+  conteudo_nome: None
+  descricao: ''
+  selects_single: []
+  selects_multi: []
+  website: ''
+
+########## CENARIO B — LINK DO YOUTUBE ##########
+[B] website preenchido com link do YouTube
+[B] botao IA disabled apos preencher website?: False
+
+===== CAMPOS LIDOS B (antes da IA) =====
+  workload_seconds: ''
+  startDate: ''
+  endDate: ''
+  approvalDate: ''
+  certificateDate: ''
+  expirationDate: ''
+  conteudo_nome: None
+  descricao: ''
+  selects_single: []
+  selects_multi: []
+  website: 'https://www.youtube.com/watch?v=k_rYoyLEZKg'
+[ia] cliquei em 'Preencher com IA'
+[B] MODAL apos clique IA: 'Limite de créditos atingido Sua organização atingiu o limite de créditos de IA disponíveis. Para continuar utilizando, entre em contato com nossa equipe para liberar novos créditos. Contato'
+[B] BLOQUEADO por limite de creditos de IA — IA nao executou.
+
+===== CAMPOS LIDOS B (apos IA) =====
+  workload_seconds: ''
+  startDate: ''
+  endDate: ''
+  approvalDate: ''
+  certificateDate: ''
+  expirationDate: ''
+  conteudo_nome: None
+  descricao: ''
+  selects_single: []
+  selects_multi: []
+  website: 'https://www.youtube.com/watch?v=k_rYoyLEZKg'
+
+########## RESUMO ##########
+[A] IA respondeu (mudou campo)?: False
+[A] Nome/Conteudo: None
+[A] Carga horaria (#workload_seconds): ''
+[A] selects single: []
+[A] selects multi: []
+[A] datas: cert='' start='' end='' approval='' exp=''
+[B] IA respondeu (mudou campo)?: False
+[B] Nome/Conteudo: None
+[B] Carga horaria: ''
+[B] selects single: []
+[B] descricao: ''
