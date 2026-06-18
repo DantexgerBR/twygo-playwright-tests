@@ -1,0 +1,18 @@
+D:\Estudo\Programa��o\cursor\twygo-playwright-tests\scripts\retrabalho_filtro_avaliacoes_preencher_bundlecheck.py:15: SyntaxWarning: "\." is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\."? A raw string is also an option.
+  Rode:  .\.venv\Scripts\python.exe scripts/retrabalho_filtro_avaliacoes_preencher_bundlecheck.py
+application.ts: application.ts-DIrM1tT3.min.js 
+
+PROVA 1 — chunk: development-page-QS4tkBiq.min.js
+  trecho da aba 'Avaliacoes a preencher':
+  test-id":"development-evaluations-tab",children:e.jsx(N,{relationshipKind:"self_assessment",hideSearch:!0,hideCompletedDefaultFilter:!0})}),_={recognition:{bg:"#C6F6D5",color:"#22543D"},concern:{bg:"#FED7AA",color:"#9C4221"},feedback:{bg:"#
+  => OK: aba passa hideCompletedDefaultFilter:!0 (true)
+
+PROVA 2 — chunk: performance-evaluations-table-DZ2JRIM5.min.js
+  logica de filtro:
+  hideCompletedDefaultFilter:f})=>{const{i18n:u}=x(),{organization:o}=C(),t=d.useMemo(()=>{const m=[];return r&&m.push(`relationship_kind=${r}`),s&&s!=="todas"&&m.push(s==="overdue"?"overdue_only=true":`status=${s}`),m.length>0?m.join("&"):void 0},[r,s]),i=d.useMemo(()=>{const m=E(u,o);return s&&s!=="todas"?m.filter(_=>_.field!=="status"):m},[u,o,s]),n=d.useMemo(()=>{const m=P(u,o);return s&&s!=="todas"?m.filter(_=>_.field!=="status"):m},[u,o,s]),p=d.useMemo(()=>E(u,o),[u,o]),c=d.useMemo(()=>$(u,p),[u,p]),y=d.useMemo(()=>f?c.filter(m=>m.model_default_enum!==j):c,[c,f]),v=d.useMemo(()=>!s||s==="todas"?null:s==="in_progress"?c[0]??null:s==="overdue"?c[1]??null:s==="completed"?c[2]??null:null,[s,c]);return a.jsx(T,{model:"performance_assessment",filterOptions:n,filterColumns:i,defaultFilters:y,currentFilter:v,children:a.jsx(w,{orderType:"asc",defaultVisualizationType:"table",children:a.jsx(Y,{customUrl:e,hideSearch:l,fixedParams:t})})})};export{_e as P};
+
+
+  => OK: com a prop true, defaultFilters remove o preset (model_default_enum!==enum);
+        currentFilter segue na lista completa (indices estaveis).
+
+RESULTADO: fix do PR #10737 esta DEPLOYADO e corretamente ligado no stage.
