@@ -75,11 +75,13 @@ def cfg(prefix: str = "") -> dict:
 # --------------------------------------------------------------------------- #
 # Browser / página
 # --------------------------------------------------------------------------- #
-def nova_pagina(p, headless: bool = False, slow_mo: int = 350, width: int = 1500, height: int = 950):
+def nova_pagina(p, headless: bool = True, slow_mo: int = 350, width: int = 1500, height: int = 950):
     """Cria browser+context+page com os defaults do projeto (pt-BR, viewport amplo).
-    Defina TW_HEADLESS=1 no ambiente para rodar sem janela (não rouba foco)."""
-    if os.environ.get("TW_HEADLESS") == "1":
-        headless = True
+    Padrão HEADLESS: não abre janela na frente dos outros apps. Defina TW_HEADED=1
+    no ambiente para ver a janela (debug). O parâmetro headless é ignorado em favor
+    dessa regra para nunca roubar foco sem o usuário pedir."""
+    headless = os.environ.get("TW_HEADED") != "1"
+    if headless:
         slow_mo = 0
     browser = p.chromium.launch(headless=headless, slow_mo=slow_mo)
     ctx = browser.new_context(viewport={"width": width, "height": height}, locale="pt-BR")

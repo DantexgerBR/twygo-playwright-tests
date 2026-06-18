@@ -1,7 +1,7 @@
-[cfg] base=https://goatwy.stage.twygoead.com org=36676 email=usuariodev@testes.com
+[cfg] base=https://twygo1772627238.stage.twygoead.com org=36675 email=dante.tavares@twygo.com
 [cert] gerado: certificado_teste.png
 [login] logando + switch admin...
-[login] url atual: https://goatwy.stage.twygoead.com/o/36676/events?tab=events&profile=admin
+[login] url atual: https://twygo1772627238.stage.twygoead.com/o/36675/events?tab=events&profile=admin
 
 ########## CENARIO A — UPLOAD DE CERTIFICADO ##########
 [A] botao IA disabled apos upload?: False
@@ -19,20 +19,20 @@
   selects_multi: []
   website: ''
 [ia] cliquei em 'Preencher com IA'
-[A] MODAL apos clique IA: 'Limite de créditos atingido Sua organização atingiu o limite de créditos de IA disponíveis. Para continuar utilizando, entre em contato com nossa equipe para liberar novos créditos. Contato'
-[A] BLOQUEADO por limite de creditos de IA — IA nao executou.
+[A] MODAL apos clique IA: None
+[ia] form mudou apos 15s
 
 ===== CAMPOS LIDOS A (apos IA) =====
-  workload_seconds: ''
+  workload_seconds: '0008:00:00'
   startDate: ''
   endDate: ''
   approvalDate: ''
-  certificateDate: ''
+  certificateDate: '2024-03-15'
   expirationDate: ''
   conteudo_nome: None
   descricao: ''
-  selects_single: []
-  selects_multi: []
+  selects_single: ['Liderança Ágil e Gestão de Times']
+  selects_multi: ['Gestão', 'Soft Skills']
   website: ''
 
 ########## CENARIO B — LINK DO YOUTUBE ##########
@@ -52,11 +52,11 @@
   selects_multi: []
   website: 'https://www.youtube.com/watch?v=k_rYoyLEZKg'
 [ia] cliquei em 'Preencher com IA'
-[B] MODAL apos clique IA: 'Limite de créditos atingido Sua organização atingiu o limite de créditos de IA disponíveis. Para continuar utilizando, entre em contato com nossa equipe para liberar novos créditos. Contato'
-[B] BLOQUEADO por limite de creditos de IA — IA nao executou.
+[B] MODAL apos clique IA: None
+[ia] form mudou apos 24s
 
 ===== CAMPOS LIDOS B (apos IA) =====
-  workload_seconds: ''
+  workload_seconds: '0000:00:00'
   startDate: ''
   endDate: ''
   approvalDate: ''
@@ -64,19 +64,19 @@
   expirationDate: ''
   conteudo_nome: None
   descricao: ''
-  selects_single: []
+  selects_single: ['Online']
   selects_multi: []
   website: 'https://www.youtube.com/watch?v=k_rYoyLEZKg'
 
 ########## RESUMO ##########
-[A] IA respondeu (mudou campo)?: False
+[A] IA respondeu (mudou campo)?: True
 [A] Nome/Conteudo: None
-[A] Carga horaria (#workload_seconds): ''
-[A] selects single: []
-[A] selects multi: []
-[A] datas: cert='' start='' end='' approval='' exp=''
-[B] IA respondeu (mudou campo)?: False
+[A] Carga horaria (#workload_seconds): '0008:00:00'
+[A] selects single: ['Liderança Ágil e Gestão de Times']
+[A] selects multi: ['Gestão', 'Soft Skills']
+[A] datas: cert='2024-03-15' start='' end='' approval='' exp=''
+[B] IA respondeu (mudou campo)?: True
 [B] Nome/Conteudo: None
-[B] Carga horaria: ''
-[B] selects single: []
+[B] Carga horaria: '0000:00:00'
+[B] selects single: ['Online']
 [B] descricao: ''

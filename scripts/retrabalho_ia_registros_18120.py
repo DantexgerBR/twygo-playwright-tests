@@ -1,5 +1,6 @@
 """retrabalho_ia_registros_18120.py — Valida o "Preencher com IA" do form de
-Registro externo (Aprendizagem > Registros) no STAGE goatwy (org 36676).
+Registro externo (Aprendizagem > Registros) no STAGE principal (org 36675).
+A org 36675 tem creditos de IA (goatwy/36676 esta zerada).
 
 Bug 18120: o "Preencher com IA" não puxava nenhum dado.
 Cenário A: upload de certificado PNG (gerado aqui) -> IA preenche campos.
@@ -190,7 +191,7 @@ def aguardar_ia(page, baseline, timeout_s=120):
 
 
 def main():
-    c = tw.cfg("GOATWY")
+    c = tw.cfg("")  # org principal 36675 (tem creditos de IA)
     log(f"[cfg] base={c['base_url']} org={c['org_id']} email={c['email']}")
 
     with tw.sync_playwright() as p:
