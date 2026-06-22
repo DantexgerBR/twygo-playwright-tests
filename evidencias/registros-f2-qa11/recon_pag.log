@@ -1,0 +1,247 @@
+============================================================
+recon_qa11_paginacao.py
+============================================================
+Logado: https://registrosf2.stage.twygoead.com/o/37079/use_mode_iten
+
+=== RECON: Footer de paginacao ===
+  Linhas visíveis: 25
+   [snap] recon_pag_inicio.png
+   [snap] recon_pag_footer_scroll.png
+  Screenshot do footer capturado
+
+  HTML do container de paginacao:
+<div class="chakra-select__wrapper css-104wwwu"><select id="select_pages" class="chakra-select css-1gq5ikj"><option value="25" id="id_select_25">25 por página </option><option value="50" id="id_select_50">50 por página </option><option value="100" id="id_select_100">100 por página </option></select><div class="chakra-select__icon-wrapper css-iohxn1"><svg viewBox="0 0 24 24" role="presentation" class="chakra-select__icon" focusable="false" aria-hidden="true" style="width: 1em; height: 1em; color: currentcolor;"><path fill="currentColor" d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path></svg></div></div>
+
+  Botoes na metade inferior da pagina: 25
+    top= 488 | text='more_vert'          | aria=None | dis=False | cls=chakra-menu__menu-button css-kjvu41
+    top= 545 | text='more_vert'          | aria=None | dis=False | cls=chakra-menu__menu-button css-kjvu41
+    top= 602 | text='more_vert'          | aria=None | dis=False | cls=chakra-menu__menu-button css-kjvu41
+    top= 659 | text='more_vert'          | aria=None | dis=False | cls=chakra-menu__menu-button css-kjvu41
+    top= 716 | text='more_vert'          | aria=None | dis=False | cls=chakra-menu__menu-button css-kjvu41
+    top= 773 | text='more_vert'          | aria=None | dis=False | cls=chakra-menu__menu-button css-kjvu41
+    top= 830 | text='more_vert'          | aria=None | dis=False | cls=chakra-menu__menu-button css-kjvu41
+    top= 887 | text='more_vert'          | aria=None | dis=False | cls=chakra-menu__menu-button css-kjvu41
+    top= 944 | text='more_vert'          | aria=None | dis=False | cls=chakra-menu__menu-button css-kjvu41
+    top=1001 | text='more_vert'          | aria=None | dis=False | cls=chakra-menu__menu-button css-kjvu41
+    top=1058 | text='more_vert'          | aria=None | dis=False | cls=chakra-menu__menu-button css-kjvu41
+    top=1115 | text='more_vert'          | aria=None | dis=False | cls=chakra-menu__menu-button css-kjvu41
+    top=1172 | text='more_vert'          | aria=None | dis=False | cls=chakra-menu__menu-button css-kjvu41
+    top=1229 | text='more_vert'          | aria=None | dis=False | cls=chakra-menu__menu-button css-kjvu41
+    top=1286 | text='more_vert'          | aria=None | dis=False | cls=chakra-menu__menu-button css-kjvu41
+    top=1343 | text='more_vert'          | aria=None | dis=False | cls=chakra-menu__menu-button css-kjvu41
+    top=1400 | text='more_vert'          | aria=None | dis=False | cls=chakra-menu__menu-button css-kjvu41
+    top=1457 | text='more_vert'          | aria=None | dis=False | cls=chakra-menu__menu-button css-kjvu41
+    top=1514 | text='more_vert'          | aria=None | dis=False | cls=chakra-menu__menu-button css-kjvu41
+    top=1571 | text='more_vert'          | aria=None | dis=False | cls=chakra-menu__menu-button css-kjvu41
+    top= 880 | text='keyboard_double_arrow_left' | aria=None | dis=True | cls=chakra-button css-11hpmsw
+    top= 880 | text='chevron_left'       | aria=None | dis=True | cls=chakra-button css-jwhkjy
+    top= 880 | text='1'                  | aria=None | dis=False | cls=chakra-button css-2o9l1t
+    top= 880 | text='2'                  | aria=None | dis=False | cls=chakra-button css-lxsoor
+    top= 880 | text='chevron_right'      | aria=None | dis=False | cls=chakra-button css-jwhkjy
+
+  HTML apos tabela:
+nada apos tabela
+
+=== RECON: Criacao de usuario + reset senha ===
+
+  HTML do form de usuario:
+<form data-type="html" id="suport-email" enctype="multipart/form-data" action="/support/mail" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="✓" autocomplete="off"><input type="hidden" name="authenticity_token" value="8_I7KO2s6tV-a1P3DElfr94mCm63rMVXoGHe3WciIWf4os5TH1b9M4BYg2jSCwyJnoS3VN-o9vFMIZZuYutnzQ" autocomplete="off"><div class="subject-support-email">
+<label required="required" for="message_subject">Assunto: </label>
+<input type="text" name="message_subject" id="message_subject" placeholder="" data-limit="100">
+</div>
+<div class="select-attachment-support-email">
+<label class="control-label" for="files[]">
+Anexo:
+</label>
+<div id="file-name-container">
+<a class="btn btn-primary inline waves-effect">
+Enviar arquivo
+</a>
+<div class="content-file-size-warning" style="position: relative; top: 40px;">
+Arquivos até  10 MB.
+</div>
+<span id="input-file-name">
+Nenhum arquivo selecionado
+</span>
+<input type="file" name="files[]" id="message_attachments" multiple="multiple">
+</div>
+<div id="files-list-container">
+<ul id="files-list"></ul>
+</div>
+</div>
+<div class="message-support">
+<span>
+<label required="required" for="message_text">Mensagem:</label>
+</span>
+<div class="message">
+<textarea name="message_text" id="message_text" placeholder="Digite aqui sua mensagem." data-limit="1000" data-limit-input="message_text_limit_number" required="required"></textarea>
+<div id="message_text_limit" style="float: right; font-size: 12px; font-style: italic">
+<span id="message_text_limit_number">0</span>
+caracteres restantes.
+</div>
+</div>
+<div id="mail_myself_checkbox">
+<input type="checkbox" name="send_copy" id="send_copy" value="1">
+<label for="send_copy">Desejo receber uma cópia do e-mail</label>
+</div>
+<div id="recaptcha">
+<script src="https://www.recaptcha.net/recaptcha/api.js" async="" defer=""></script>
+<div data-sitekey="6LeQZhIqAAAAAFFg3D7Yw2I04FM6m7VmCq0GIiVw" class="g-recaptcha "><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" width="304" height="78" role="presentation" name="a-x9p5wra5pik7" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.recaptcha.net/recaptcha/api2/anchor?ar=1&amp;k=6LeQZhIqAAAAAFFg3D7Yw2I04FM6m7VmCq0GIiVw&amp;co=aHR0cHM6Ly9yZWdpc3Ryb3NmMi5zdGFnZS50d3lnb2VhZC5jb206NDQz&amp;hl=pt-BR&amp;v=MerVUtRoajKEbP7pLiGXkL28&amp;size=normal&amp;anchor-ms=20000&amp;execute-ms=30000&amp;cb=rhda25alnrm6"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div>
+          <noscript>
+            <div>
+              <div style="width: 302px; height: 422px; position: relative;">
+                <div style="width: 302px; height: 422px; position: absolute;">
+                  <iframe
+                    src="https://www.recaptcha.net/recaptcha/api/fallback?k=6LeQZhIqAAAAAFFg3D7Yw2I04FM6m7VmCq0GIiVw"
+                    name="ReCAPTCHA"
+                    style="width: 302px; height: 422px; border-style: none; border: 0; overflow: hidden;">
+                  </iframe>
+                </div>
+              </div>
+              <div style="width: 300px; height: 60px; border-style: none;
+                bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px;
+                background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;">
+                <textarea id="g-recaptcha-response" name="g-recaptcha-response"
+                  class="g-recaptcha-response"
+                  style="width: 250px; height: 40px; border: 1px solid #c1c1c1;
+                  margin: 10px 25px; padding: 0px; resize: none;">
+                </textarea>
+              </div>
+            </div>
+          </noscript>
+
+</div>
+</div>
+<div class="actions-support-mail">
+<input type="submit" name="commit" value="Enviar" class="inline green_btn confirmationss" data-disable-with="Enviar">
+<div class="loading">
+<img src="https://cdn-stage.twygo.com/assets/ajaxloader-a87d94c5ba7c474f301ef3e92644e410b633376ba52b3201253ce8ac24faf62d.gif">
+</div>
+</div>
+</form>
+
+  Inputs no form: 62
+    id='' name='utf8' type='hidden' placeholder='' req=False
+    id='' name='authenticity_token' type='hidden' placeholder='' req=False
+    id='message_subject' name='message_subject' type='text' placeholder='' req=False
+    id='message_attachments' name='files[]' type='file' placeholder='' req=False
+    id='send_copy' name='send_copy' type='checkbox' placeholder='' req=False
+    id='' name='commit' type='submit' placeholder='' req=False
+    id='' name='utf8' type='hidden' placeholder='' req=False
+    id='' name='authenticity_token' type='hidden' placeholder='' req=False
+    id='message_subject' name='message_subject' type='text' placeholder='' req=False
+    id='external_user_name' name='external_user_name' type='text' placeholder='' req=False
+    id='external_user_email' name='external_user_email' type='text' placeholder='exemplo@email.com' req=True
+    id='external_user_phone' name='external_user_phone' type='text' placeholder='(__) ____-____' req=True
+    id='send_copy' name='send_copy' type='checkbox' placeholder='' req=False
+    id='' name='commit' type='submit' placeholder='' req=False
+    id='' name='utf8' type='hidden' placeholder='' req=False
+    id='professional_email' name='professional[email]' type='text' placeholder='Ex: joao@email.com' req=False
+    id='professional_first_name' name='professional[first_name]' type='text' placeholder='Ex: Leandro' req=False
+    id='professional_last_name' name='professional[last_name]' type='text' placeholder='Ex: Custódio da Silva' req=False
+    id='professional_cpf' name='professional[cpf]' type='text' placeholder='Ex: 67347848008' req=False
+    id='professional_phone1' name='professional[phone1]' type='text' placeholder='Ex: (47) 98888-8888' req=False
+    id='professional_cell_phone' name='professional[cell_phone]' type='text' placeholder='Ex: (47) 98888-8888' req=False
+    id='professional_zip_code' name='professional[zip_code]' type='text' placeholder='Ex: 89240-000' req=False
+    id='professional_address' name='professional[address]' type='text' placeholder='Ex: Rua São Paulo' req=False
+    id='professional_address_number' name='professional[address_number]' type='text' placeholder='Ex: 1234' req=False
+    id='professional_address2' name='professional[address2]' type='text' placeholder='Ex: Sala 2' req=False
+    id='professional_district' name='professional[district]' type='text' placeholder='Ex: Centro' req=False
+    id='professional_city' name='professional[city]' type='text' placeholder='Ex: Joinville' req=False
+    id='professional_state' name='professional[state]' type='text' placeholder='Ex: Santa Catarina' req=False
+    id='professional_enterprise' name='professional[enterprise]' type='text' placeholder='Ex: Twygo' req=False
+    id='professional_business_line' name='professional[business_line]' type='text' placeholder='Ex: Gráfica' req=False
+    id='professional_site' name='professional[site]' type='text' placeholder='Ex: www.site.com' req=False
+    id='professional_phone2' name='professional[phone2]' type='text' placeholder='Ex: (47) 98888-8888' req=False
+    id='professional_role' name='professional[role]' type='text' placeholder='Ex: Gerente' req=False
+    id='professional_department_hidden' name='professional[department]' type='hidden' placeholder='' req=False
+    id='react-select-3-input' name='' type='text' placeholder='' req=False
+    id='professional_hire_date_hidden' name='professional[hire_date]' type='hidden' placeholder='' req=False
+    id='hire-date-field' name='' type='date' placeholder='' req=False
+    id='user_roles_hidden' name='user_roles' type='hidden' placeholder='' req=False
+    id='react-select-2-input' name='' type='text' placeholder='' req=False
+    id='' name='professional[professional]' type='hidden' placeholder='' req=False
+    id='professional_professional' name='professional[professional]' type='checkbox' placeholder='' req=False
+    id='' name='professional[receive_newsletter]' type='hidden' placeholder='' req=False
+    id='professional_receive_newsletter' name='professional[receive_newsletter]' type='checkbox' placeholder='' req=False
+    id='' name='professional[receive_manager_newsletter]' type='hidden' placeholder='' req=False
+    id='professional_receive_manager_newsletter' name='professional[receive_manager_newsletter]' type='checkbox' placeholder='' req=False
+    id='' name='professional[is_manager]' type='hidden' placeholder='' req=False
+    id='professional_is_manager' name='professional[is_manager]' type='checkbox' placeholder='' req=False
+    id='manager_name' name='manager_name' type='text' placeholder='' req=False
+    id='professional_manager_id' name='professional[manager_id]' type='hidden' placeholder='' req=False
+    id='user_profile_settings_admin' name='user_profile_settings[admin]' type='hidden' placeholder='' req=False
+    id='user_profile_settings_admin' name='user_profile_settings[admin]' type='checkbox' placeholder='' req=False
+    id='user_profile_settings_instructor' name='user_profile_settings[instructor]' type='hidden' placeholder='' req=False
+    id='user_profile_settings_instructor' name='user_profile_settings[instructor]' type='checkbox' placeholder='' req=False
+    id='user_profile_settings_manager_class' name='user_profile_settings[manager_class]' type='hidden' placeholder='' req=False
+    id='user_profile_settings_manager_class' name='user_profile_settings[manager_class]' type='checkbox' placeholder='' req=False
+    id='' name='professional[enable_communities]' type='hidden' placeholder='' req=False
+    id='professional_enable_communities' name='professional[enable_communities]' type='checkbox' placeholder='' req=False
+    id='' name='professional[enable_notifications]' type='hidden' placeholder='' req=False
+    id='professional_enable_notifications' name='professional[enable_notifications]' type='checkbox' placeholder='' req=False
+    id='' name='utf8' type='hidden' placeholder='' req=False
+    id='recommendation_recipient_email' name='recommendation[recipient_email]' type='text' placeholder='' req=False
+    id='recommendation_event_id' name='recommendation[event_id]' type='hidden' placeholder='' req=False
+
+  Email alvo: qa11tc3r26628@mailtest.example
+  Inputs visíveis: 31
+    [0] id='professional_email' ph='Ex: joao@email.com' type='text'
+    [1] id='professional_first_name' ph='Ex: Leandro' type='text'
+    [2] id='professional_last_name' ph='Ex: Custódio da Silva' type='text'
+    [3] id='professional_cpf' ph='Ex: 67347848008' type='text'
+    [4] id='professional_phone1' ph='Ex: (47) 98888-8888' type='text'
+    [5] id='professional_cell_phone' ph='Ex: (47) 98888-8888' type='text'
+    [6] id='professional_zip_code' ph='Ex: 89240-000' type='text'
+    [7] id='professional_address' ph='Ex: Rua São Paulo' type='text'
+    [8] id='professional_address_number' ph='Ex: 1234' type='text'
+    [9] id='professional_address2' ph='Ex: Sala 2' type='text'
+    [10] id='professional_district' ph='Ex: Centro' type='text'
+    [11] id='professional_city' ph='Ex: Joinville' type='text'
+    [12] id='professional_state' ph='Ex: Santa Catarina' type='text'
+    [13] id='professional_enterprise' ph='Ex: Twygo' type='text'
+    [14] id='professional_business_line' ph='Ex: Gráfica' type='text'
+    [15] id='professional_site' ph='Ex: www.site.com' type='text'
+    [16] id='professional_phone2' ph='Ex: (47) 98888-8888' type='text'
+    [17] id='professional_role' ph='Ex: Gerente' type='text'
+    [18] id='react-select-3-input' ph='' type='text'
+    [19] id='hire-date-field' ph='' type='date'
+    [20] id='react-select-2-input' ph='' type='text'
+    [21] id='professional_professional' ph='' type='checkbox'
+    [22] id='professional_receive_newsletter' ph='' type='checkbox'
+    [23] id='professional_receive_manager_newsletter' ph='' type='checkbox'
+    [24] id='professional_is_manager' ph='' type='checkbox'
+    [25] id='manager_name' ph='' type='text'
+    [26] id='user_profile_settings_admin' ph='' type='checkbox'
+    [27] id='user_profile_settings_instructor' ph='' type='checkbox'
+    [28] id='user_profile_settings_manager_class' ph='' type='checkbox'
+    [29] id='professional_enable_communities' ph='' type='checkbox'
+    [30] id='professional_enable_notifications' ph='' type='checkbox'
+   [snap] recon_form_usuario.png
+  Placeholders: ['Ex: joao@email.com', 'Ex: Leandro', 'Ex: Custódio da Silva', 'Ex: 67347848008', 'Ex: (47) 98888-8888', 'Ex: (47) 98888-8888', 'Ex: 89240-000', 'Ex: Rua São Paulo', 'Ex: 1234', 'Ex: Sala 2', 'Ex: Centro', 'Ex: Joinville', 'Ex: Santa Catarina', 'Ex: Twygo', 'Ex: Gráfica', 'Ex: www.site.com', 'Ex: (47) 98888-8888', 'Ex: Gerente', '', '', '', '', '', '', '', '', '', '', '', '', '']
+  Email input achado via placeholder 'Ex: joao@email.com'
+  Email preenchido: 'qa11tc3r26628@mailtest.example'
+   [snap] recon_form_email_preenchido.png
+  Nome input achado via placeholder 'Ex: Leandro'
+  Nome: 'QA11TC3'
+  Sobrenome input achado via placeholder 'Silva'
+  Sobrenome: 'EmptyUser'
+   [snap] recon_form_completo.png
+  Botao salvar achado: 'Salvar'
+  Redirect pos-salvar: https://registrosf2.stage.twygoead.com/o/37079/users
+   [snap] recon_pos_criar_usuario.png
+
+  Usuario criado. URL final: https://registrosf2.stage.twygoead.com/o/37079/users
+  Botoes de reset: 0
+   [snap] recon_lista_usuarios.png
+  Lista de usuarios capturada
+  Busca usuario erro: Page.fill: Timeout 30000ms exceeded.
+Call log:
+  - waiting for locator("input[type='search'], input[placeholder*='busca'], input[placeholder*='search']")
+
+
+  Email criado: qa11tc3r26628@mailtest.example
+
+============================================================
+RECON CONCLUIDO
+============================================================

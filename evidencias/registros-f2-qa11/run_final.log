@@ -1,0 +1,75 @@
+============================================================
+fechamento_qa11_final.py
+Org: https://registrosf2.stage.twygoead.com / ID: 37079
+============================================================
+
+--- TC3 (admin cria usuario) ---
+  Admin logado: https://registrosf2.stage.twygoead.com/o/37079/events?tab=ev
+
+=== TC3: Empty state (usuario novo) ===
+  Criando usuario: qa11tc335248@mailnull.com
+  Form usuario URL: https://registrosf2.stage.twygoead.com/o/37079/users/new
+   [snap] fechamento_tc3_form_novo_usuario.png
+  Criado: False, URL: https://registrosf2.stage.twygoead.com/o/37079/users/new
+   [snap] fechamento_tc3_apos_criar_usuario.png
+  [TC3] FALHOU — criacao de usuario falhou (email_ok=False, criado=False)
+
+--- Seed + TC11 (aluno dante) ---
+  Aluno logado: https://registrosf2.stage.twygoead.com/o/37079/use_mode_iten
+
+=== Semeando registros (meta: >= 26 total) ===
+  Total inicial visivel: 14
+  [01] QA11-F2-Alura-Python
+    OK #1
+  [02] QA11-F2-Alura-Django
+    OK #2
+  [03] QA11-F2-Alura-Docker
+    OK #3
+  [04] QA11-F2-Alura-Git
+    OK #4
+  [05] QA11-F2-Alura-React
+    OK #5
+  [06] QA11-F2-Coursera-ML
+    OK #6
+  [07] QA11-F2-Coursera-DS
+    OK #7
+  [08] QA11-F2-Coursera-TF
+    OK #8
+  [09] QA11-F2-Coursera-NLP
+    OK #9
+  [10] QA11-F2-Coursera-Agile
+    OK #10
+  [11] QA11-F2-FGV-Gestao
+    OK #11
+  [12] QA11-F2-FGV-Lideranca
+    OK #12
+  Meta 26 atingida: 26 estimado
+   [snap] fechamento_tc11_lista_pos_semeia.png
+  Semeados: 12, falhas: 0, visivel: 25
+  Semeados: 12, visivel: 25
+
+=== TC11: Paginacao 25/50/100 ===
+  Linhas pagina 1: 25
+   [snap] fechamento_tc11_pag1.png
+  Botoes paginacao: []
+  Select por-pagina via: select
+  Controles: next=False, select=True, por_pag_txt=True
+   [snap] fechamento_tc11_controles.png
+  50/pag: 26 linhas
+   [snap] fechamento_tc11_50pag.png
+  100/pag: 26 linhas
+   [snap] fechamento_tc11_100pag.png
+
+  Resumo TC11:
+    pag1=25 linhas (default 25: True)
+    has_paginacao: True
+    pag2: False (0 linhas)
+    50/pag: True (26 linhas)
+    100/pag: True (26 linhas)
+  [TC11] FALHOU — pag1=25 OK, controles presentes, MAS pag2 NAO funcionou (0)
+
+============================================================
+RESULTADOS FINAIS:
+  TC3: FALHOU — criacao de usuario falhou (email_ok=False, criado=False)
+  TC11: FALHOU — pag1=25 OK, controles presentes, MAS pag2 NAO funcionou (0)
+============================================================

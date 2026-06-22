@@ -1,0 +1,37 @@
+# -*- coding: utf-8 -*-
+import re, sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _twygo as tw
+c = tw.cfg("NOVOEST")
+PASTA = tw.ROOT / "evidencias" / "qualidade_ia_cleanup"
+JS_RECT = """()=>{
+  const ms=[...document.querySelectorAll('[role=menu]')].filter(m=>{const s=getComputedStyle(m);return s.visibility==='visible'&&parseFloat(s.opacity)>0.5;});
+  const m=ms[ms.length-1]; if(!m) return null;
+  const it=[...m.querySelectorAll('[role=menuitem]')].find(e=>/Excluir/i.test(e.innerText||''));
+  if(!it) return null; it.scrollIntoView({block:'center'}); const r=it.getBoundingClientRect();
+  return {x:r.left+r.width/2, y:r.top+r.height/2};
+}"""
+with tw.sync_playwright() as p:
+    browser, ctx, page = tw.nova_pagina(p, width=1440, height=900)
+    tw.login(page, c)
+    page.goto(f"{c['base_url']}/o/{c['org_id']}/events?tab=events&profile=admin", wait_until="domcontentloaded", timeout=45000)
+    page.wait_for_timeout(4000); tw.dispensar_nps(page)
+    page.get_by_placeholder(re.compile("Pesquise", re.I)).first.fill("Domine SQL Básico")
+    page.wait_for_timeout(4000)
+    page.get_by_text("more_vert", exact=True).last.click(timeout=6000, force=True)
+    page.wait_for_timeout(1500)
+    rect = page.evaluate(JS_RECT)
+    print("rect Excluir VISÍVEL:", rect)
+    if rect:
+        page.mouse.click(rect["x"], rect["y"])
+        page.wait_for_timeout(3000)
+    tw.snap(page, PASTA, "confirm4")
+    info = page.evaluate("""()=>{
+        const ds=[...document.querySelectorAll('[role=alertdialog],[role=dialog],.chakra-modal__content')].filter(e=>e.offsetParent!==null);
+        const modais=ds.map(d=>({txt:(d.innerText||'').replace(/\s+/g,' ').slice(0,200), botoes:[...d.querySelectorAll('button')].map(b=>(b.innerText||'').trim()).filter(Boolean)}));
+        const aindaLista=/Domine SQL B[aá]sico/i.test(document.body.innerText);
+        return {modais, aindaLista};
+    }""")
+    print("INFO:", info)
+    ctx.close(); browser.close()

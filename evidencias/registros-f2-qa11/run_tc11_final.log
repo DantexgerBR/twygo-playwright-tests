@@ -1,0 +1,38 @@
+============================================================
+fechamento_qa11_tc11_final.py — TC11 paginacao
+Org: https://registrosf2.stage.twygoead.com / ORG_ID: 37079
+============================================================
+Logado: https://registrosf2.stage.twygoead.com/o/37079/use_mode_iten
+
+=== Semeando registros ===
+  Total atual: 25
+  [01] QA11-V3-Alura-Python
+    OK #1
+   [snap] fechamento_seed_v3.png
+  Pos-seed: 1 novos, visivel=25
+Semeados: 1, visivel: 25
+
+=== TC11: Paginacao 25/50/100 ===
+  Pag1: 25 linhas
+   [snap] fechamento_tc11_v3_pag1.png
+   [snap] fechamento_tc11_v3_footer.png
+  Indicador pag '1': True
+  Btn next: found, disabled=False
+  Pag2: 2 linhas
+   [snap] fechamento_tc11_v3_pag2.png
+  50/pag: 27 linhas
+   [snap] fechamento_tc11_v3_50pag.png
+  100/pag: 27 linhas
+   [snap] fechamento_tc11_v3_100pag.png
+
+  RESUMO TC11:
+    Passo 1: pag1=25, default_25=True, indicador_pag=True
+    Passo 2: pagina2=True (2 linhas)
+    Passo 3: 50/pag=True (27 linhas)
+    Passo 4: 100/pag=True (27 linhas)
+
+TC11: PASSOU — todos 4 passos OK
+
+============================================================
+FIM
+============================================================

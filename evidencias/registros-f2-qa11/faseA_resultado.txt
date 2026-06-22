@@ -1,0 +1,1 @@
+TC3|BLOQUEADO|Aluno ja tem 7 registros — nao e possivel validar empty state com este usuario. Necessario usuario com ZERO registros.
