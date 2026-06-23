@@ -40,8 +40,25 @@ Bugs reais confirmados no Discovery v02 (RN 9, 10, 11, 14). Texto pronto para ab
 
 ---
 
+## 4. P1 [Registros] Visão do Gestor de turma não filtra por liderados diretos — exibe org inteira
+
+**Onde:** Aprendizagem > Registros, perfil "Gestor de turma" — https://registrosf2.stage.twygoead.com/
+
+**Problema:** O usuário com papel de Gestor de turma (líder no organograma) acessa Aprendizagem > Registros e visualiza os registros de toda a organização — KPIs idênticos ao Admin (260 Emitidos, 13 Expirados, 80 Pendentes, 13 Recusados) e lista com pessoas fora do seu time. O liderado direto (`liderado1@teste.com`) não aparece na lista sem filtro de busca.
+
+**Esperado (RN 6.2):** a tela de Registros no perfil Gestor de turma deve listar apenas os registros dos liderados diretos do líder. KPIs devem refletir apenas o time (menores ou iguais à org inteira). Usuários que não são liderados diretos não devem aparecer.
+
+**Reprodução:**
+1. Login como `qalider@teste.com` (organograma: liderado direto = `liderado1@teste.com`)
+2. Seletor de perfil → mudar para "Gestor de turma"
+3. Aprendizagem > Registros
+4. Resultado: 260 Emitidos (org inteira), lista com qa11tc342816@twygotest.com (não é liderado)
+
+**Evidência:** tc9_step1_registros_lider.png, tc9_crosscheck_nao_liderado.png, tc9_crosscheck_liderado.png, tc9g_02_dropdown_perfil.png
+
+---
+
 ## Pendências (não são retrabalho)
 
-- **TC9 BLOQUEADO:** org 37079 sem organograma/líder com liderados. Criar líder + liderado direto para executar a visão Líder.
 - **TC2 (alinhar AT, não bug):** colunas configuráveis (RN 7.2); labels reais "Situação", tooltip do Provedor e conjunto default ("Experiência"/"Website"/"Evidências"; "Progresso" fora do default) divergem da AT. Atualizar test-analysis.md.
 - **Reconciliar QA 1.1 TC10:** veredito PASSOU deve virar FALHOU pelo mesmo bug do retrabalho #2 (sort não limpa).
