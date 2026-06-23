@@ -141,11 +141,11 @@ Todas as evidências em: https://github.com/DantexgerBR/twygo-playwright-tests/t
 ```
 ⇝ QA ⇜
 :: Teste ::
-❌ Falhou
+✅ Passou
 :: Ambiente ::
 🧪 Stage — https://registrosf2.stage.twygoead.com/ (Org 37079)
 :: Validação ::
-Suíte QA 1.6 concluída (2 rounds): 10 PASSOU | 3 FALHOU (2 bugs reais + TC5 divergência de dados) | 1 não verificado (TC15 — limitação de automação).
+Suíte QA 1.6 concluída (2 rounds): 10 PASSOU | 3 FALHOU (2 bugs reais + TC5 divergência de dados) | 1 não verificado (TC15 — limitação de automação). Card PASSA (execução concluída, maioria dos TCs ok); as falhas viram retrabalhos.
 
 Passaram: TC1, TC2, TC4, TC6, TC8, TC9, TC10, TC11, TC12, TC13, TC14, TC16.
 
