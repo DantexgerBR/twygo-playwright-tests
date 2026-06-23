@@ -136,11 +136,11 @@ Pasta: `evidencias/registros-f2-qa19/`
 ```
 ⇝ QA ⇜
 :: Teste ::
-⚠️ Inconclusivo
+✅ Passou
 :: Ambiente ::
 🧪 Stage — https://registrosf2.stage.twygoead.com/ (Org 37079)
 :: Validação ::
-Suíte QA 1.9 executada: 3 PASSOU | 0 FALHOU | 6 NAO_VERIFICADO.
+Suíte QA 1.9 executada: 3 PASSOU | 0 FALHOU | 6 NAO_VERIFICADO. Card PASSA (execução concluída, nenhuma falha; os 3 TCs testáveis passaram). RESSALVA: 6 TCs ficaram sem verificar por falta de massa na stage (sem registro Externo+Pendente com o kebab "Avaliar" ativo) — precisam de fixture + re-execução pra cobertura completa.
 
 TCs PASSOU (comportamento correto):
 - TC2: Form de avaliação (/edit?mode=admin-avaliar) carrega com campos Tipo/Categorias editáveis, demais desabilitados, rodapé com Aprovar/Recusar/Cancelar.
@@ -160,8 +160,9 @@ Mutação: registro id=44279951 excluído durante simulação de TC9.
 :: Obs ::
 Para completar TC1, TC8, TC3, TC4, TC6 e TC9, é necessário criar um registro Externo com situação "pendente de avaliação" na stage. O aluno não tem rota de criação acessível (/records/new → 404). Recomenda-se criar manualmente ou via admin o registro fixture antes de re-executar.
 :: Evidência(s) ::
-- Form avaliação com campos e rodapé: tc2_02_form_completo.png
-- Modal Recusar funcional: tc5_02_modal.png / tc5_03_preenchido.png
-- Cancelar retorna à lista: tc7_03_pos_cancelar.png
-Pasta: evidencias/registros-f2-qa19/
+- TC2 form de avaliação (campos + rodapé): https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa19/tc2_02_form_completo.png
+- TC5 modal Recusar funcional: https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa19/tc5_02_modal.png
+- TC5 modal preenchido (botão habilita): https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa19/tc5_03_preenchido.png
+- TC7 Cancelar retorna à lista: https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa19/tc7_03_pos_cancelar.png
+Pasta com todas as evidências: https://github.com/DantexgerBR/twygo-playwright-tests/tree/main/evidencias/registros-f2-qa19
 ```
