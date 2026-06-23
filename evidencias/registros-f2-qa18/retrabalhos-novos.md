@@ -32,6 +32,6 @@ O `<button role="menuitem" data-test-id="records-list-view-action">` existe no D
 **RNs afetadas**: RN 47, RN 48, RN 49  
 
 **Evidências**:  
-- `kb4_01_focado.png` — Visualizar focado via teclado (highlight, foco real confirmado)
-- `kb4_02_pos_enter.png` — Após Enter: menu fechou, lista sem ação
-- `dispatch_aluno_02_pos_editar.png` — Editar funciona no mesmo menu (referência)
+- Visualizar focado via teclado (foco real confirmado): https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa18/kb4_01_focado.png
+- Após Enter: menu fechou, lista sem ação (BUG): https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa18/kb4_02_pos_enter.png
+- Editar funciona no mesmo menu (controle/referência): https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa18/dispatch_aluno_02_pos_editar.png
