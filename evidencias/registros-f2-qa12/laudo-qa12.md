@@ -100,29 +100,36 @@ Organograma criado por Dante: líder `qalider@teste.com` com liderado direto `li
 
 **Causa raiz**: a API de Registros na visão Gestor de turma não aplica filtro de escopo pelo organograma (liderados diretos). O Gestor vê a org inteira em vez do seu time.
 
-**Evidências**: `tc9_step1_registros_lider.png`, `tc9_crosscheck_nao_liderado.png`, `tc9_crosscheck_liderado.png`, `tc9g_02_dropdown_perfil.png`
+**Evidências**:
+- [tc9_step1_registros_lider.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc9_step1_registros_lider.png) — listagem na visão do líder (org inteira)
+- [tc9_18_lider_kpis.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc9_18_lider_kpis.png) — KPIs idênticos ao Admin
+- [tc9_crosscheck_nao_liderado.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc9_crosscheck_nao_liderado.png) — não-liderado listado
+- [tc9_crosscheck_liderado.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc9_crosscheck_liderado.png) — liderado direto ausente na busca
+- [tc9g_02_dropdown_perfil.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc9g_02_dropdown_perfil.png) — seletor de perfil (Gestor de turma)
 
 ---
 
 ## Evidências
 
-| TC | Arquivo principal |
-|---|---|
-| Gate | gate_02_registros_admin.png |
-| TC1 | tc1_01_registros_full.png, tc1_02_toolbar.png |
-| TC2 | tc2_01_tabela_completa.png, tc2_tooltip_svg2.png |
-| TC3 | tc3_01_tres_marcados.png, tc3_02_header_todos_marcados.png, tc3_03_header_desmarcados.png |
-| TC4 | tc4_01_antes_busca.png, tc4_02_busca_sem_resultado.png |
-| TC5 | tc5_01_antes_scroll.png, tc5_02_apos_scroll_horizontal.png, tc5_03_sticky_estado.png |
-| TC6 | tc6_01_sem_sort.png, tc6_02_asc.png, tc6_03_desc.png, tc6_04_none.png |
-| TC7 | tc7_01_busca_por_nome.png |
-| TC8 | tc8final_01_grid.png, tc8final_02_card_marcado.png |
-| TC9 | tc9_step1_registros_lider.png, tc9_crosscheck_nao_liderado.png, tc9_crosscheck_liderado.png, tc9g_02_dropdown_perfil.png |
-| TC10 | tc10_01_pagina1.png, tc10_02_pagina2.png |
-| TC11 | tc11_01_mobile_full.png, tc11_02_hamburger_area.png |
-| TC12 | tc12_01_tablet_full.png |
+Base (GitHub): https://github.com/DantexgerBR/twygo-playwright-tests/tree/main/evidencias/registros-f2-qa12 — cada arquivo abaixo é um link clicável.
 
-Todas as evidências em: `evidencias/registros-f2-qa12/`
+| TC | Arquivo principal (link) |
+|---|---|
+| Gate | [gate_02_registros_admin.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/gate_02_registros_admin.png) |
+| TC1 | [tc1_01_registros_full.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc1_01_registros_full.png), [tc1_02_toolbar.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc1_02_toolbar.png) |
+| TC2 | [tc2_01_tabela_completa.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc2_01_tabela_completa.png), [tc2_tooltip_svg2.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc2_tooltip_svg2.png) |
+| TC3 | [tc3_01_tres_marcados.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc3_01_tres_marcados.png), [tc3_02_header_todos_marcados.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc3_02_header_todos_marcados.png), [tc3_03_header_desmarcados.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc3_03_header_desmarcados.png) |
+| TC4 | [tc4_01_antes_busca.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc4_01_antes_busca.png), [tc4_02_busca_sem_resultado.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc4_02_busca_sem_resultado.png) |
+| TC5 | [tc5_01_antes_scroll.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc5_01_antes_scroll.png), [tc5_02_apos_scroll_horizontal.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc5_02_apos_scroll_horizontal.png), [tc5_03_sticky_estado.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc5_03_sticky_estado.png) |
+| TC6 | [tc6_01_sem_sort.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc6_01_sem_sort.png), [tc6_02_asc.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc6_02_asc.png), [tc6_03_desc.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc6_03_desc.png), [tc6_04_none.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc6_04_none.png) |
+| TC7 | [tc7_01_busca_por_nome.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc7_01_busca_por_nome.png) |
+| TC8 | [tc8final_01_grid.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc8final_01_grid.png), [tc8final_02_card_marcado.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc8final_02_card_marcado.png) |
+| TC9 | [tc9_step1_registros_lider.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc9_step1_registros_lider.png), [tc9_18_lider_kpis.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc9_18_lider_kpis.png), [tc9_crosscheck_nao_liderado.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc9_crosscheck_nao_liderado.png), [tc9_crosscheck_liderado.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc9_crosscheck_liderado.png), [tc9g_02_dropdown_perfil.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc9g_02_dropdown_perfil.png) |
+| TC10 | [tc10_01_pagina1.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc10_01_pagina1.png), [tc10_02_pagina2.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc10_02_pagina2.png) |
+| TC11 | [tc11_01_mobile_full.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc11_01_mobile_full.png), [tc11_02_hamburger_area.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc11_02_hamburger_area.png) |
+| TC12 | [tc12_01_tablet_full.png](https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc12_01_tablet_full.png) |
+
+Todas as evidências em: https://github.com/DantexgerBR/twygo-playwright-tests/tree/main/evidencias/registros-f2-qa12
 
 ---
 
@@ -152,15 +159,16 @@ TC9 re-executado após criação de organograma (qalider → liderado1). Perfil 
 TC2 (ressalva, NÃO bug — alinhar AT): colunas são configuráveis (RN 7.2); labels reais "Situação", tooltip do Provedor e conjunto default (com "Experiência"/"Website"/"Evidências"; "Progresso" fora do default) divergem da AT. Atualizar test-analysis.md.
 Novos retrabalhos desta execução: TC5 (sticky+altura 660px), TC6 (3º clique sort — global), TC8 (borda roxa), TC9 (escopo Gestor não filtrado por liderados).
 :: Evidência(s) ::
-- tc1_01_registros_full.png
-- tc2_01_tabela_completa.png
-- tc4_02_busca_sem_resultado.png
-- tc5_03_sticky_estado.png
-- tc6_04_none.png
-- tc8final_02_card_marcado.png
-- tc9_step1_registros_lider.png
-- tc9_crosscheck_nao_liderado.png
-- tc11_01_mobile_full.png
-- tc12_01_tablet_full.png
-Evidências em: evidencias/registros-f2-qa12/
+- TC1 estrutura: https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc1_01_registros_full.png
+- TC2 colunas: https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc2_01_tabela_completa.png
+- TC4 busca não filtra: https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc4_02_busca_sem_resultado.png
+- TC5 sticky/altura: https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc5_03_sticky_estado.png
+- TC6 3º clique sort: https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc6_04_none.png
+- TC8 card sem borda: https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc8final_02_card_marcado.png
+- TC9 escopo líder (org inteira): https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc9_step1_registros_lider.png
+- TC9 KPIs do líder = Admin: https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc9_18_lider_kpis.png
+- TC9 não-liderado listado: https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc9_crosscheck_nao_liderado.png
+- TC11 sem hambúrguer mobile: https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc11_01_mobile_full.png
+- TC12 tablet 2x2: https://github.com/DantexgerBR/twygo-playwright-tests/blob/main/evidencias/registros-f2-qa12/tc12_01_tablet_full.png
+Pasta com todas as evidências: https://github.com/DantexgerBR/twygo-playwright-tests/tree/main/evidencias/registros-f2-qa12
 ```
