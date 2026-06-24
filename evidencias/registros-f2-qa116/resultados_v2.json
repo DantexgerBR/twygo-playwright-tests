@@ -1,0 +1,56 @@
+{
+  "resultados": {
+    "TC1": {
+      "veredito": "FALHOU",
+      "resumo": "Líder puro não conseguiu logar (URL=https://registrosf2.stage.twygoead.com/users/login)"
+    },
+    "TC2": {
+      "veredito": "FALHOU",
+      "resumo": "Líder puro não conseguiu logar (URL=https://registrosf2.stage.twygoead.com/users/login)"
+    },
+    "TC3": {
+      "veredito": "FALHOU",
+      "resumo": "Líder puro não conseguiu logar (URL=https://registrosf2.stage.twygoead.com/users/login)"
+    },
+    "TC4": {
+      "veredito": "FALHOU",
+      "resumo": "Registros do usuário descartável não criados via API"
+    },
+    "TC5": {
+      "veredito": "FALHOU",
+      "resumo": "KPI sum (408) ≠ total paginado (0) — inconsistência"
+    },
+    "TC6": {
+      "veredito": "FALHOU",
+      "resumo": "BLOQUEADO: Registros Compartilhados (origin=shared) vêm de SharedEvent de org parceira. A org 37079 não tem parceiro configurado e não é possível criar origin=shared via API sem infraestrutura de outra org. TC6-TC10 requerem setup de org parceira — solicitar ao João Miguel."
+    },
+    "TC7": {
+      "veredito": "FALHOU",
+      "resumo": "BLOQUEADO: Registros Compartilhados (origin=shared) vêm de SharedEvent de org parceira. A org 37079 não tem parceiro configurado e não é possível criar origin=shared via API sem infraestrutura de outra org. TC6-TC10 requerem setup de org parceira — solicitar ao João Miguel."
+    },
+    "TC8": {
+      "veredito": "FALHOU",
+      "resumo": "BLOQUEADO: Registros Compartilhados (origin=shared) vêm de SharedEvent de org parceira. A org 37079 não tem parceiro configurado e não é possível criar origin=shared via API sem infraestrutura de outra org. TC6-TC10 requerem setup de org parceira — solicitar ao João Miguel."
+    },
+    "TC9": {
+      "veredito": "FALHOU",
+      "resumo": "BLOQUEADO: Registros Compartilhados (origin=shared) vêm de SharedEvent de org parceira. A org 37079 não tem parceiro configurado e não é possível criar origin=shared via API sem infraestrutura de outra org. TC6-TC10 requerem setup de org parceira — solicitar ao João Miguel."
+    },
+    "TC10": {
+      "veredito": "FALHOU",
+      "resumo": "BLOQUEADO: Registros Compartilhados (origin=shared) vêm de SharedEvent de org parceira. A org 37079 não tem parceiro configurado e não é possível criar origin=shared via API sem infraestrutura de outra org. TC6-TC10 requerem setup de org parceira — solicitar ao João Miguel."
+    }
+  },
+  "entidades_criadas": [
+    {
+      "tipo": "usuario",
+      "email": "qaliderpuro@teste.com",
+      "acao": "criado"
+    },
+    {
+      "tipo": "usuario",
+      "email": "qainativo_75295@twygotest.com",
+      "acao": "criado_descartavel"
+    }
+  ]
+}
