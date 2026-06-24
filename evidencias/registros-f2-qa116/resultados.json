@@ -1,0 +1,187 @@
+{
+  "inventario": {
+    "kpis_iniciais": {
+      "pendentes": 0,
+      "emitidos": 0,
+      "expirados": 0,
+      "recusados": 0
+    },
+    "total_registros": 0,
+    "tem_compartilhados": false,
+    "lider_existe": true,
+    "liderado_existe": true,
+    "organograma_404": true,
+    "perfil_lider_confirmado": true,
+    "usuarios": [
+      {
+        "email": "liderado1@teste.com",
+        "texto": "liderado 1 liderado1@teste.com school 0 0% more_vert",
+        "ativo": true
+      },
+      {
+        "email": "qalider@teste.com",
+        "texto": "lider . qalider@teste.com 23/06/2026 16:56 school manage_accounts supervisor_account for_you 0 0% more_vert",
+        "ativo": true
+      },
+      {
+        "email": "devtestes@teste.com",
+        "texto": "dev teste devtestes@teste.com school manage_accounts supervisor_account for_you 0 0% more_vert",
+        "ativo": true
+      },
+      {
+        "email": "qakpitc8session2@twygotest.com",
+        "texto": "QA KPI TC8 qakpitc8session2@twygotest.com 22/06/2026 15:43 school 0 0% more_vert",
+        "ativo": true
+      },
+      {
+        "email": "qa11tc342816@twygotest.com",
+        "texto": "QA11 TC3 qa11tc342816@twygotest.com 24/06/2026 10:17 school 110 88% more_vert",
+        "ativo": true
+      },
+      {
+        "email": "qa11tc334976@twygotest.com",
+        "texto": "QA11 TC3 qa11tc334976@twygotest.com school 0 0% more_vert",
+        "ativo": true
+      },
+      {
+        "email": "qa11tc342588@twygotest.com",
+        "texto": "QA11 TC3 qa11tc342588@twygotest.com 24/06/2026 10:42 school 0 0% more_vert",
+        "ativo": true
+      },
+      {
+        "email": "qa11tc3r26628@mailtest.example",
+        "texto": "QA11TC3 EmptyUser qa11tc3r26628@mailtest.example school 0 0% more_vert",
+        "ativo": true
+      },
+      {
+        "email": "qa11empty30168@mailnull.com",
+        "texto": "QA11 EmptyTest qa11empty30168@mailnull.com school 0 0% more_vert",
+        "ativo": true
+      },
+      {
+        "email": "qa11empty10628@mailnull.com",
+        "texto": "QA11 EmptyTest qa11empty10628@mailnull.com school 0 0% more_vert",
+        "ativo": true
+      },
+      {
+        "email": "richard.sebold@twygo.com",
+        "texto": "Richard Sebold richard.sebold@twygo.com 24/06/2026 11:50 school manage_accounts supervisor_account for_you 0 0% more_vert",
+        "ativo": true
+      },
+      {
+        "email": "usuario.trial@sophia.tech.com.br",
+        "texto": "Usuario Trial usuario.trial@sophia.tech.com.br 11/05/2026 15:57 school manage_accounts 0 0% more_vert",
+        "ativo": true
+      },
+      {
+        "email": "julia@sophia.tech.com.br",
+        "texto": "Julia Oliveira julia@sophia.tech.com.br 23/06/2026 11:55 school 2640 74% more_vert",
+        "ativo": true
+      },
+      {
+        "email": "vanessa@sophia.tech.com.br",
+        "texto": "Vanessa Pereira vanessa@sophia.tech.com.br 01/08/2024 11:32 school 2780 78% more_vert",
+        "ativo": true
+      },
+      {
+        "email": "gabriel@sophia.tech.com.br",
+        "texto": "Gabriel Souza gabriel@sophia.tech.com.br 01/08/2024 11:33 school 1020 29% more_vert",
+        "ativo": true
+      },
+      {
+        "email": "carla@sophia.tech.com.br",
+        "texto": "Carla Silva carla@sophia.tech.com.br 01/08/2024 11:37 school 3000 84% more_vert",
+        "ativo": true
+      },
+      {
+        "email": "danilo@sophia.tech.com.br",
+        "texto": "Danilo Marques danilo@sophia.tech.com.br 01/08/2024 11:35 school 1140 29% more_vert",
+        "ativo": true
+      },
+      {
+        "email": "dante.tavares@twygo.com",
+        "texto": "QA Tester dante.tavares@twygo.com 24/06/2026 12:19 school manage_accounts 1190 35% more_vert",
+        "ativo": true
+      }
+    ]
+  },
+  "info_liderados": {
+    "funcao": "verificar_liderados",
+    "liderado1_existe": true,
+    "liderado1_info": "\t\n\nliderado 1\n\nliderado1@teste.com\n\n\t\t\nschool\n\t\n\n0\n\n\t\n\n0%\n\n\t\n\t\nmore_vert"
+  },
+  "tc1": {
+    "tc": "TC1",
+    "admin_total_linhas": 25,
+    "admin_kpis": {
+      "pendentes": 80,
+      "emitidos": 293,
+      "expirados": 15,
+      "recusados": 20
+    },
+    "estrutura_admin": {
+      "tem_botao_adicionar": true,
+      "tem_acoes_em_massa": true,
+      "tem_extrair_dados": true,
+      "tem_kpis": true,
+      "url": "https://registrosf2.stage.twygoead.com/o/37079/records"
+    },
+    "lider_total_linhas": 25,
+    "lider_kpis": {
+      "pendentes": 80,
+      "emitidos": 293,
+      "expirados": 15,
+      "recusados": 20
+    },
+    "estrutura_lider": {
+      "tem_botao_adicionar": true,
+      "tem_acoes_em_massa": true,
+      "tem_kpis": true,
+      "url": "https://registrosf2.stage.twygoead.com/o/37079/records",
+      "acessou_registros": true
+    },
+    "lider_status": "EXECUTADO",
+    "status": "EXECUTADO_SEM_MASSA",
+    "detalhe": "Login Admin e Líder funcionaram. Admin vê 25 registros, Líder vê 25 registros. Sem registros na org para validar restrição de escopo — precisam existir registros de usuários fora do liderado para verificar a restrição."
+  },
+  "tc4": {
+    "tc": "TC4",
+    "kpis_antes": {
+      "pendentes": 80,
+      "emitidos": 293,
+      "expirados": 15,
+      "recusados": 20
+    },
+    "linhas_antes": 25,
+    "status": "BLOQUEADO",
+    "motivo": "Há 25 registros na org mas precisa identificar qual usuário possui registros para inativar de forma controlada. TC4 é operação destrutiva — necessita confirmação do João Miguel para prosseguir."
+  },
+  "tc5": {
+    "tc": "TC5",
+    "kpis": {
+      "pendentes": 80,
+      "emitidos": 293,
+      "expirados": 15,
+      "recusados": 20
+    },
+    "soma_kpi": 408,
+    "linhas_lista": 25,
+    "texto_paginacao": null,
+    "status": "FALHOU",
+    "detalhe": "KPI total (408) != linhas da lista (25) — inconsistência detectada",
+    "lider_kpis": {
+      "pendentes": 80,
+      "emitidos": 293,
+      "expirados": 15,
+      "recusados": 20
+    },
+    "lider_soma": 408,
+    "lider_linhas": 25,
+    "lider_coerencia": "DIVERGENCIA: KPI=408 != linhas=25"
+  },
+  "tc6": {
+    "tc": "TC6",
+    "status": "BLOQUEADO",
+    "motivo": "Nenhum registro com origem='Compartilhado' encontrado na org 37079. Registros Compartilhados vêm de SharedEvent de org parceira (não criáveis pela UI). Solicitar ao João Miguel: configurar compartilhamento de org parceira ou criar registros com origin=shared via seed/API."
+  }
+}
