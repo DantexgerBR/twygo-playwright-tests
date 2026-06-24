@@ -1,0 +1,82 @@
+{
+  "perfil_lider": "Gestor de turma",
+  "falhas_4xx_5xx": [],
+  "requests_relevantes": [
+    {
+      "url": "https://registrosf2.stage.twygoead.com/o/37079/records/new",
+      "status": 200,
+      "method": "GET"
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=13&frm=0&ae=g&auid=1761798378.1782320326&dt=Dom%C3%ADnio%20padr%C3%A3o&en=page_view&dl=https%3A%2F%2Fregistrosf2.stage.twygoead.com%2Fo%2F37079%2Frecords%2Fnew&dr=registrosf2.stage.twygoead.com&scrsrc=www.googletagmanager.com&rnd=918905944.1782320341&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He66n0v78814578za200zd78814578xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~119027224~119392696~119392704&apve=1&apvf=f&apvc=1&tft=1782320340760&tfd=1088&fmt=8",
+      "status": 200,
+      "method": "POST"
+    },
+    {
+      "url": "https://cdn-stage.twygo.com/vite/assets/theme-provider-CYpwgdqY.min.js",
+      "status": 304,
+      "method": "GET"
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-RD7B5K6ZK4&gtm=45je66n0v884816885z878814578za20gzb78814578zd78814578&_p=1782320340666&gcd=13l3l3l3l1l1&npa=0&dma=0&ecid=1411524329&_eu=EAAAAGQC&are=1&cid=465192655.1782320327&ec_mode=a&frm=0&ir=1&pscdl=noapi&rcb=9&sr=1500x950&uaa=x86&uab=64&uafvl=Chromium%3B148.0.7778.96%7CHeadlessChrome%3B148.0.7778.96%7CNot%252FA)Brand%3B99.0.0.0&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=pt-br&gaf=2&_s=1&tag_exp=115616986~115938465~115938468~119027224~119392696~119392704~119534187&sid=1782320326&sct=1&seg=1&dl=https%3A%2F%2Fregistrosf2.stage.twygoead.com%2Fo%2F37079%2Frecords%2Fnew&dr=https%3A%2F%2Fregistrosf2.stage.twygoead.com%2Fo%2F37079%2Frecords&dt=Dom%C3%ADnio%20padr%C3%A3o&en=page_view&tfd=1115",
+      "status": 204,
+      "method": "POST"
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-RD7B5K6ZK4&gtm=45je66n0v884816885z878814578za20gzb78814578zd78814578&_p=1782320340666&gcd=13l3l3l3l1l1&npa=0&dma=0&ecid=1411524329&_eu=EAACAGQC&are=1&cid=465192655.1782320327&ec_mode=a&frm=0&ir=1&pscdl=noapi&rcb=9&sr=1500x950&uaa=x86&uab=64&uafvl=Chromium%3B148.0.7778.96%7CHeadlessChrome%3B148.0.7778.96%7CNot%252FA)Brand%3B99.0.0.0&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=pt-br&gaf=2&_s=2&tag_exp=115616986~115938465~115938468~119027224~119392696~119392704~119534187&sid=1782320326&sct=1&seg=1&dl=https%3A%2F%2Fregistrosf2.stage.twygoead.com%2Fo%2F37079%2Frecords%2Fnew&dr=https%3A%2F%2Fregistrosf2.stage.twygoead.com%2Fo%2F37079%2Frecords&dt=Dom%C3%ADnio%20padr%C3%A3o&en=page_view&_et=2&tfd=1121",
+      "status": 204,
+      "method": "POST"
+    },
+    {
+      "url": "https://www.google.com/ccm/collect?rcb=4&frm=0&ae=g&auid=1761798378.1782320326&dt=Dom%C3%ADnio%20padr%C3%A3o&dl=https%3A%2F%2Fregistrosf2.stage.twygoead.com%2Fo%2F37079%2Frecords%2Fnew&dr=registrosf2.stage.twygoead.com&scrsrc=www.googletagmanager.com&rnd=918905944.1782320341&navt=n&npa=0&_tu=CA&gtm=45be66n0v9178419319z878814578za20gzb78814578zd78814578xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~118395334~119027224~119392696~119392704&apve=1&apvf=f&apvc=0&tids=AW-940863039&tid=AW-940863039&tft=1782320340837&tfd=1165&fmt=8",
+      "status": 200,
+      "method": "POST"
+    },
+    {
+      "url": "https://www.google.com/rmkt/collect/940863039/?random=1782320340831&cv=11&fst=1782320340831&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45be66n0v9178419319z878814578za20gzb78814578zd78814578xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~118395334~119027224~119392696~119392704&u_w=1500&u_h=950&url=https%3A%2F%2Fregistrosf2.stage.twygoead.com%2Fo%2F37079%2Frecords%2Fnew&ref=https%3A%2F%2Fregistrosf2.stage.twygoead.com%2Fo%2F37079%2Frecords&rcb=4&frm=0&tiba=Dom%C3%ADnio%20padr%C3%A3o&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1761798378.1782320326&uaa=x86&uab=64&uafvl=Chromium%3B148.0.7778.96%7CHeadlessChrome%3B148.0.7778.96%7CNot%252FA)Brand%3B99.0.0.0&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=CA&ept=68&gcp=5",
+      "status": 200,
+      "method": "POST"
+    },
+    {
+      "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/940863039/?random=1782320340831&cv=11&fst=1782320340831&bg=ffffff&guid=ON&async=1&gtm=45be66n0v9178419319z878814578za20gzb78814578zd78814578xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~118395334~119027224~119392696~119392704&u_w=1500&u_h=950&url=https%3A%2F%2Fregistrosf2.stage.twygoead.com%2Fo%2F37079%2Frecords%2Fnew&ref=https%3A%2F%2Fregistrosf2.stage.twygoead.com%2Fo%2F37079%2Frecords&rcb=4&frm=0&tiba=Dom%C3%ADnio%20padr%C3%A3o&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1761798378.1782320326&uaa=x86&uab=64&uafvl=Chromium%3B148.0.7778.96%7CHeadlessChrome%3B148.0.7778.96%7CNot%252FA)Brand%3B99.0.0.0&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=CA&ept=9&rfmt=3&fmt=4",
+      "status": 200,
+      "method": "GET"
+    },
+    {
+      "url": "https://www.google.com/pagead/1p-user-list/940863039/?random=1782320340831&cv=11&fst=1782316800000&bg=ffffff&guid=ON&async=1&gtm=45be66n0v9178419319z878814578za20gzb78814578zd78814578xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~118395334~119027224~119392696~119392704&u_w=1500&u_h=950&url=https%3A%2F%2Fregistrosf2.stage.twygoead.com%2Fo%2F37079%2Frecords%2Fnew&ref=https%3A%2F%2Fregistrosf2.stage.twygoead.com%2Fo%2F37079%2Frecords&rcb=4&frm=0&tiba=Dom%C3%ADnio%20padr%C3%A3o&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1761798378.1782320326&uaa=x86&uab=64&uafvl=Chromium%3B148.0.7778.96%7CHeadlessChrome%3B148.0.7778.96%7CNot%252FA)Brand%3B99.0.0.0&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=CA&ept=9&rfmt=3&fmt=3&is_vtc=1&cid=CAQS-QEAEQoqgeUIB0SniTBdFmD4s4yB-XGRLw6XvSuZ4N4O21rSeBjrxLWtk_coO_McKLXgbEEnKELj2vUlPUUOS3rh5kOg-9Qz3Nj1xdLiy1e0olVD-fDY03ISBusnnYaYcLohMib4WC7Ll_hVJuss-_2peApJqFTWX7ocg18eimuY-jA6L0w3G1luyof_g129FaOfsrF32HPiIXF9yNtoYVoDrsWY5XF4B-da5HMN0BlQiIN4DHqcexGr3f4T5_kkZtuJlbwdSLEDUgD6zLiF8teffjjc7-dJ91MZhNIzRd6U6MEFpImaue5LZcqE3PjjFJAwhjBxbcW_44s&random=1921334207&rmt_tld=0&ipr=y",
+      "status": 200,
+      "method": "GET"
+    },
+    {
+      "url": "https://www.google.com.br/pagead/1p-user-list/940863039/?random=1782320340831&cv=11&fst=1782316800000&bg=ffffff&guid=ON&async=1&gtm=45be66n0v9178419319z878814578za20gzb78814578zd78814578xea&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938469~118395334~119027224~119392696~119392704&u_w=1500&u_h=950&url=https%3A%2F%2Fregistrosf2.stage.twygoead.com%2Fo%2F37079%2Frecords%2Fnew&ref=https%3A%2F%2Fregistrosf2.stage.twygoead.com%2Fo%2F37079%2Frecords&rcb=4&frm=0&tiba=Dom%C3%ADnio%20padr%C3%A3o&hn=www.googleadservices.com&npa=0&pscdl=noapi&auid=1761798378.1782320326&uaa=x86&uab=64&uafvl=Chromium%3B148.0.7778.96%7CHeadlessChrome%3B148.0.7778.96%7CNot%252FA)Brand%3B99.0.0.0&uamb=0&uam=&uap=Windows&uapv=19.0.0&uaw=0&_tu=CA&ept=9&rfmt=3&fmt=3&is_vtc=1&cid=CAQS-QEAEQoqgeUIB0SniTBdFmD4s4yB-XGRLw6XvSuZ4N4O21rSeBjrxLWtk_coO_McKLXgbEEnKELj2vUlPUUOS3rh5kOg-9Qz3Nj1xdLiy1e0olVD-fDY03ISBusnnYaYcLohMib4WC7Ll_hVJuss-_2peApJqFTWX7ocg18eimuY-jA6L0w3G1luyof_g129FaOfsrF32HPiIXF9yNtoYVoDrsWY5XF4B-da5HMN0BlQiIN4DHqcexGr3f4T5_kkZtuJlbwdSLEDUgD6zLiF8teffjjc7-dJ91MZhNIzRd6U6MEFpImaue5LZcqE3PjjFJAwhjBxbcW_44s&random=1921334207&rmt_tld=1&ipr=y",
+      "status": 200,
+      "method": "GET"
+    },
+    {
+      "url": "https://px.ads.linkedin.com/collect?v=2&fmt=js&pid=1024585&time=1782320340921&li_adsId=b28dbb9a-ce0d-4310-a5d2-3b229da4b392&url=https%3A%2F%2Fregistrosf2.stage.twygoead.com%2Fo%2F37079%2Frecords%2Fnew",
+      "status": 302,
+      "method": "GET"
+    },
+    {
+      "url": "https://cdn-stage.twygo.com/vite/assets/new-record-form-gvLzRHLF.min.js",
+      "status": 404,
+      "method": "GET"
+    },
+    {
+      "url": "https://px.ads.linkedin.com/attribution_trigger?pid=1024585&time=1782320340921&url=https%3A%2F%2Fregistrosf2.stage.twygoead.com%2Fo%2F37079%2Frecords%2Fnew",
+      "status": 200,
+      "method": "GET"
+    },
+    {
+      "url": "https://px4.ads.linkedin.com/collect?v=2&fmt=js&pid=1024585&time=1782320340921&li_adsId=b28dbb9a-ce0d-4310-a5d2-3b229da4b392&url=https%3A%2F%2Fregistrosf2.stage.twygoead.com%2Fo%2F37079%2Frecords%2Fnew&e_ipv6=AQL_jfA0e5079AAAAZ76kcrpn2Jd02FGJL0Pujwb2SCF_eTqg6t4UxVQcZ80J2uneQccRY9tv6Ksw1VyKDwXcpQKkM0p-Eg",
+      "status": 200,
+      "method": "GET"
+    },
+    {
+      "url": "https://analytics.google.com/g/collect?v=2&tid=G-RD7B5K6ZK4&gtm=45je66n0v884816885za20gzb78814578zd78814578&_p=1782320340666&gcd=13l3l3l3l1l1&npa=0&dma=0&ecid=1411524329&_eu=EEAAAGQC&ae=a&are=1&cid=465192655.1782320327&frm=0&ir=1&pscdl=noapi&rcb=9&sr=1500x950&uaa=x86&uab=64&uafvl=Chromium%3B148.0.7778.96%7CHeadlessChrome%3B148.0.7778.96%7CNot%252FA)Brand%3B99.0.0.0&uam=&uamb=0&uap=Windows&uapv=19.0.0&uaw=0&ul=pt-br&gaf=2&_s=3&tag_exp=115616986~115938465~115938468~119027224~119392696~119392704~119534187&sid=1782320326&sct=1&seg=1&dl=https%3A%2F%2Fregistrosf2.stage.twygoead.com%2Fo%2F37079%2Frecords%2Fnew&dr=https%3A%2F%2Fregistrosf2.stage.twygoead.com%2Fo%2F37079%2Frecords&dt=Dom%C3%ADnio%20padr%C3%A3o&_tu=CA&en=scroll&epn.percent_scrolled=90&_et=6&tfd=6133",
+      "status": 204,
+      "method": "POST"
+    }
+  ],
+  "toasts": []
+}
