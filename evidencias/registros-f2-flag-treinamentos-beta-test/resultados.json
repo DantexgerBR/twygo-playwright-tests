@@ -1,0 +1,678 @@
+{
+  "admin": {
+    "_erros_console": [
+      {
+        "type": "error",
+        "text": "Loading the script 'https://connect.facebook.net/en_US/all.js' violates the following Content Security Policy directive: \"script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked."
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-QituST8WC/C9V3BvzGqmGOrwKu7+QN9xIT/7G9B0q8o='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-xpCWrI/CA1w6nWND5biTfFx2QIZPiK+Ogw9iXiUPGL8='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-ybh/VcwTkHeX8bMsqexCRBOKvXAJxNHub6Retb+IpTE='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Loading the script 'https://connect.facebook.net/en_US/all.js' violates the following Content Security Policy directive: \"script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked."
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-jYh1LTWtssMJ0dT7HJHe61dhEVBzIoODr7tBVFSV3tg='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Loading the script 'https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js' violates the following Content Security Policy directive: \"script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback."
+      },
+      {
+        "type": "error",
+        "text": "Loading the script 'https://cdn.ckeditor.com/4.17.1/full/ckeditor.js' violates the following Content Security Policy directive: \"script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blo"
+      },
+      {
+        "type": "error",
+        "text": "Loading the script 'https://www.recaptcha.net/recaptcha/api.js' violates the following Content Security Policy directive: \"script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked."
+      },
+      {
+        "type": "error",
+        "text": "Loading the script 'https://www.recaptcha.net/recaptcha/api.js' violates the following Content Security Policy directive: \"script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked."
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-IwJPRFCVz6YiJCR8r+TsQxUkmddclVoKRVQUxzTCo5k='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-PftBs/yb6r0CO0Q2M814OhakpVlJzhSdUCm9hfj/fHQ='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-dB2XyatJNZbKdu4SBk4G2/ljrw4o11X8mPHNZ40PLuY='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-mbK9eiD8869LaZAHor2okmKgEkaDWfbuPdZ+8k9rJSo='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-mW2D4nV5Bp5X2JuMMQa882cLMgmDjY+mw0heAd1G7aw='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-mW2D4nV5Bp5X2JuMMQa882cLMgmDjY+mw0heAd1G7aw='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-uO7OxPAarUl/7BMNL4lVWgK6/DWRw7VtQuXU6nVPJ4U='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-DEHRT5Q+jO5ppqKX3Hb0E7my6XfD6ZY/NIOk6122HV0='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-GkQTn6SWRd+Fxn71l/tFM6RAw0ZFQPPCQsrIamDCZds='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Error: unknown format: \n    at new U (https://cdn-stage.twygo.com/vite/assets/primary-color-DP1XNnRh.min.js:72:1502)\n    at Q (https://cdn-stage.twygo.com/vite/assets/primary-color-DP1XNnRh.min.js:72:1755)\n    at Yg.generate (https://cdn-stage.twygo.com/vite/assets/palette-generator-Cl00tsB0.min.js:"
+      },
+      {
+        "type": "error",
+        "text": "Refused to apply style from 'https://registrosf2.stage.twygoead.com/assets/fonts/material-icons/material-icons.sass' because its MIME type ('text/sass') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+      },
+      {
+        "type": "warning",
+        "text": "[quick-fetch] quickFetchScript was not included or running in Node.js environment. Falling back to stubbed implementation."
+      },
+      {
+        "type": "error",
+        "text": "Permissions policy violation: compute-pressure is not allowed in this document."
+      },
+      {
+        "type": "error",
+        "text": "Refused to apply style from 'https://registrosf2.stage.twygoead.com/assets/fonts/material-icons/material-icons.sass' because its MIME type ('text/sass') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+      },
+      {
+        "type": "warning",
+        "text": "[quick-fetch] quickFetchScript was not included or running in Node.js environment. Falling back to stubbed implementation."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 400 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 400 ()"
+      },
+      {
+        "type": "error",
+        "text": "Refused to apply style from 'https://registrosf2.stage.twygoead.com/assets/fonts/material-icons/material-icons.sass' because its MIME type ('text/sass') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+      },
+      {
+        "type": "warning",
+        "text": "[quick-fetch] quickFetchScript was not included or running in Node.js environment. Falling back to stubbed implementation."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 400 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_CONNECTION_TIMED_OUT"
+      },
+      {
+        "type": "error",
+        "text": "Refused to apply style from 'https://registrosf2.stage.twygoead.com/assets/fonts/material-icons/material-icons.sass' because its MIME type ('text/sass') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+      },
+      {
+        "type": "warning",
+        "text": "[quick-fetch] quickFetchScript was not included or running in Node.js environment. Falling back to stubbed implementation."
+      },
+      {
+        "type": "error",
+        "text": "Refused to apply style from 'https://registrosf2.stage.twygoead.com/assets/fonts/material-icons/material-icons.sass' because its MIME type ('text/sass') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+      },
+      {
+        "type": "warning",
+        "text": "[quick-fetch] quickFetchScript was not included or running in Node.js environment. Falling back to stubbed implementation."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 400 ()"
+      },
+      {
+        "type": "error",
+        "text": "Refused to apply style from 'https://registrosf2.stage.twygoead.com/assets/fonts/material-icons/material-icons.sass' because its MIME type ('text/sass') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+      },
+      {
+        "type": "warning",
+        "text": "[quick-fetch] quickFetchScript was not included or running in Node.js environment. Falling back to stubbed implementation."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 400 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)"
+      },
+      {
+        "type": "error",
+        "text": "Refused to apply style from 'https://registrosf2.stage.twygoead.com/assets/fonts/material-icons/material-icons.sass' because its MIME type ('text/sass') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+      },
+      {
+        "type": "warning",
+        "text": "[quick-fetch] quickFetchScript was not included or running in Node.js environment. Falling back to stubbed implementation."
+      },
+      {
+        "type": "error",
+        "text": "Refused to apply style from 'https://registrosf2.stage.twygoead.com/assets/fonts/material-icons/material-icons.sass' because its MIME type ('text/sass') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+      },
+      {
+        "type": "warning",
+        "text": "[quick-fetch] quickFetchScript was not included or running in Node.js environment. Falling back to stubbed implementation."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 400 ()"
+      },
+      {
+        "type": "error",
+        "text": "Refused to apply style from 'https://registrosf2.stage.twygoead.com/assets/fonts/material-icons/material-icons.sass' because its MIME type ('text/sass') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+      },
+      {
+        "type": "warning",
+        "text": "[quick-fetch] quickFetchScript was not included or running in Node.js environment. Falling back to stubbed implementation."
+      },
+      {
+        "type": "error",
+        "text": "Refused to apply style from 'https://registrosf2.stage.twygoead.com/assets/fonts/material-icons/material-icons.sass' because its MIME type ('text/sass') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+      },
+      {
+        "type": "warning",
+        "text": "[quick-fetch] quickFetchScript was not included or running in Node.js environment. Falling back to stubbed implementation."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 400 ()"
+      }
+    ],
+    "_erros_rede": [
+      {
+        "status": 400,
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/beta_test/get_active_beta_test_notification?feature_name=estudio_de_criacao&with_notification_history=true"
+      },
+      {
+        "status": 400,
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/beta_test/get_active_beta_test_notification?feature_name=agente_suporte_ia&with_notification_history=true"
+      },
+      {
+        "status": 400,
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/beta_test/get_active_beta_test_notification?feature_name=registros_avaliacao&with_notification_history=true"
+      },
+      {
+        "status": 400,
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/beta_test/get_active_beta_test_notification?feature_name=registros_avaliacao&with_notification_history=true"
+      },
+      {
+        "status": 400,
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/beta_test/get_active_beta_test_notification?feature_name=registros_avaliacao&with_notification_history=true"
+      },
+      {
+        "status": 400,
+        "url": "https://www.clarity.ms/tag/oizme88931"
+      },
+      {
+        "status": 400,
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/beta_test/get_active_beta_test_notification?feature_name=registros_avaliacao&with_notification_history=true"
+      },
+      {
+        "status": 400,
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/beta_test/get_active_beta_test_notification?feature_name=registros_avaliacao&with_notification_history=true"
+      }
+    ],
+    "listagem_status": {
+      "corpo_vazio": false,
+      "tem_erro_texto": false,
+      "snippet": "new_releases\nBoas-vindas\nleaderboard\nDashboard\nMeus Cursos\nMinhas Trilhas\ngroups\nComunidades\ndescription\nMeu histórico BETA\nmap\nRegistros BETA\nmonitoring\nPlanos e Metas\nBETA\ntrack_changes\nPDI\n QA Test"
+    },
+    "n_linhas": 25,
+    "colunas": [
+      "",
+      "Experiência",
+      "Conteúdo",
+      "Origem",
+      "Provedor",
+      "Situação",
+      "Progresso",
+      "Certificado",
+      "Data do certificado",
+      "Data de validade",
+      ""
+    ],
+    "kebab": {
+      "abriu": true,
+      "itens": [
+        {
+          "index": 0,
+          "text": "visibility Visualizar"
+        },
+        {
+          "index": 1,
+          "text": "description Evidências"
+        }
+      ]
+    },
+    "visualizar": {
+      "clicou": true,
+      "achou": true,
+      "onde": "mesma_aba",
+      "url": "https://registrosf2.stage.twygoead.com/o/37079/records/44279381/edit?mode=view",
+      "snippet": "leaderboard\nDashboard\nschool\nAprendizagem\nformat_list_bulleted_add\nConteúdos\nsend\nCompartilhamentos\ndescription\nRegistros\nBETA\nworkspace_premium\nCertificados\nfolder_open\nBase de conhecimento\ngroup\nUsu"
+    },
+    "listagem_admin_status": {
+      "corpo_vazio": false,
+      "tem_erro_texto": false,
+      "snippet": "leaderboard\nDashboard\nschool\nAprendizagem\nformat_list_bulleted_add\nConteúdos\nsend\nCompartilhamentos\ndescription\nRegistros\nBETA\nworkspace_premium\nCertificados\nfolder_open\nBase de conhecimento\ngroup\nUsu"
+    },
+    "n_linhas_admin": 25,
+    "kebab_gestao": {
+      "abriu": true,
+      "itens": [
+        {
+          "index": 0,
+          "text": "edit Editar"
+        },
+        {
+          "index": 1,
+          "text": "visibility Visualizar"
+        },
+        {
+          "index": 2,
+          "text": "description Evidências"
+        }
+      ]
+    },
+    "editar": {
+      "clicou": true,
+      "achou": false,
+      "onde": "mesma_aba",
+      "url": "https://registrosf2.stage.twygoead.com/o/37079/records/44358366/edit",
+      "snippet": "leaderboard\nDashboard\nschool\nAprendizagem\nformat_list_bulleted_add\nConteúdos\nsend\nCompartilhamentos\ndescription\nRegistros\nBETA\nworkspace_premium\nCertificados\nfolder_open\nBase de conhecimento\ngroup\nUsu"
+    },
+    "criar_novo": {
+      "tem_botao": true,
+      "achou": true,
+      "onde": "mesma_aba",
+      "url": "https://registrosf2.stage.twygoead.com/o/37079/records/new",
+      "snippet": "leaderboard\nDashboard\nschool\nAprendizagem\nformat_list_bulleted_add\nConteúdos\nsend\nCompartilhamentos\ndescription\nRegistros\nBETA\nworkspace_premium\nCertificados\nfolder_open\nBase de conhecimento\ngroup\nUsu"
+    },
+    "_erros_rede_core": [
+      {
+        "status": 400,
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/beta_test/get_active_beta_test_notification?feature_name=estudio_de_criacao&with_notification_history=true"
+      },
+      {
+        "status": 400,
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/beta_test/get_active_beta_test_notification?feature_name=agente_suporte_ia&with_notification_history=true"
+      },
+      {
+        "status": 400,
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/beta_test/get_active_beta_test_notification?feature_name=registros_avaliacao&with_notification_history=true"
+      },
+      {
+        "status": 400,
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/beta_test/get_active_beta_test_notification?feature_name=registros_avaliacao&with_notification_history=true"
+      },
+      {
+        "status": 400,
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/beta_test/get_active_beta_test_notification?feature_name=registros_avaliacao&with_notification_history=true"
+      },
+      {
+        "status": 400,
+        "url": "https://www.clarity.ms/tag/oizme88931"
+      },
+      {
+        "status": 400,
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/beta_test/get_active_beta_test_notification?feature_name=registros_avaliacao&with_notification_history=true"
+      },
+      {
+        "status": 400,
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/beta_test/get_active_beta_test_notification?feature_name=registros_avaliacao&with_notification_history=true"
+      }
+    ],
+    "_erros_console_core": [
+      {
+        "type": "error",
+        "text": "Loading the script 'https://connect.facebook.net/en_US/all.js' violates the following Content Security Policy directive: \"script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked."
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-QituST8WC/C9V3BvzGqmGOrwKu7+QN9xIT/7G9B0q8o='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-xpCWrI/CA1w6nWND5biTfFx2QIZPiK+Ogw9iXiUPGL8='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-ybh/VcwTkHeX8bMsqexCRBOKvXAJxNHub6Retb+IpTE='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Loading the script 'https://connect.facebook.net/en_US/all.js' violates the following Content Security Policy directive: \"script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked."
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-jYh1LTWtssMJ0dT7HJHe61dhEVBzIoODr7tBVFSV3tg='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Loading the script 'https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js' violates the following Content Security Policy directive: \"script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback."
+      },
+      {
+        "type": "error",
+        "text": "Loading the script 'https://cdn.ckeditor.com/4.17.1/full/ckeditor.js' violates the following Content Security Policy directive: \"script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blo"
+      },
+      {
+        "type": "error",
+        "text": "Loading the script 'https://www.recaptcha.net/recaptcha/api.js' violates the following Content Security Policy directive: \"script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked."
+      },
+      {
+        "type": "error",
+        "text": "Loading the script 'https://www.recaptcha.net/recaptcha/api.js' violates the following Content Security Policy directive: \"script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked."
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-IwJPRFCVz6YiJCR8r+TsQxUkmddclVoKRVQUxzTCo5k='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-PftBs/yb6r0CO0Q2M814OhakpVlJzhSdUCm9hfj/fHQ='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-dB2XyatJNZbKdu4SBk4G2/ljrw4o11X8mPHNZ40PLuY='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-mbK9eiD8869LaZAHor2okmKgEkaDWfbuPdZ+8k9rJSo='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-mW2D4nV5Bp5X2JuMMQa882cLMgmDjY+mw0heAd1G7aw='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-mW2D4nV5Bp5X2JuMMQa882cLMgmDjY+mw0heAd1G7aw='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-uO7OxPAarUl/7BMNL4lVWgK6/DWRw7VtQuXU6nVPJ4U='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-DEHRT5Q+jO5ppqKX3Hb0E7my6XfD6ZY/NIOk6122HV0='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-GkQTn6SWRd+Fxn71l/tFM6RAw0ZFQPPCQsrIamDCZds='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Error: unknown format: \n    at new U (https://cdn-stage.twygo.com/vite/assets/primary-color-DP1XNnRh.min.js:72:1502)\n    at Q (https://cdn-stage.twygo.com/vite/assets/primary-color-DP1XNnRh.min.js:72:1755)\n    at Yg.generate (https://cdn-stage.twygo.com/vite/assets/palette-generator-Cl00tsB0.min.js:"
+      },
+      {
+        "type": "error",
+        "text": "Refused to apply style from 'https://registrosf2.stage.twygoead.com/assets/fonts/material-icons/material-icons.sass' because its MIME type ('text/sass') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+      },
+      {
+        "type": "warning",
+        "text": "[quick-fetch] quickFetchScript was not included or running in Node.js environment. Falling back to stubbed implementation."
+      },
+      {
+        "type": "error",
+        "text": "Permissions policy violation: compute-pressure is not allowed in this document."
+      },
+      {
+        "type": "error",
+        "text": "Refused to apply style from 'https://registrosf2.stage.twygoead.com/assets/fonts/material-icons/material-icons.sass' because its MIME type ('text/sass') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+      },
+      {
+        "type": "warning",
+        "text": "[quick-fetch] quickFetchScript was not included or running in Node.js environment. Falling back to stubbed implementation."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 400 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 400 ()"
+      },
+      {
+        "type": "error",
+        "text": "Refused to apply style from 'https://registrosf2.stage.twygoead.com/assets/fonts/material-icons/material-icons.sass' because its MIME type ('text/sass') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+      },
+      {
+        "type": "warning",
+        "text": "[quick-fetch] quickFetchScript was not included or running in Node.js environment. Falling back to stubbed implementation."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 400 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: net::ERR_CONNECTION_TIMED_OUT"
+      },
+      {
+        "type": "error",
+        "text": "Refused to apply style from 'https://registrosf2.stage.twygoead.com/assets/fonts/material-icons/material-icons.sass' because its MIME type ('text/sass') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+      },
+      {
+        "type": "warning",
+        "text": "[quick-fetch] quickFetchScript was not included or running in Node.js environment. Falling back to stubbed implementation."
+      },
+      {
+        "type": "error",
+        "text": "Refused to apply style from 'https://registrosf2.stage.twygoead.com/assets/fonts/material-icons/material-icons.sass' because its MIME type ('text/sass') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+      },
+      {
+        "type": "warning",
+        "text": "[quick-fetch] quickFetchScript was not included or running in Node.js environment. Falling back to stubbed implementation."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 400 ()"
+      },
+      {
+        "type": "error",
+        "text": "Refused to apply style from 'https://registrosf2.stage.twygoead.com/assets/fonts/material-icons/material-icons.sass' because its MIME type ('text/sass') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+      },
+      {
+        "type": "warning",
+        "text": "[quick-fetch] quickFetchScript was not included or running in Node.js environment. Falling back to stubbed implementation."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 400 ()"
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)"
+      },
+      {
+        "type": "error",
+        "text": "Refused to apply style from 'https://registrosf2.stage.twygoead.com/assets/fonts/material-icons/material-icons.sass' because its MIME type ('text/sass') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+      },
+      {
+        "type": "warning",
+        "text": "[quick-fetch] quickFetchScript was not included or running in Node.js environment. Falling back to stubbed implementation."
+      },
+      {
+        "type": "error",
+        "text": "Refused to apply style from 'https://registrosf2.stage.twygoead.com/assets/fonts/material-icons/material-icons.sass' because its MIME type ('text/sass') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+      },
+      {
+        "type": "warning",
+        "text": "[quick-fetch] quickFetchScript was not included or running in Node.js environment. Falling back to stubbed implementation."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 400 ()"
+      },
+      {
+        "type": "error",
+        "text": "Refused to apply style from 'https://registrosf2.stage.twygoead.com/assets/fonts/material-icons/material-icons.sass' because its MIME type ('text/sass') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+      },
+      {
+        "type": "warning",
+        "text": "[quick-fetch] quickFetchScript was not included or running in Node.js environment. Falling back to stubbed implementation."
+      },
+      {
+        "type": "error",
+        "text": "Refused to apply style from 'https://registrosf2.stage.twygoead.com/assets/fonts/material-icons/material-icons.sass' because its MIME type ('text/sass') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+      },
+      {
+        "type": "warning",
+        "text": "[quick-fetch] quickFetchScript was not included or running in Node.js environment. Falling back to stubbed implementation."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 400 ()"
+      }
+    ],
+    "busca_flag_nova": [
+      {
+        "url": "https://registrosf2.stage.twygoead.com/o/37079/settings",
+        "achou": false
+      },
+      {
+        "url": "https://registrosf2.stage.twygoead.com/o/37079/organizations/edit",
+        "achou": false
+      }
+    ]
+  },
+  "aluno": {
+    "_erros_console": [
+      {
+        "type": "error",
+        "text": "Loading the script 'https://connect.facebook.net/en_US/all.js' violates the following Content Security Policy directive: \"script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked."
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-dD24GPfBgs/EEs1G3E/YXrAE3rQWsIR+Ylr5N0vy2tY='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-xpCWrI/CA1w6nWND5biTfFx2QIZPiK+Ogw9iXiUPGL8='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-ybh/VcwTkHeX8bMsqexCRBOKvXAJxNHub6Retb+IpTE='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Loading the script 'https://connect.facebook.net/en_US/all.js' violates the following Content Security Policy directive: \"script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked."
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-jYh1LTWtssMJ0dT7HJHe61dhEVBzIoODr7tBVFSV3tg='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Loading the script 'https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js' violates the following Content Security Policy directive: \"script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback."
+      },
+      {
+        "type": "error",
+        "text": "Loading the script 'https://cdn.ckeditor.com/4.17.1/full/ckeditor.js' violates the following Content Security Policy directive: \"script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blo"
+      },
+      {
+        "type": "error",
+        "text": "Loading the script 'https://www.recaptcha.net/recaptcha/api.js' violates the following Content Security Policy directive: \"script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked."
+      },
+      {
+        "type": "error",
+        "text": "Loading the script 'https://www.recaptcha.net/recaptcha/api.js' violates the following Content Security Policy directive: \"script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br\". Note that 'script-src-elem' was not explicitly set, so 'script-src' is used as a fallback. The action has been blocked."
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-IwJPRFCVz6YiJCR8r+TsQxUkmddclVoKRVQUxzTCo5k='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-PftBs/yb6r0CO0Q2M814OhakpVlJzhSdUCm9hfj/fHQ='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-dB2XyatJNZbKdu4SBk4G2/ljrw4o11X8mPHNZ40PLuY='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-mbK9eiD8869LaZAHor2okmKgEkaDWfbuPdZ+8k9rJSo='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-mW2D4nV5Bp5X2JuMMQa882cLMgmDjY+mw0heAd1G7aw='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-mW2D4nV5Bp5X2JuMMQa882cLMgmDjY+mw0heAd1G7aw='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-uO7OxPAarUl/7BMNL4lVWgK6/DWRw7VtQuXU6nVPJ4U='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-DEHRT5Q+jO5ppqKX3Hb0E7my6XfD6ZY/NIOk6122HV0='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Executing inline script violates the following Content Security Policy directive 'script-src 'self' cdn-stage.twygo.com cdn.twygo.com.br'. Either the 'unsafe-inline' keyword, a hash ('sha256-GkQTn6SWRd+Fxn71l/tFM6RAw0ZFQPPCQsrIamDCZds='), or a nonce ('nonce-...') is required to enable inline executi"
+      },
+      {
+        "type": "error",
+        "text": "Error: unknown format: \n    at new U (https://cdn-stage.twygo.com/vite/assets/primary-color-DP1XNnRh.min.js:72:1502)\n    at Q (https://cdn-stage.twygo.com/vite/assets/primary-color-DP1XNnRh.min.js:72:1755)\n    at Yg.generate (https://cdn-stage.twygo.com/vite/assets/palette-generator-Cl00tsB0.min.js:"
+      },
+      {
+        "type": "error",
+        "text": "Refused to apply style from 'https://registrosf2.stage.twygoead.com/assets/fonts/material-icons/material-icons.sass' because its MIME type ('text/sass') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+      },
+      {
+        "type": "warning",
+        "text": "[quick-fetch] quickFetchScript was not included or running in Node.js environment. Falling back to stubbed implementation."
+      },
+      {
+        "type": "error",
+        "text": "Refused to apply style from 'https://registrosf2.stage.twygoead.com/assets/fonts/material-icons/material-icons.sass' because its MIME type ('text/sass') is not a supported stylesheet MIME type, and strict MIME checking is enabled."
+      },
+      {
+        "type": "warning",
+        "text": "[quick-fetch] quickFetchScript was not included or running in Node.js environment. Falling back to stubbed implementation."
+      },
+      {
+        "type": "error",
+        "text": "Failed to load resource: the server responded with a status of 400 ()"
+      }
+    ],
+    "_erros_rede": [
+      {
+        "status": 400,
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/beta_test/get_active_beta_test_notification?feature_name=registros_avaliacao&with_notification_history=true"
+      }
+    ],
+    "status": {
+      "corpo_vazio": false,
+      "tem_erro_texto": false,
+      "snippet": "new_releases\nBoas-vindas\nleaderboard\nDashboard\nMeus Cursos\nMinhas Trilhas\ngroups\nComunidades\ndescription\nMeu histórico BETA\nmap\nRegistros BETA\nmonitoring\nPlanos e Metas\nBETA\ntrack_changes\nPDI\n QA Test"
+    },
+    "url_final": "https://registrosf2.stage.twygoead.com/o/37079/records?in_use_mode_layout=true"
+  }
+}
