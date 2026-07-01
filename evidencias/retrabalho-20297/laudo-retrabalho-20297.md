@@ -7,13 +7,25 @@
 **Executor**: Playwright E2E headed (Python), `scripts/retrabalho_20297_401_vincular_pessoas_lider.py`
 **PR avaliado**: https://github.com/Twygo/twyg-app/pull/10868/
 
----
+> **Veredito ajustado após alinhamento com o dev (01/07):** o PR #10868 ajustou o
+> endpoint só para o fluxo do **Aluno** (retorna o próprio usuário). Para o
+> **Gestor (Líder)**, o vínculo de liderados **não é feito por essa modal** —
+> vai ganhar **tela própria**, já rastreada no card Artia **33126594**. Ou
+> seja, o 401 remanescente em `professionals`/`professionals/results_for_filter`
+> para o Líder **não é bug desta PR** — é escopo que nunca foi desta entrega.
+> Execução deste retrabalho (20297) → **card ✅**; o bloqueio real do Gestor
+> segue rastreado (e cobrado) no card 33126594, não aqui.
 
 ## Veredito
 
-**❌ Ainda quebrado (correção parcial)**
+**✅ Passou (pós-alinhamento)** — ver nota acima. Achados técnicos originais (abaixo) permanecem válidos como evidência do estado atual do endpoint; a leitura de "bug" foi substituída por "fora de escopo, tratado em outro card".
 
-O PR #10868 corrigiu **1 de 3** endpoints citados no bug, mas os **2 endpoints centrais** (que alimentam a lista de pessoas do modal) continuam retornando 401. O Gestor de turma (Líder) permanece **totalmente bloqueado** de vincular pessoas ao criar um registro de aprendizagem.
+<details>
+<summary>Veredito original desta execução (pré-alinhamento, para histórico)</summary>
+
+**❌ Ainda quebrado (correção parcial)** — O PR #10868 corrigiu **1 de 3** endpoints citados no bug, mas os **2 endpoints centrais** (que alimentam a lista de pessoas do modal) continuam retornando 401. Interpretação inicial: Gestor de turma (Líder) permanece bloqueado por falha da PR. Corrigido pela nota de alinhamento acima — o bloqueio é real, mas por escopo (tela ainda não construída), não por regressão desta PR.
+
+</details>
 
 ---
 
@@ -65,15 +77,16 @@ O campo `modal_nenhum_item` no `resultado.json` ficou `false` por um artefato do
 ```
 ⇝ QA ⇜
 :: Teste ::
-❌ Falhou
+✅ Passou
 :: Ambiente ::
 🧪 Stage — https://registrosf2.stage.twygoead.com/ (Org 37079)
 :: Validação ::
-PR #10868 corrigiu apenas 1 dos 3 endpoints reportados no bug original (card 19893/TC3). GET /event_sources/get_provider_names agora retorna 200 (antes 401), mas GET /professionals e GET /professionals/results_for_filter continuam retornando 401 na mesma sessão do Líder — são justamente os endpoints que alimentam a lista do modal "Vincular pessoas". Testado com 2 líderes (qalider@teste.com — usuário da evidência original — e qaliderpuro@teste.com): ambos reproduzem o 401 de forma idêntica, modal abre com "Nenhum item encontrado", Gestor de turma continua bloqueado de vincular pessoas ao criar registro.
+PR #10868 ajustou o endpoint de vínculo de pessoas para o fluxo do Aluno (retorna o próprio usuário — antes 401 em event_sources/get_provider_names, agora 200). Confirmado ao vivo com 2 líderes (qalider@teste.com — usuário da evidência original do bug 19893/TC3 — e qaliderpuro@teste.com): GET /professionals e /professionals/results_for_filter continuam 401 na sessão do Líder, modal "Vincular pessoas" segue "Nenhum item encontrado".
 :: Obs ::
-O fato de event_sources ter virado 200 na mesma sessão em que professionals segue 401 descarta sessão inválida ou PR não deployado — é um bug de autorização remanescente, específico dos endpoints professionals*. Fix incompleto: falta corrigir a autorização do Líder (perfil "Gestor de turma") nesses 2 endpoints.
+Conforme alinhamento com o dev (01/07): o vínculo de liderados pelo Gestor de turma não é entregue por essa modal — terá tela própria, já rastreada no card 33126594. O 401 remanescente em professionals* para o Líder não é regressão desta PR; é escopo pendente daquele card, não deste retrabalho. Severidade P1 do bloqueio ao Gestor segue integralmente no card 33126594 — não foi "perdoada", só realocada para onde o trabalho de fato será feito.
+Link da atividade que trata o Gestor: card Artia 33126594.
 :: Evidência(s) ::
-- lider1_qalider_01_form.png (toast 401 visível)
+- lider1_qalider_01_form.png (toast 401 visível — estado atual do endpoint pro Líder)
 - lider1_qalider_02_modal_apos_click.png (modal vazio, líder da evidência original)
 - lider2_qaliderpuro_02_modal_apos_click.png (modal vazio, segundo líder)
 - resultado.json (captura completa de Network por líder)
