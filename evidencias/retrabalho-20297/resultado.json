@@ -1,0 +1,140 @@
+{
+  "lider1_qalider": {
+    "status": "OK",
+    "clicou": true,
+    "modal_nenhum_item": false,
+    "n_pessoas_checkbox": 0,
+    "capturas_network": [
+      {
+        "endpoint": "professionals",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/professionals?order_type=asc&order_by=full_name&page=1&per_page=10&filter_columns=%5B%22department%22%2C%22role%22%5D",
+        "status": 401
+      },
+      {
+        "endpoint": "event_sources/get_provider_names",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/event_sources/get_provider_names?status=active&search_query=&search_field=name&page=1",
+        "status": 200
+      },
+      {
+        "endpoint": "professionals",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/professionals?&order_type=desc&per_page=25&page=1&order_by=id&filter_options=%5B%7B%22field%22%3A%22situation%22%2C%22type%22%3A%22select%22%2C%22value%22%3A%5B%7B%22value%22%3A%221%22%7D%5D%7D%5D&filter_columns=%5B%7B%22field%22%3A%22situation%22%7D%5D",
+        "status": 401
+      },
+      {
+        "endpoint": "professionals",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/professionals?order_type=asc&order_by=full_name&page=1&per_page=10&filter_columns=%5B%22department%22%2C%22role%22%5D",
+        "status": 401
+      },
+      {
+        "endpoint": "event_sources/get_provider_names",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/event_sources/get_provider_names?status=active&search_query=&search_field=name&page=1",
+        "status": 200
+      },
+      {
+        "endpoint": "professionals/results_for_filter",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/professionals/results_for_filter?search_field=role&page=1&search_query=&page=1",
+        "status": 401
+      },
+      {
+        "endpoint": "professionals",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/professionals?&order_type=desc&per_page=25&page=1&order_by=id&filter_options=%5B%7B%22field%22%3A%22situation%22%2C%22type%22%3A%22select%22%2C%22value%22%3A%5B%7B%22value%22%3A%221%22%7D%5D%7D%5D&filter_columns=%5B%7B%22field%22%3A%22situation%22%7D%5D",
+        "status": 401
+      },
+      {
+        "endpoint": "professionals/results_for_filter",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/professionals/results_for_filter?search_field=role&search_query=&page=1",
+        "status": 401
+      },
+      {
+        "endpoint": "professionals/results_for_filter",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/professionals/results_for_filter?search_field=department&page=1&search_query=&page=1",
+        "status": 401
+      },
+      {
+        "endpoint": "professionals/results_for_filter",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/professionals/results_for_filter?search_field=department&search_query=&page=1",
+        "status": 401
+      },
+      {
+        "endpoint": "professionals/results_for_filter",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/professionals/results_for_filter?search_field=role&search_query=&page=1",
+        "status": 401
+      },
+      {
+        "endpoint": "professionals/results_for_filter",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/professionals/results_for_filter?search_field=department&search_query=&page=1",
+        "status": 401
+      }
+    ],
+    "modal_texto_preview": "NotificaçõesNão há nada por aqui..."
+  },
+  "lider2_qaliderpuro": {
+    "status": "OK",
+    "clicou": true,
+    "modal_nenhum_item": false,
+    "n_pessoas_checkbox": 0,
+    "capturas_network": [
+      {
+        "endpoint": "event_sources/get_provider_names",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/event_sources/get_provider_names?status=active&search_query=&search_field=name&page=1",
+        "status": 200
+      },
+      {
+        "endpoint": "professionals",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/professionals?&order_type=desc&per_page=25&page=1&order_by=id&filter_options=%5B%7B%22field%22%3A%22situation%22%2C%22type%22%3A%22select%22%2C%22value%22%3A%5B%7B%22value%22%3A%221%22%7D%5D%7D%5D&filter_columns=%5B%7B%22field%22%3A%22situation%22%7D%5D",
+        "status": 401
+      },
+      {
+        "endpoint": "professionals",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/professionals?order_type=asc&order_by=full_name&page=1&per_page=10&filter_columns=%5B%22department%22%2C%22role%22%5D",
+        "status": 401
+      },
+      {
+        "endpoint": "event_sources/get_provider_names",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/event_sources/get_provider_names?status=active&search_query=&search_field=name&page=1",
+        "status": 200
+      },
+      {
+        "endpoint": "professionals",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/professionals?order_type=asc&order_by=full_name&page=1&per_page=10&filter_columns=%5B%22department%22%2C%22role%22%5D",
+        "status": 401
+      },
+      {
+        "endpoint": "professionals",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/professionals?&order_type=desc&per_page=25&page=1&order_by=id&filter_options=%5B%7B%22field%22%3A%22situation%22%2C%22type%22%3A%22select%22%2C%22value%22%3A%5B%7B%22value%22%3A%221%22%7D%5D%7D%5D&filter_columns=%5B%7B%22field%22%3A%22situation%22%7D%5D",
+        "status": 401
+      },
+      {
+        "endpoint": "professionals/results_for_filter",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/professionals/results_for_filter?search_field=department&search_query=&page=1",
+        "status": 401
+      },
+      {
+        "endpoint": "professionals/results_for_filter",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/professionals/results_for_filter?search_field=role&search_query=&page=1",
+        "status": 401
+      },
+      {
+        "endpoint": "professionals/results_for_filter",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/professionals/results_for_filter?search_field=role&page=1&search_query=&page=1",
+        "status": 401
+      },
+      {
+        "endpoint": "professionals/results_for_filter",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/professionals/results_for_filter?search_field=department&page=1&search_query=&page=1",
+        "status": 401
+      },
+      {
+        "endpoint": "professionals/results_for_filter",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/professionals/results_for_filter?search_field=role&search_query=&page=1",
+        "status": 401
+      },
+      {
+        "endpoint": "professionals/results_for_filter",
+        "url": "https://registrosf2.stage.twygoead.com/api/v1/o/37079/professionals/results_for_filter?search_field=department&search_query=&page=1",
+        "status": 401
+      }
+    ],
+    "modal_texto_preview": "NotificaçõesNão há nada por aqui..."
+  }
+}
