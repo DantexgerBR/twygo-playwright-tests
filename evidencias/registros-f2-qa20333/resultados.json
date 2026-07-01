@@ -1,0 +1,353 @@
+{
+  "admin": {
+    "visualizar_seta": {
+      "ok": true,
+      "abertura": {
+        "achou": true,
+        "onde": "mesma_aba",
+        "url": "https://registrosf2.stage.twygoead.com/o/37079/records/44279381/edit?mode=view",
+        "snippet": "leaderboard\nDashboard\nschool\nAprendizagem\nformat_list_bulleted_add\nConteúdos\nsend\nCompartilhamentos\ndescription\nRegistros\nBETA\nworkspace_premium\nCertificados\nfolder_open\nBase de conhecimento\ngroup\nUsu"
+      },
+      "tabindex_dom": 0,
+      "ordem_menu": [
+        {
+          "index": 0,
+          "id": "menu-list-:r29:-menuitem-:r71:",
+          "text": "visibility Visualizar",
+          "tabIndex": 0,
+          "className": "chakra-menu__menuitem css-18esm8n"
+        },
+        {
+          "index": 1,
+          "id": "menu-list-:r29:-menuitem-:r74:",
+          "text": "description Evidências",
+          "tabIndex": -1,
+          "className": "chakra-menu__menuitem css-18esm8n"
+        }
+      ],
+      "passos": [
+        {
+          "passo": 1,
+          "foco": {
+            "tag": "BUTTON",
+            "role": "menuitem",
+            "id": "menu-list-:r29:-menuitem-:r74:",
+            "text": "description Evidências",
+            "tabIndex": 0
+          }
+        },
+        {
+          "passo": 2,
+          "foco": {
+            "tag": "BUTTON",
+            "role": "menuitem",
+            "id": "menu-list-:r29:-menuitem-:r71:",
+            "text": "visibility Visualizar",
+            "tabIndex": 0
+          }
+        }
+      ]
+    },
+    "visualizar_tab": {
+      "ok": true,
+      "abertura": {
+        "achou": true,
+        "onde": "mesma_aba",
+        "url": "https://registrosf2.stage.twygoead.com/o/37079/records/44279381/edit?mode=view",
+        "snippet": "leaderboard\nDashboard\nschool\nAprendizagem\nformat_list_bulleted_add\nConteúdos\nsend\nCompartilhamentos\ndescription\nRegistros\nBETA\nworkspace_premium\nCertificados\nfolder_open\nBase de conhecimento\ngroup\nUsu"
+      },
+      "passos": [
+        {
+          "passo": 1,
+          "foco": {
+            "tag": "BUTTON",
+            "role": "menuitem",
+            "id": "menu-list-:r29:-menuitem-:r71:",
+            "text": "visibility Visualizar",
+            "tabIndex": 0
+          }
+        }
+      ]
+    },
+    "evidencias_seta": {
+      "ok": true,
+      "abertura": {
+        "achou": true,
+        "onde": "mesma_aba",
+        "url": "https://registrosf2.stage.twygoead.com/o/37079/records?in_use_mode_layout=true",
+        "snippet": "new_releases\nBoas-vindas\nleaderboard\nDashboard\nMeus Cursos\nMinhas Trilhas\ngroups\nComunidades\ndescription\nMeu histórico BETA\nmap\nRegistros BETA\nmonitoring\nPlanos e Metas\nBETA\ntrack_changes\nPDI\n QA Test"
+      },
+      "tabindex_dom": -1,
+      "ordem_menu": [
+        {
+          "index": 0,
+          "id": "menu-list-:r29:-menuitem-:r71:",
+          "text": "visibility Visualizar",
+          "tabIndex": 0,
+          "className": "chakra-menu__menuitem css-18esm8n"
+        },
+        {
+          "index": 1,
+          "id": "menu-list-:r29:-menuitem-:r74:",
+          "text": "description Evidências",
+          "tabIndex": -1,
+          "className": "chakra-menu__menuitem css-18esm8n"
+        }
+      ],
+      "passos": [
+        {
+          "passo": 1,
+          "foco": {
+            "tag": "BUTTON",
+            "role": "menuitem",
+            "id": "menu-list-:r29:-menuitem-:r74:",
+            "text": "description Evidências",
+            "tabIndex": 0
+          }
+        }
+      ]
+    }
+  },
+  "aluno": {
+    "visualizar_seta": {
+      "ok": true,
+      "abertura": {
+        "achou": true,
+        "onde": "mesma_aba",
+        "url": "https://registrosf2.stage.twygoead.com/o/37079/records/44280004/edit?mode=view",
+        "snippet": "new_releases\nBoas-vindas\nleaderboard\nDashboard\nMeus Cursos\ngroups\nComunidades\ndescription\nMeu histórico BETA\n QA11 TC3\nREGISTROS F2\nQA11 TC3\nColaborador \nnew_releases\nBoas-vindas\n \nleaderboard\nDashboa"
+      },
+      "tabindex_dom": -1,
+      "ordem_menu": [
+        {
+          "index": 0,
+          "id": "menu-list-:r4k:-menuitem-:r52:",
+          "text": "edit Editar",
+          "tabIndex": 0,
+          "className": "chakra-menu__menuitem css-18esm8n"
+        },
+        {
+          "index": 1,
+          "id": "menu-list-:r4k:-menuitem-:r55:",
+          "text": "delete Excluir",
+          "tabIndex": -1,
+          "className": "chakra-menu__menuitem css-18esm8n"
+        },
+        {
+          "index": 2,
+          "id": "menu-list-:r4k:-menuitem-:r5a:",
+          "text": "visibility Visualizar",
+          "tabIndex": -1,
+          "className": "chakra-menu__menuitem css-18esm8n"
+        },
+        {
+          "index": 3,
+          "id": "menu-list-:r4k:-menuitem-:r5d:",
+          "text": "description Evidências",
+          "tabIndex": -1,
+          "className": "chakra-menu__menuitem css-18esm8n"
+        }
+      ],
+      "passos": [
+        {
+          "passo": 1,
+          "foco": {
+            "tag": "BUTTON",
+            "role": "menuitem",
+            "id": "menu-list-:r4k:-menuitem-:r55:",
+            "text": "delete Excluir",
+            "tabIndex": 0
+          }
+        },
+        {
+          "passo": 2,
+          "foco": {
+            "tag": "BUTTON",
+            "role": "menuitem",
+            "id": "menu-list-:r4k:-menuitem-:r5a:",
+            "text": "visibility Visualizar",
+            "tabIndex": 0
+          }
+        }
+      ]
+    },
+    "visualizar_tab": {
+      "ok": false,
+      "motivo": "Tab não focou o item (comportamento do menu ARIA — não é o cenário do bug)",
+      "passos": [
+        {
+          "passo": 1,
+          "foco": {
+            "tag": "BUTTON",
+            "role": "menuitem",
+            "id": "menu-list-:r5g:-menuitem-:r5u:",
+            "text": "edit Editar",
+            "tabIndex": 0
+          }
+        },
+        {
+          "passo": 2,
+          "foco": {
+            "tag": "BUTTON",
+            "role": "menuitem",
+            "id": "menu-list-:r5g:-menuitem-:r5u:",
+            "text": "edit Editar",
+            "tabIndex": 0
+          }
+        },
+        {
+          "passo": 3,
+          "foco": {
+            "tag": "BUTTON",
+            "role": "menuitem",
+            "id": "menu-list-:r5g:-menuitem-:r5u:",
+            "text": "edit Editar",
+            "tabIndex": 0
+          }
+        },
+        {
+          "passo": 4,
+          "foco": {
+            "tag": "BUTTON",
+            "role": "menuitem",
+            "id": "menu-list-:r5g:-menuitem-:r5u:",
+            "text": "edit Editar",
+            "tabIndex": 0
+          }
+        },
+        {
+          "passo": 5,
+          "foco": {
+            "tag": "BUTTON",
+            "role": "menuitem",
+            "id": "menu-list-:r5g:-menuitem-:r5u:",
+            "text": "edit Editar",
+            "tabIndex": 0
+          }
+        },
+        {
+          "passo": 6,
+          "foco": {
+            "tag": "BUTTON",
+            "role": "menuitem",
+            "id": "menu-list-:r5g:-menuitem-:r5u:",
+            "text": "edit Editar",
+            "tabIndex": 0
+          }
+        },
+        {
+          "passo": 7,
+          "foco": {
+            "tag": "BUTTON",
+            "role": "menuitem",
+            "id": "menu-list-:r5g:-menuitem-:r5u:",
+            "text": "edit Editar",
+            "tabIndex": 0
+          }
+        },
+        {
+          "passo": 8,
+          "foco": {
+            "tag": "BUTTON",
+            "role": "menuitem",
+            "id": "menu-list-:r5g:-menuitem-:r5u:",
+            "text": "edit Editar",
+            "tabIndex": 0
+          }
+        },
+        {
+          "passo": 9,
+          "foco": {
+            "tag": "BUTTON",
+            "role": "menuitem",
+            "id": "menu-list-:r5g:-menuitem-:r5u:",
+            "text": "edit Editar",
+            "tabIndex": 0
+          }
+        },
+        {
+          "passo": 10,
+          "foco": {
+            "tag": "BUTTON",
+            "role": "menuitem",
+            "id": "menu-list-:r5g:-menuitem-:r5u:",
+            "text": "edit Editar",
+            "tabIndex": 0
+          }
+        }
+      ]
+    },
+    "evidencias_seta": {
+      "ok": true,
+      "abertura": {
+        "achou": true,
+        "onde": "mesma_aba",
+        "url": "https://registrosf2.stage.twygoead.com/o/37079/records?in_use_mode_layout=true",
+        "snippet": "new_releases\nBoas-vindas\nleaderboard\nDashboard\nMeus Cursos\ngroups\nComunidades\ndescription\nMeu histórico BETA\n QA11 TC3\nREGISTROS F2\nQA11 TC3\nColaborador \nnew_releases\nBoas-vindas\n \nleaderboard\nDashboa"
+      },
+      "tabindex_dom": -1,
+      "ordem_menu": [
+        {
+          "index": 0,
+          "id": "menu-list-:r4k:-menuitem-:r52:",
+          "text": "edit Editar",
+          "tabIndex": 0,
+          "className": "chakra-menu__menuitem css-18esm8n"
+        },
+        {
+          "index": 1,
+          "id": "menu-list-:r4k:-menuitem-:r55:",
+          "text": "delete Excluir",
+          "tabIndex": -1,
+          "className": "chakra-menu__menuitem css-18esm8n"
+        },
+        {
+          "index": 2,
+          "id": "menu-list-:r4k:-menuitem-:r5a:",
+          "text": "visibility Visualizar",
+          "tabIndex": -1,
+          "className": "chakra-menu__menuitem css-18esm8n"
+        },
+        {
+          "index": 3,
+          "id": "menu-list-:r4k:-menuitem-:r5d:",
+          "text": "description Evidências",
+          "tabIndex": -1,
+          "className": "chakra-menu__menuitem css-18esm8n"
+        }
+      ],
+      "passos": [
+        {
+          "passo": 1,
+          "foco": {
+            "tag": "BUTTON",
+            "role": "menuitem",
+            "id": "menu-list-:r4k:-menuitem-:r55:",
+            "text": "delete Excluir",
+            "tabIndex": 0
+          }
+        },
+        {
+          "passo": 2,
+          "foco": {
+            "tag": "BUTTON",
+            "role": "menuitem",
+            "id": "menu-list-:r4k:-menuitem-:r5a:",
+            "text": "visibility Visualizar",
+            "tabIndex": 0
+          }
+        },
+        {
+          "passo": 3,
+          "foco": {
+            "tag": "BUTTON",
+            "role": "menuitem",
+            "id": "menu-list-:r4k:-menuitem-:r5d:",
+            "text": "description Evidências",
+            "tabIndex": 0
+          }
+        }
+      ]
+    }
+  }
+}
